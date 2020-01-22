@@ -1,0 +1,6 @@
+{
+    "name": "Betterbnb",
+    "version": "0.0.1",
+    "description": "Chrome extension for Betterbnb",
+    "manifest_version": 2
+  }
