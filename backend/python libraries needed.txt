@@ -1,5 +1,0 @@
-python3 libraries needed
-
-json
-uszipcode
-requests
