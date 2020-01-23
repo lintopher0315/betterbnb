@@ -20,9 +20,8 @@ def extract_zipcode(website_url):
     # isolate the listing id
     listing_id = listing_id[0:listing_id.find('?')]
 
-
+    # call the api, store the json + retrieve latitude and longitude
     listing_json = requests.get(FIRST_HALF_URL + listing_id + SECOND_HALF_URL).json()
-
     listing_latitude = listing_json['pdp_listing_detail']['lat']
     listing_longitude = listing_json['pdp_listing_detail']['lng']
 
