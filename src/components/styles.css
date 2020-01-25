@@ -72,3 +72,26 @@
     height: 700px;
     margin-top: 400px;
 }
+
+#extension-text-header {
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    font-size: 54px;
+    padding-top: 100px;
+    text-align: center;
+    color: rgb(16, 48, 75);
+}
+
+#extension-text {
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    color: #10304B;
+    font-size: 28px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+#icon-container {
+    padding-top: 100px;
+    text-align: center;
+}
