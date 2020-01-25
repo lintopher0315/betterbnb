@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 
 import Jumbotron from './Jumbotron.js';
+import Info from './Info.js';
+import Extensions from './Extensions.js';
 
 function Home() {
     return (
@@ -29,6 +31,8 @@ function Home() {
                 </Nav>
             </Navbar>
             <Jumbotron />
+            <Info />
+            <Extensions />
         </div>
     )
 }
