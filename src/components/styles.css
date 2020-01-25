@@ -1,0 +1,44 @@
+#header {
+    background: rgb(16, 48, 75);
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-link:focus {
+    outline: none;
+}
+
+#container {
+    height: 700px;
+    background: rgb(16, 48, 75);
+}
+
+#container-text {
+    color: white;
+    font-size: 54px;
+    font-family: 'Merienda';
+    text-align: center;
+    padding-top: 150px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+#header-button {
+	padding-right: 40px;
+    color: #3285CD;
+    font-family: 'Pacifico';
+    font-size: 25px;
+    transition: .2s all ease-in-out;
+}
+
+#header-button:hover {
+    color: rgb(34, 93, 145);
+    transition: .2s all ease-in-out;
+}
