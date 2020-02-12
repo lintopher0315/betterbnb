@@ -2,7 +2,7 @@ from uszipcode import SearchEngine, SimpleZipcode
 import requests
 import json
 
-def extract_zipcode(website_url):
+def extract_zipcode_with_url(website_url):
 
     # upper case variables are constants
     # 'r' means raw, doesn't worry about escape characters etc
@@ -22,10 +22,16 @@ def extract_zipcode(website_url):
 
     # call the api, store the json + retrieve latitude and longitude
     listing_json = requests.get(FIRST_HALF_URL + listing_id + SECOND_HALF_URL).json()
-    listing_latitude = listing_json['pdp_listing_detail']['lat']
-    listing_longitude = listing_json['pdp_listing_detail']['lng']
+    return extract_zipcode_with_lat_lng(listing_json['pdp_listing_detail']['lat'],
+                                        listing_json['pdp_listing_detail']['lng'])
 
-    # find list of zipcodes within 1 mile of the listing
+
+def extract_zipcode_with_lat_lng(lat, lng):
+
+    listing_latitude = lat
+    listing_longitude = lng
+
+    # find list of zipcodes within 2 miles of the listing
     # latitude and longitude
 
     search = SearchEngine()
@@ -36,5 +42,17 @@ def extract_zipcode(website_url):
 
     return first_zipcode
 
+def extract_city_and_state_with_lat_lng(lat, lng):
+    listing_latitude = lat
+    listing_longitude = lng
 
-    
+    # find list of zipcodes within 2 miles of the listing
+    # latitude and longitude
+
+    search = SearchEngine()
+    list_of_zipcodes = search.by_coordinates(listing_latitude, listing_longitude, 2)
+
+    # retrieve first zipcode found (closest zipcode)
+    first_zipcode = list_of_zipcodes[0]
+
+    return first_zipcode.city, first_zipcode.state
