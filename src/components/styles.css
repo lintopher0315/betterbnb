@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 #header {
     background: rgb(16, 48, 75);
 }
@@ -41,6 +45,10 @@
 #header-button:hover {
     color: rgb(34, 93, 145);
     transition: .2s all ease-in-out;
+}
+
+.header-redirect:hover {
+    text-decoration: none;
 }
 
 #plane-image {
@@ -94,4 +102,25 @@
 #icon-container {
     padding-top: 100px;
     text-align: center;
+}
+
+#form-label {
+    padding-left: 280px;
+    padding-top: 70px;
+}
+
+#form-ctrl {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#form-row {
+    padding-top: 60px;
+}
+
+#form-button {
+    margin-left: auto;
+    margin-right: auto;
 }
