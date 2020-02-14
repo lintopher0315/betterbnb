@@ -27,7 +27,7 @@ def get_crime_data(lat, lng):
             if i == 1:
                 return {}
 
-    # Save only the ORIs of the state of the listing to ori_iterator as a dictionary.
+    # Isolate only information pertaining to the state in the form of a dictionary in ori_iterator
     ori_iterator = agenciesList[state]
 
     # Iterate through the list of ORIs, attempting to find a police department that
