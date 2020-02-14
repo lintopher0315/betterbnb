@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # backend
+/backend/node_modules
 /backend/scripts/reqs/
 backend/scripts/.idea/workspace.xml
 backend/scripts.idea/vcs.xml
