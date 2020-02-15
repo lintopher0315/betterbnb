@@ -47,6 +47,10 @@ body {
     transition: .2s all ease-in-out;
 }
 
+.header-redirect {
+    outline: none;
+}
+
 .header-redirect:hover {
     text-decoration: none;
 }
@@ -123,4 +127,21 @@ body {
 #form-button {
     margin-left: auto;
     margin-right: auto;
+}
+
+#listing-card {
+    max-width: 345px;
+    max-height: 275px;
+}
+
+#listing-card-media {
+    height: 140px;
+}
+
+#results-container {
+    padding-left: 100px;
+}
+
+#results-row {
+    padding-top: 50px;
 }
