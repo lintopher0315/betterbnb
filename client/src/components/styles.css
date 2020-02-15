@@ -129,13 +129,52 @@ body {
     margin-right: auto;
 }
 
-#listing-card {
-    max-width: 345px;
-    max-height: 275px;
+.listing-card-root {
+    overflow: initial;
+    max-width: 304px;
+    padding-bottom: 20px;
 }
 
-#listing-card-media {
-    height: 140px;
+.listing-card-title {
+    margin-bottom: 0px;
+    font-family: 'Dosis';
+    font-weight: 600;
+    width: 224px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#listing-card-text {
+    font-family: 'Dosis';
+}
+
+#listing-card-star {
+    padding-top: 7px;
+}
+
+.listing-card-rate {
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.listing-card-fav {
+    position: absolute;
+    top: -10px;
+    left: 190px;
+}
+
+.listing-card-fav:focus {
+    outline: none;
+}
+
+.listing-card-loc {
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+.listing-card-opt:focus {
+    outline: none;
 }
 
 #results-container {
