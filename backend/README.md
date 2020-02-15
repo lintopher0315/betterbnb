@@ -1,28 +1,11 @@
-# How to install and setup backend 
+# betterbnb - backend
+Contained within this directory is the Node.js backend as well as the Python data-gathering scripts contained within the scripts
+directory.
+
+To run the backend (isolated)
 
 ```
-(i) Use a virtual env before installing any dependencies 
+npm start
 ```
 
-### How to install virtual env 
-
-```
-(ii) pip3 install virtualenv
-```
-
-### Activating and setting up virtual env
-Remark: you need to name the virtualenv reqs as that is what it's named inside gitignore 
-
-```
-(iv) virtualenv reqs
-```
-
-```
-(v) source reqs/bin/activate
-```
-
-### First time - installing dependencies
-
-```
-(vi) pip3 install -r requirements.txt
-```
+Running the above command will run the server on localhost port 5000

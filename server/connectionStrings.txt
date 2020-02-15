@@ -1,0 +1,12 @@
+Node Connection String: mongodb+srv://<username>:<password>@cluster0-94hkc.gcp.mongodb.net/test?retryWrites=true&w=majority
+Python Connection String: mongodb+srv://<username>:<password>@cluster0-94hkc.gcp.mongodb.net/test?retryWrites=true&w=majority
+
+Node Driver Example:
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://<username>:<password>@cluster0-94hkc.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
