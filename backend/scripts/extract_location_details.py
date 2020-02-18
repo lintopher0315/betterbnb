@@ -63,8 +63,8 @@ def extract_zipcode_with_address(address):
 
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
-    lat = GeocodedAddress['results']['geometry']['location']['lat']
-    lng = GeocodedAddress['results']['geometry']['location']['lng']
+    lat = GeocodedAddress[0]['geometry']['location']['lat']
+    lng = GeocodedAddress[0]['geometry']['location']['lng']
 
     # Call utility method that extracts the zipcode with the latitude and longitude
     return extract_zipcode_with_lat_lng(lat, lng)
@@ -91,8 +91,8 @@ def extract_city_and_state_with_address(address):
 
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
-    lat = GeocodedAddress['results']['geometry']['location']['lat']
-    lng = GeocodedAddress['results']['geometry']['location']['lng']
+    lat = GeocodedAddress[0]['geometry']['location']['lat']
+    lng = GeocodedAddress[0]['geometry']['location']['lng']
 
     # Extract a list of nearby zipcodes via the uszipcodes API
     list_of_zipcodes = search.by_coordinates(lat, lng, 5)
