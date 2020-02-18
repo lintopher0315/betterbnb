@@ -1,11 +1,32 @@
-from uszipcode import SearchEngine, SimpleZipcode
 import requests
 import json
 import unittest
 import googlemaps
 
+
 # API Key (intended use is Google Maps)
 CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
+
+# Google Maps Client Object
+gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
+
+def extract_zipcode_with_lat_lng(lat, lng):
+
+    reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
+
+    # iterate through list of nearby components
+    for i in range(len(reverse_geocode_result)):
+
+        # if that component contains a postal code
+        if 'postal_code' in reverse_geocode_result[i]['types']:
+
+            # check each of the address components within that component
+            for j in range(len(reverse_geocode_result[i]['address_components'])):
+
+                # if that component is the postal code, save it into 'zipcode' and end
+                if 'postal_code' in reverse_geocode_result[i]['address_components'][j]['types']:
+                    return reverse_geocode_result[i]['address_components'][j]['short_name']
+
 
 def extract_zipcode_with_url(website_url):
 
@@ -31,35 +52,30 @@ def extract_zipcode_with_url(website_url):
                                         listing_json['pdp_listing_detail']['lng'])
 
 
-def extract_zipcode_with_lat_lng(lat, lng):
-
-    # find list of zipcodes within 5 miles of the listing
-    # latitude and longitude
-
-    search = SearchEngine()
-    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
-
-    # retrieve first zipcode found
-    first_zipcode = list_of_zipcodes[0].zipcode
-
-    return first_zipcode
-
 def extract_city_and_state_with_lat_lng(lat, lng):
 
-    # find list of zipcodes within 5 miles of the listing
-    # latitude and longitude
+    reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
 
-    search = SearchEngine()
-    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
+    # iterate through list of nearby components
+    for i in range(len(reverse_geocode_result)):
 
-    # retrieve first zipcode found (closest zipcode)
-    first_zipcode = list_of_zipcodes[0]
+        # if that component contains a postal code
+        if 'postal_code' in reverse_geocode_result[i]['types']:
 
-    return first_zipcode.city, first_zipcode.state
+            # check each of the address components within that component
+            for j in range(len(reverse_geocode_result[i]['address_components'])):
+
+                # if that component is the postal code, save it into 'zipcode' and end
+                if 'postal_code' in reverse_geocode_result[i]['address_components'][j]['types']:
+                    formatted_string = reverse_geocode_result[i]['formatted_address']
+                    splitString = formatted_string.split(",")
+                    city = splitString[0];
+                    state = splitString[1].strip()[:splitString[1].strip().index(" ")]
+                    return city, state
+
+    return 'NOT_FOUND, NOT_FOUND'
 
 def extract_zipcode_with_address(address):
-    # Create a GoogleMaps Object
-    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
 
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
@@ -70,8 +86,6 @@ def extract_zipcode_with_address(address):
     return extract_zipcode_with_lat_lng(lat, lng)
 
 def extract_lat_lng_with_address(address):
-    # Create a GoogleMaps Object
-    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
 
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
@@ -82,32 +96,18 @@ def extract_lat_lng_with_address(address):
     return lat, lng
 
 def extract_city_and_state_with_address(address):
-
-    # Create a uszipcodes SearchEngine Object
-    search = SearchEngine()
-
-    # Create a GoogleMaps Object
-    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
-
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
-    lat = GeocodedAddress[0]['geometry']['location']['lat']
-    lng = GeocodedAddress[0]['geometry']['location']['lng']
 
-    # Extract a list of nearby zipcodes via the uszipcodes API
-    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
+    AllComponents = GeocodedAddress[0]
 
-    # retrieve first zipcode found (closest zipcode)
-    first_zipcode = list_of_zipcodes[0]
-
-    return first_zipcode.city, first_zipcode.state
-
-
-
-
-
-
-
+    for i in range(len(AllComponents['address_components'])):
+        if 'locality' in AllComponents['address_components'][i]['types']:
+            city = AllComponents['address_components'][i]['short_name']
+            for j in range(len(AllComponents['address_components'])):
+                if 'administrative_area_level_1' in AllComponents['address_components'][j]['types']:
+                    state = AllComponents['address_components'][j]['short_name']
+                    return city, state
 # UNIT TEST CLASSES BELOW #
 # UNIT TEST CLASSES BELOW #
 # UNIT TEST CLASSES BELOW #
@@ -122,7 +122,7 @@ class TestZipcodeExtraction(unittest.TestCase):
         self.assertEqual(str(60007), extract_zipcode_with_lat_lng(42.01, -87.99))
         self.assertEqual(str(47906), extract_zipcode_with_lat_lng(40.49, -86.96))
         self.assertEqual(str(23801), extract_zipcode_with_lat_lng(37.24, -77.34))
-        self.assertEqual(str(33815), extract_zipcode_with_lat_lng(28.09, -82.02))
+        self.assertEqual(str(33810), extract_zipcode_with_lat_lng(28.09, -82.02))
         self.assertEqual(str(35801), extract_zipcode_with_lat_lng(34.74, -86.55))
         self.assertEqual(str(35805), extract_zipcode_with_lat_lng(34.69, -86.61))
         self.assertEqual(str(85034), extract_zipcode_with_lat_lng(33.44, -112.02))
@@ -147,4 +147,3 @@ class TestZipcodeExtraction(unittest.TestCase):
 
         city, state = extract_city_and_state_with_lat_lng(39.77, -105.01)
         self.assertListEqual(["Denver", "CO"], [city, state])
-
