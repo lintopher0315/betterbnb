@@ -23,7 +23,7 @@ def extract_zipcode_with_lat_lng(lat, lng):
             # check each of the address components within that component
             for j in range(len(reverse_geocode_result[i]['address_components'])):
 
-                # if that component is the postal code, save it into 'zipcode' and end
+                # if that component is the postal code, return the postal code
                 if 'postal_code' in reverse_geocode_result[i]['address_components'][j]['types']:
                     return reverse_geocode_result[i]['address_components'][j]['short_name']
 
@@ -103,11 +103,12 @@ def extract_city_and_state_with_address(address):
 
     for i in range(len(AllComponents['address_components'])):
         if 'locality' in AllComponents['address_components'][i]['types']:
-            city = AllComponents['address_components'][i]['short_name']
+            city = AllComponents['address_components'][i]['long_name']
             for j in range(len(AllComponents['address_components'])):
                 if 'administrative_area_level_1' in AllComponents['address_components'][j]['types']:
                     state = AllComponents['address_components'][j]['short_name']
                     return city, state
+
 # UNIT TEST CLASSES BELOW #
 # UNIT TEST CLASSES BELOW #
 # UNIT TEST CLASSES BELOW #
@@ -115,7 +116,7 @@ def extract_city_and_state_with_address(address):
 
 class TestZipcodeExtraction(unittest.TestCase):
 
-    def test_ZipBatchOne(self):
+    def test_ExtractZipWithLatLng(self):
 
         # LEFT COLUMN IS THE "EXPECTED" RESULT #
 
@@ -129,7 +130,7 @@ class TestZipcodeExtraction(unittest.TestCase):
         self.assertEqual(str(80211), extract_zipcode_with_lat_lng(39.77, -105.01))
         self.assertEqual(str(60612), extract_zipcode_with_lat_lng(41.88, -87.69))
 
-    def test_ZipBatchTwo(self):
+    def test_ExtractCityAndStateWithLatLng(self):
 
         # LEFT COLUMN IS THE "EXPECTED" RESULT #
 
@@ -147,3 +148,17 @@ class TestZipcodeExtraction(unittest.TestCase):
 
         city, state = extract_city_and_state_with_lat_lng(39.77, -105.01)
         self.assertListEqual(["Denver", "CO"], [city, state])
+
+    def test_ExtractCityAndStateWithAddress(self):
+         # LEFT COLUMN IS THE "EXPECTED" RESULT #
+        self.assertTupleEqual(('Des Plaines', 'IL'), extract_city_and_state_with_address('1755 S. Wolf Road, Des Plaines, IL'))
+        self.assertTupleEqual(('Glenview', 'IL'), extract_city_and_state_with_address('4000 W Lake Ave, Glenview, IL'))
+        self.assertTupleEqual(('New York', 'NY'), extract_city_and_state_with_address('65 W 54th St, New York, NY'))
+        self.assertTupleEqual(('San Francisco', 'CA'), extract_city_and_state_with_address('3416 19th St, San Franscisco, CA'))
+
+    def test_ExtractZipWithAddress(self):
+        # LEFT COLUMN IS THE "EXPECTED" RESULT #
+        self.assertEqual(str(60018), str(extract_zipcode_with_address('1755 S. Wolf Road, Des Plaines, IL')))
+        self.assertEqual(str(60026), str(extract_zipcode_with_address('4000 W Lake Ave, Glenview, IL')))
+        self.assertEqual(str(10019), str(extract_zipcode_with_address('65 W 54th St, New York, NY')))
+        self.assertEqual(str(94110), str(extract_zipcode_with_address('3416 19th St, San Franscisco, CA')))
