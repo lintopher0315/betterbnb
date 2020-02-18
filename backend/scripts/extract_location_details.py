@@ -2,6 +2,10 @@ from uszipcode import SearchEngine, SimpleZipcode
 import requests
 import json
 import unittest
+import googlemaps
+
+# API Key (intended use is Google Maps)
+CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
 
 def extract_zipcode_with_url(website_url):
 
@@ -29,14 +33,11 @@ def extract_zipcode_with_url(website_url):
 
 def extract_zipcode_with_lat_lng(lat, lng):
 
-    listing_latitude = lat
-    listing_longitude = lng
-
-    # find list of zipcodes within 2 miles of the listing
+    # find list of zipcodes within 5 miles of the listing
     # latitude and longitude
 
     search = SearchEngine()
-    list_of_zipcodes = search.by_coordinates(listing_latitude, listing_longitude, 5)
+    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
 
     # retrieve first zipcode found
     first_zipcode = list_of_zipcodes[0].zipcode
@@ -44,19 +45,67 @@ def extract_zipcode_with_lat_lng(lat, lng):
     return first_zipcode
 
 def extract_city_and_state_with_lat_lng(lat, lng):
-    listing_latitude = lat
-    listing_longitude = lng
 
-    # find list of zipcodes within 2 miles of the listing
+    # find list of zipcodes within 5 miles of the listing
     # latitude and longitude
 
     search = SearchEngine()
-    list_of_zipcodes = search.by_coordinates(listing_latitude, listing_longitude, 2)
+    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
 
     # retrieve first zipcode found (closest zipcode)
     first_zipcode = list_of_zipcodes[0]
 
     return first_zipcode.city, first_zipcode.state
+
+def extract_zipcode_with_address(address):
+    # Create a GoogleMaps Object
+    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
+
+    # Extract the latitude and longitude from the address via the Google Maps API
+    GeocodedAddress = gmaps.geocode(address)
+    lat = GeocodedAddress['results']['geometry']['location']['lat']
+    lng = GeocodedAddress['results']['geometry']['location']['lng']
+
+    # Call utility method that extracts the zipcode with the latitude and longitude
+    return extract_zipcode_with_lat_lng(lat, lng)
+
+def extract_lat_lng_with_address(address):
+    # Create a GoogleMaps Object
+    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
+
+    # Extract the latitude and longitude from the address via the Google Maps API
+    GeocodedAddress = gmaps.geocode(address)
+    lat = GeocodedAddress[0]['geometry']['location']['lat']
+    lng = GeocodedAddress[0]['geometry']['location']['lng']
+
+    # Return latitude, longitude of that address
+    return lat, lng
+
+def extract_city_and_state_with_address(address):
+
+    # Create a uszipcodes SearchEngine Object
+    search = SearchEngine()
+
+    # Create a GoogleMaps Object
+    gmaps = googlemaps.Client(key=CONSTANT_GOOGLE_API_KEY)
+
+    # Extract the latitude and longitude from the address via the Google Maps API
+    GeocodedAddress = gmaps.geocode(address)
+    lat = GeocodedAddress['results']['geometry']['location']['lat']
+    lng = GeocodedAddress['results']['geometry']['location']['lng']
+
+    # Extract a list of nearby zipcodes via the uszipcodes API
+    list_of_zipcodes = search.by_coordinates(lat, lng, 5)
+
+    # retrieve first zipcode found (closest zipcode)
+    first_zipcode = list_of_zipcodes[0]
+
+    return first_zipcode.city, first_zipcode.state
+
+
+
+
+
 
 
 # UNIT TEST CLASSES BELOW #
