@@ -2,6 +2,7 @@ import requests
 import json
 import unittest
 import googlemaps
+from googlemaps.exceptions import HTTPError
 
 
 # API Key (intended use is Google Maps)
@@ -54,7 +55,13 @@ def extract_zipcode_with_url(website_url):
 
 def extract_city_and_state_with_lat_lng(lat, lng):
 
-    reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
+    # First, try to retrieve the geocoded object.
+    try:
+        reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
+
+    # If an HTTPError occurs, the lat/lng was invalid.
+    except HTTPError:
+        return 'NOT_FOUND', 'NOT_FOUND'
 
     # iterate through list of nearby components
     for i in range(len(reverse_geocode_result)):
@@ -73,7 +80,7 @@ def extract_city_and_state_with_lat_lng(lat, lng):
                     state = splitString[1].strip()[:splitString[1].strip().index(" ")]
                     return city, state
 
-    return 'NOT_FOUND, NOT_FOUND'
+    return 'NOT_FOUND', 'NOT_FOUND'
 
 def extract_zipcode_with_address(address):
 
@@ -89,6 +96,8 @@ def extract_lat_lng_with_address(address):
 
     # Extract the latitude and longitude from the address via the Google Maps API
     GeocodedAddress = gmaps.geocode(address)
+    if len(GeocodedAddress) == 0:
+        return 'NOT_FOUND', 'NOT_FOUND'
     lat = GeocodedAddress[0]['geometry']['location']['lat']
     lng = GeocodedAddress[0]['geometry']['location']['lng']
 
@@ -109,10 +118,10 @@ def extract_city_and_state_with_address(address):
                     state = AllComponents['address_components'][j]['short_name']
                     return city, state
 
-# UNIT TEST CLASSES BELOW #
-# UNIT TEST CLASSES BELOW #
-# UNIT TEST CLASSES BELOW #
-# UNIT TEST CLASSES BELOW #
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
 
 class TestZipcodeExtraction(unittest.TestCase):
 
