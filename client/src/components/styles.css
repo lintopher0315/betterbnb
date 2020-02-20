@@ -196,3 +196,51 @@ body {
 #results-row {
     padding-top: 50px;
 }
+
+#carousel-container {
+    padding-top: 20px;
+}
+
+#listing-page-title {
+    font-family: 'Dosis';
+    font-weight: bold;
+    font-size: 48px;
+    color: rgb(51, 51, 51);
+    padding-top: 30px;
+}
+
+#listing-page-loc {
+    font-family: 'Dosis';
+    font-size: 24px;
+    color: rgb(51, 51, 51);
+}
+
+#listing-page-star {
+    padding-top: 20px;
+}
+
+#listing-desc-title {
+    font-family: 'Dosis';
+    font-weight: bold;
+    font-size: 32px;
+    padding-top: 30px;
+}
+
+#listing-desc-text {
+    font-family: 'Dosis';
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+#listing-map {
+    padding-top: 50px;
+}
+
+#desc-col {
+    width: 550px;
+    float: right;
+}
+
+#map-col {
+    width: 650px;
+}
