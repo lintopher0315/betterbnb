@@ -34,6 +34,18 @@ body {
     pointer-events: none;
 }
 
+#location-container {
+    margin-top: 180px;
+    margin-left: 296px;
+    width: 1250px;
+}
+
+#listing-location-container {
+    margin-top: 65px;
+    margin-left: 100px;
+    width: 850px;
+}
+
 #header-button {
 	padding-right: 40px;
     color: #3285CD;
