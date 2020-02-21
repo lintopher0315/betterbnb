@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { Container, Col, Row } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Line, Scatter } from 'react-chartjs-2';
 
 function ListingPage() {
 
@@ -22,6 +23,44 @@ function ListingPage() {
     }
 
     const position = [-33.861691, 151.207687]
+
+    var crimeDataYearly = {
+        labels: ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."],
+        datasets: [{
+            data: [5, 8, 4, 10, 13, 8, 6, 7, 10, 8, 8, 6],
+            label: "Crime Frequency Dataset",
+            borderColor: "#f54293",
+            fill: false,
+        }]
+    }
+
+    var crimeDataMonthly = {
+        datasets: [{
+            data: [{
+                x: 1,
+                y: 2
+            }, {
+                x: 2,
+                y: 5
+            }, {
+                x: 5,
+                y: 4
+            }, {
+                x: 7,
+                y: 3
+            }, {
+                x: 10,
+                y: 6
+            }, {
+                x: 13,
+                y: 5
+            }],
+            label: "Crime Frequency Dataset",
+            borderColor: "#b82e6c",
+            fill: false,
+            showLine: true,
+        }]
+    }
 
     return (
         <div>
@@ -54,7 +93,8 @@ function ListingPage() {
                                 value={5}
                                 size={'medium'}
                             />
-                            <div id="listing-desc-title">
+                            <hr />
+                            <div id="listing-sub-title">
                                 Description
                             </div>
                             <div id="listing-desc-text">
@@ -66,6 +106,7 @@ function ListingPage() {
                                 then meet back at Mode Kitchen & Bar for fresh, local cuisine and drinks at Grain. 
                                 In Sydney, work and play are never too far apart. And that’s just the way we like it.
                             </div>
+                            <hr />
                         </div>
                     </Col>
 
@@ -84,6 +125,92 @@ function ListingPage() {
                                     </Marker>
                                 </Map>
                             </div>
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <div id="area-col">
+                            <div id="listing-sub-title">
+                                About the Area
+                            </div>
+                            
+                        </div>
+                    </Col>
+                    <Col>
+                    
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col>
+                        <div id="chart-container-left">
+                            <Line
+                                data={crimeDataYearly}
+                                options={{
+                                    maintainAspectRatio: false,
+                                    title: {
+                                        display: true,
+                                        text: 'Reported Crime Incidents Over Past Year',
+                                        fontFamily: 'Dosis',
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Month',
+                                                fontFamily: 'Dosis',
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Number of Reports',
+                                                fontFamily: 'Dosis',
+                                            }
+                                        }]
+                                    },
+                                }}
+                            />
+                        </div>
+                    </Col>
+
+                    <Col style={{paddingLeft: '100px'}}>
+                        <div id="chart-container-right">
+                            <Scatter
+                                type="scatter"
+                                data={crimeDataMonthly}
+                                options={{
+                                    maintainAspectRatio: false,
+                                    title: {
+                                        display: true,
+                                        text: 'Reported Crime Incidents Over Past Month',
+                                        fontFamily: 'Dosis',
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                            ticks: {
+                                                max: 30,
+                                                min: 0,
+                                                stepSize: 1
+                                            },
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Day of Month',
+                                                fontFamily: 'Dosis',
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Number of Reports',
+                                                fontFamily: 'Dosis',
+                                            }
+                                        }]
+                                    },
+                                }}
+                            />
                         </div>
                     </Col>
                 </Row>

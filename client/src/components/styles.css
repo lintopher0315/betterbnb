@@ -217,19 +217,21 @@ body {
 
 #listing-page-star {
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 
-#listing-desc-title {
+#listing-sub-title {
     font-family: 'Dosis';
     font-weight: bold;
     font-size: 32px;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 #listing-desc-text {
     font-family: 'Dosis';
     font-size: 20px;
-    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 #listing-map {
@@ -241,6 +243,23 @@ body {
     float: right;
 }
 
+#area-col {
+    width: 550px;
+    padding-left: 255px;
+}
+
 #map-col {
     width: 650px;
+}
+
+#chart-container-left {
+    height: 400px;
+    float: right;
+    width: 630px;
+}
+
+#chart-container-right {
+    height: 400px;
+    float: left;
+    width: 630px;
 }
