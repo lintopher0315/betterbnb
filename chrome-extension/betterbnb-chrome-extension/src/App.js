@@ -5,10 +5,14 @@ import './App.css';
 
 // import components
 import Landing from './components/landing.component'
+import Footer from './components/footer.component'
 
 function App() {
   return (
-    <Landing />
+    <div>
+      <Landing />
+      <Footer />
+    </div>
   );
 }
 

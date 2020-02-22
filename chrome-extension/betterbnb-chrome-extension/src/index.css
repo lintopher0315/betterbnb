@@ -5,16 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 600px;
-  width: 800px; 
+  height: 450px;
+  width: 300px; 
 }
 
 html { 
-  height: 600px; 
-  width: 800px;
+  height: 450px;
+  width: 300px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* unvisited link */
+a:link {
+  color: #7f8fa6;
+}
+
+/* visited link */
+a:visited {
+  color: #7f8fa6;
+}
+
+/* mouse over link */
+a:hover {
+  color: #10304B;
+  text-decoration: None;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
 }
