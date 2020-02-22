@@ -7,7 +7,7 @@ export default class Landing extends Component {
     
     render() {
         return(
-            <div className='container' style={{paddingTop: "50%"}}>
+            <div className='container' style={{paddingTop: "35%"}}>
                 <div className='text-center'>
                     <Spinner animation="grow" variant="dark" />
                     <p>Visit an Airbnb listing to get started...</p> 
