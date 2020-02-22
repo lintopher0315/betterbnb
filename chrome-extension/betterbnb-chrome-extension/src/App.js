@@ -6,10 +6,12 @@ import './App.css';
 // import components
 import Landing from './components/landing.component'
 import Footer from './components/footer.component'
+import Header from './components/header.component'
 
 function App() {
   return (
     <div>
+      <Header />
       <Landing />
       <Footer />
     </div>

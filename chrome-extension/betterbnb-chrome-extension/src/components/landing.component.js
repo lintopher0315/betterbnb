@@ -8,9 +8,7 @@ export default class Landing extends Component {
         return(
             <div className='container'>
                 <div className='text-center'>
-                    <h1><b>BetterBNB</b></h1>
-                    <hr />
-                    <p>The official Chrome extension for BetterBNB</p>
+                    <h1><b>Content</b></h1>
                 </div>
             </div>
         )

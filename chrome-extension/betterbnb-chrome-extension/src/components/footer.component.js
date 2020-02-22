@@ -8,6 +8,7 @@ export default class Footer extends Component {
     
     render() {
         return(
+            <div className='extension-footer'>
                 <div className='text-center'>
                     <Card.Footer className="text-muted">
                     <Row>
@@ -24,6 +25,7 @@ export default class Footer extends Component {
                     </Row>    
                     </Card.Footer>
                 </div>
+            </div>
         )
     }
 }
