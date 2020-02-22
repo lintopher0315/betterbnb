@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 
 export default class Landing extends Component {
     
     
     render() {
         return(
-            <div className='container'>
+            <div className='container' style={{paddingTop: "50%"}}>
                 <div className='text-center'>
-                    <h1><b>Content</b></h1>
+                    <Spinner animation="grow" variant="dark" />
+                    <p>Visit an Airbnb listing to get started...</p> 
                 </div>
             </div>
         )
