@@ -2,8 +2,10 @@ import requests
 import json
 import sys
 
-
-#restraunt_name = zomato.get_nearby_restaurants(41.881832, -87.623177)
+"""
+This script expects a longitude and latitude passed in as command line arguments. It prints the 
+names of the nearby restraunts and cuisines. 
+"""
   
 
 def getCategories():
@@ -54,6 +56,9 @@ def get_nearby_cuisines(lat, lon):
 
 
 def get(endpoint, params):
+  """
+  Method used to format API calls made to the Zomato API.
+  """
   host = "https://developers.zomato.com/api/v2.1"
   user_key = "423b069e30574cb2f6c6c4da1b5f65ca"
   content_type='application/json'
@@ -70,6 +75,17 @@ def get(endpoint, params):
   return response.json()
 
 
+def address_to_lon_and_lat(addr):
+  url = "https://us1.locationiq.com/v1/search.php"
+  data = {
+      'key': '89f839c5bfa44e',
+      'q': addr,
+      'format': 'json'
+  }
+  response = requests.get(url, params=data)
+  lat = response.json()[0]['lat']
+  lon = response.json()[0]['lon']
+  return [lat, lon]
 
 if __name__ == "__main__":
   lat = sys.argv[1]
@@ -84,4 +100,6 @@ if __name__ == "__main__":
   nearby_cuisines = get_nearby_cuisines(41.881832, -87.623177)
   #python3 restraunt.py 41.881832 -87.623177 
   print(nearby_cuisines)
+
+  print(address_to_lon_and_lat("Empire State Bulding"))
 
