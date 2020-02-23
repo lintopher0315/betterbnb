@@ -5,7 +5,6 @@ import { Card, Row, Col } from 'react-bootstrap'
 export default class Footer extends Component {
     
     
-    
     render() {
         return(
             <div className='extension-footer'>
@@ -13,13 +12,13 @@ export default class Footer extends Component {
                     <Card.Footer className="text-muted">
                     <Row>
                         <Col>
-                            <a href="#"><i class="fas fa-home"></i></a>
+                            <Link to='/'><i class="fas fa-home"></i></Link>
                         </Col>    
                         <Col>
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <Link href="#"><i class="fas fa-link"></i></Link>
                         </Col>      
                         <Col>
-                            <a href="#"><i class="fas fa-cog"></i></a>
+                            <Link to='/settings'><i class="fas fa-cog"></i></Link>
                         </Col>   
                         
                     </Row>    

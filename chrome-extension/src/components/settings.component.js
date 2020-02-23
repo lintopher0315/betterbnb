@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Spinner } from 'react-bootstrap'
 
-export default class Landing extends Component {
+export default class Settings extends Component {
     
     
     render() {
@@ -9,7 +9,7 @@ export default class Landing extends Component {
             <div className='container' style={{paddingTop: "35%"}}>
                 <div className='text-center'>
                     <Spinner animation="grow" variant="dark" />
-                    <p>Visit an Airbnb listing to get started...</p> 
+                    <h1>Settings</h1>
                 </div>
             </div>
         )
