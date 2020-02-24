@@ -130,7 +130,7 @@ def extrat_zip_code_from_airbnb(listing):
     chrome_options = Options()  
     chrome_options.add_argument("--headless")  #if you don't want the GUI to pop up
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(r"https://www.airbnb.com/rooms/23685486?source_impression_id=p3_1579732940_%2FzNK%2FKclSFS%2BzX1n")
+    driver.get(listing)
     time.sleep(2)
     soup = BeautifulSoup(driver.page_source, features="html.parser")
     url = (soup.find("img", {"data-veloute":"map/GoogleMapStatic"})).attrs['src']
