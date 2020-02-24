@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "express-sslify": "^1.2.0",
     "heroku-ssl-redirect": "0.0.4",
+    "mongodb": "^3.5.3",
     "nodemailer": "^6.4.2",
     "ssl-express-www": "^3.0.6"
   }
