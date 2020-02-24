@@ -34,6 +34,18 @@ body {
     pointer-events: none;
 }
 
+#location-container {
+    margin-top: 180px;
+    margin-left: 296px;
+    width: 1250px;
+}
+
+#listing-location-container {
+    margin-top: 65px;
+    margin-left: 100px;
+    width: 850px;
+}
+
 #header-button {
 	padding-right: 40px;
     color: #3285CD;
@@ -183,4 +195,71 @@ body {
 
 #results-row {
     padding-top: 50px;
+}
+
+#carousel-container {
+    padding-top: 20px;
+}
+
+#listing-page-title {
+    font-family: 'Dosis';
+    font-weight: bold;
+    font-size: 48px;
+    color: rgb(51, 51, 51);
+    padding-top: 30px;
+}
+
+#listing-page-loc {
+    font-family: 'Dosis';
+    font-size: 24px;
+    color: rgb(51, 51, 51);
+}
+
+#listing-page-star {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+#listing-sub-title {
+    font-family: 'Dosis';
+    font-weight: bold;
+    font-size: 32px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#listing-desc-text {
+    font-family: 'Dosis';
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+#listing-map {
+    padding-top: 50px;
+}
+
+#desc-col {
+    width: 550px;
+    float: right;
+}
+
+#area-col {
+    width: 550px;
+    padding-left: 255px;
+}
+
+#map-col {
+    width: 650px;
+}
+
+#chart-container-left {
+    height: 400px;
+    float: right;
+    width: 630px;
+}
+
+#chart-container-right {
+    height: 400px;
+    float: left;
+    width: 630px;
 }

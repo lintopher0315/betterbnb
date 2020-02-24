@@ -1,7 +1,5 @@
 import React from 'react';
-import SearchBar from 'material-ui-search-bar';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AlgoliaPlaces from 'algolia-places-react';
 
 function Jumbotron() {
 
@@ -10,19 +8,14 @@ function Jumbotron() {
             <div id="container-text">
                 Travel safe with BetterBNB
             </div>
-            <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <SearchBar
-                    onChange={() => console.log("changed")}
-                    onRequestSearch={() => console.log("searched")}
-                    hintText={"Search a location"}
+            <div id="location-container">
+                <AlgoliaPlaces
+                    placeholder={"Search a location"}
                     style={{
-                        margin: '0 auto',
-                        maxWidth: 850,
                         borderRadius: '10px',
-                        marginTop: '180px'
                     }}
                 />
-            </MuiThemeProvider>
+            </div>
         </div>
     )
 }

@@ -1,27 +1,20 @@
 import React from 'react';
-import SearchBar from 'material-ui-search-bar';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Container, Col, Row } from 'react-bootstrap';
+import AlgoliaPlaces from 'algolia-places-react';
 
 import ListingCard from './ListingCard.js'
 
 function SearchResults() {
     return (
         <div>
-            <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <SearchBar
-                    onChange={() => console.log("changed")}
-                    onRequestSearch={() => console.log("searched")}
-                    hintText={"Search a location"}
+            <div id="listing-location-container">
+                <AlgoliaPlaces
+                    placeholder={"Search a location"}
                     style={{
-                        marginLeft: 100,
-                        maxWidth: 850,
-                        borderRadius: 10,
-                        marginTop: 80
+                        borderRadius: '10px',
                     }}
                 />
-            </MuiThemeProvider>
+            </div>
             <Container id="results-container" fluid={true}>
                 <Row id="results-row">
                     <Col>
