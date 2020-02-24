@@ -220,6 +220,23 @@ body {
     padding-bottom: 30px;
 }
 
+#listing-page-download-btn {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+#listing-page-download {
+    color: green;
+}
+
+#listing-page-download:focus {
+    outline: none;
+}
+
+#listing-page-download:hover {
+    text-decoration: none;
+}
+
 #listing-sub-title {
     font-family: 'Dosis';
     font-weight: bold;

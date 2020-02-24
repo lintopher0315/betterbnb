@@ -2,7 +2,7 @@ import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Container, Col, Row } from 'react-bootstrap';
+import { Button, Container, Col, Row } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
@@ -93,6 +93,9 @@ function ListingPage() {
                                 value={5}
                                 size={'medium'}
                             />
+                            <Button id="listing-page-download-btn" variant="outline-success" size="sm">
+                                <a id="listing-page-download" href='../res/sample_pdf.pdf' download>Download PDF</a>
+                            </Button>
                             <hr />
                             <div id="listing-sub-title">
                                 Description
