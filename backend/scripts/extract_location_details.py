@@ -4,6 +4,14 @@ import unittest
 import googlemaps
 from googlemaps.exceptions import HTTPError
 
+# for zip code extraction from Airbnb
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options 
+import time
+from bs4 import BeautifulSoup
+import urllib.parse as urlparse
+from urllib.parse import parse_qs
+
 
 # API Key (intended use is Google Maps)
 CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
@@ -117,6 +125,22 @@ def extract_city_and_state_with_address(address):
                 if 'administrative_area_level_1' in AllComponents['address_components'][j]['types']:
                     state = AllComponents['address_components'][j]['short_name']
                     return city, state
+
+def extrat_zip_code_from_airbnb(listing):
+    chrome_options = Options()  
+    chrome_options.add_argument("--headless")  #if you don't want the GUI to pop up
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get(r"https://www.airbnb.com/rooms/23685486?source_impression_id=p3_1579732940_%2FzNK%2FKclSFS%2BzX1n")
+    time.sleep(2)
+    soup = BeautifulSoup(driver.page_source, features="html.parser")
+    url = (soup.find("img", {"data-veloute":"map/GoogleMapStatic"})).attrs['src']
+    parsed = urlparse.urlparse(url)
+    latlong = parse_qs(parsed.query)['center'][0].split(",")
+    lat = float(latlong[0])
+    longt = float(latlong[1])
+
+    return lat, longt
+
 
 # UNIT TEST CLASS BELOW #
 # UNIT TEST CLASS BELOW #
