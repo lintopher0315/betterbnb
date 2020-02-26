@@ -1,0 +1,41 @@
+window.onload = function entry() {
+    var location = window.location.href.toString();
+    if (location.includes("rooms")) { // determine if they are currently
+        
+        /*
+        var list = document.getElementsByClassName("_vubdw0"); // div iframe is contained in
+        while (list == undefined) {
+            list = document.getElementsByClassName("_vubdw0");
+        }
+
+        var link = undefined 
+        var element = list.item(0).children; 
+        while (link == undefined) {
+            element = element.children
+            var href = element.href.toString()
+            if (href.includes("https://maps.google.com/maps?ll")) {
+                link = href
+                break
+            }
+        }""
+        console.log(href)
+        */
+        var something = document.querySelectorAll('a[href*="https://"]')
+
+        for (var i = 0; i < 100; i++) {
+            something = document.querySelectorAll('a[href*="https://"]')
+        }
+        console.log(something)
+        /*
+        for (var i = 0; i < children.length; i++) {
+            var item = children.item(i); 
+            console.log(children);
+        }
+        */
+
+
+    }
+
+
+    
+}
