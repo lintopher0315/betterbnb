@@ -53,14 +53,15 @@ app.get('/api/report', function(req, res) {
     } 
     else { // call the necessary Python scripts
         const spawn = require("child_process").spawn;
-        const pythonProcess = spawn('python3',["scripts/extract_location_details.py", listing_url]);
+        const pythonProcess = spawn('python3',["scripts/api-handler.py", listing_url]);
 
 
         pythonProcess.stdout.on('data', (data) => {
             // Do something with the data returned from python script
-            console.log("received response")
-            console.log(data.toString()); 
-            res.send(data.toString()); 
+            if (data.toString() !== "error") {
+                // process the text file
+                res.send(JSON.parse(data.toString())); 
+            }
         });
     }
 })
