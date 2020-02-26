@@ -1,6 +1,7 @@
 import requests
 import json
 import unittest
+import sys
 import googlemaps
 from googlemaps.exceptions import HTTPError
 
@@ -11,6 +12,10 @@ import time
 from bs4 import BeautifulSoup
 import urllib.parse as urlparse
 from urllib.parse import parse_qs
+
+# eventually we'll need to set this when we deploy
+#options.setBinary("/path/to/other/chrome/binary");
+
 
 
 # API Key (intended use is Google Maps)
@@ -195,3 +200,14 @@ class TestZipcodeExtraction(unittest.TestCase):
         self.assertEqual(str(60026), str(extract_zipcode_with_address('4000 W Lake Ave, Glenview, IL')))
         self.assertEqual(str(10019), str(extract_zipcode_with_address('65 W 54th St, New York, NY')))
         self.assertEqual(str(94110), str(extract_zipcode_with_address('3416 19th St, San Franscisco, CA')))
+
+if __name__ == "__main__":
+    url = sys.argv[1] # get the URL
+    latlong = extrat_zip_code_from_airbnb(url)
+    
+    resp = dict()
+    resp["latlong"] = str(latlong[0]) + "," + str(latlong[1]) 
+    resp = json.dumps(resp) 
+    loaded_resp = json.loads(resp)
+    print(loaded_resp)
+    sys.stdout.flush()

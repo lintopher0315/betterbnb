@@ -1,36 +1,33 @@
-const sslRedirect = require('heroku-ssl-redirect');   
+//const sslRedirect = require('heroku-ssl-redirect');   
 const express = require('express');
 const cors = require('cors');
+const axios = require('axios');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
 const app = express();
 const port = process.env.PORT || 5000;
-app.use(sslRedirect());
+require('dotenv').config();
+
+//app.use(sslRedirect());
 
 app.use(cors());
 app.use(express.json());
 
-/*
-const contactRouter = require('./routes/contact-form');
-const contentRouter = require('./routes/content-form');
+// constants
+const REDIRECT_URL = process.env.REDIRECT_URL;
+const MONGO_URL = process.env.MONGO_URL;
+const DB_NAME = process.env.DB_NAME;
 
-app.use('/api/contact-form', contactRouter);
-app.use('/api/content-form', contentRouter);
-*/
-
-/* Database connection code */
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const url = "mongodb+srv://Sunil:icKxYzHJ1chT3M1H@cluster0-94hkc.gcp.mongodb.net/test?retryWrites=true&w=majority"
-const dbName = "BetterBNB";
 
 //Create a new MongoClient
-const client = new  MongoClient(url);
+const client = new  MongoClient(MONGO_URL, {useUnifiedTopology: true});
 
 client.connect(function(err, client) {
     assert.equal(null, err);
     console.log("Connected correctly to server");
   
-    const db = client.db(dbName);
+    const db = client.db(DB_NAME);
   
     const col = db.collection('Users').find({}).toArray(function(err, result){
         if (err) throw err;
@@ -42,7 +39,31 @@ client.connect(function(err, client) {
   });
 
 
+/**
+ * This route is an API endpoint for the services to call
+ * that will return information about the specified 
+ * AirBNB listing. If the request does not include
+ * a listing url, it simply redirects to the dashboard
+ * 
+ */
+app.get('/api/report', function(req, res) {
+    let listing_url = req.headers.url; 
+    if (listing_url === undefined) {
+        res.redirect(REDIRECT_URL)
+    } 
+    else { // call the necessary Python scripts
+        const spawn = require("child_process").spawn;
+        const pythonProcess = spawn('python3',["scripts/extract_location_details.py", listing_url]);
 
+
+        pythonProcess.stdout.on('data', (data) => {
+            // Do something with the data returned from python script
+            console.log("received response")
+            console.log(data.toString()); 
+            res.send(data.toString()); 
+        });
+    }
+})
 
 
 if (process.env.NODE_ENV === "production") {
