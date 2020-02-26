@@ -1,6 +1,6 @@
 import os
 import sys
-from extract_location_details import extract_zip_code_from_airbnb
+from extract_location_details import extract_lat_lng_with_url
 from compiled_info import compile_info_lat_long
 # this python script will be called to handle a request from a Node.js endpoint
 # the script will then return the necessary information to the Node.js endpoint 
@@ -10,8 +10,8 @@ from compiled_info import compile_info_lat_long
 if __name__ == "__main__":
     try:
         url = sys.argv[1] 
-        #latlong = list(extract_zip_code_from_airbnb(url))
-        compile_info_lat_long(str(40.77078), str(-111.90048))
+        latlong = list(extract_lat_lng_with_url(url))
+        compile_info_lat_long(latlong[0], latlong[1])
 
         somefile = open("compiled_data.txt", "r")
         for line in somefile:

@@ -1,5 +1,7 @@
 import concurrent.futures
 import json
+from os import path
+from os import system
 from FBI_Crime_Data import get_crime_data_with_lat_lng, get_crime_data_with_address
 
 
@@ -19,6 +21,9 @@ def compile_info_addr(addr):
 
 
 def generate_report(crime_thread_obj):
+    if (path.exists("compiled_data.txt")):
+        system("rm compiled_data.txt")
+
     write_crime_dict = crime_thread_obj.result()
     # ADD SIMILAR CALL TO ABOVE
     #compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
