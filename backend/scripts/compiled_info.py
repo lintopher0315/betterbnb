@@ -8,11 +8,10 @@ executor = concurrent.futures.ThreadPoolExecutor()
 
 # initialize all return values in global scope
 crime_thread_obj = {}
+# INITIALIZE GLOBAL THREAD OBJS FOR OTHER APIS UNDER crime_thread_obj ABOVE
 
 # initialize the compiled_dict which we will change to json pre-file write
 compiled_dict = {}
-
-# INITIALIZE GLOBAL THREAD OBJS FOR OTHER APIS UNDER crime_thread_obj ABOVE
 
 
 
