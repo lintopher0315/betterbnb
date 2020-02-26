@@ -45,3 +45,6 @@ backend/.idea/backend.iml
 backend/.idea/inspectionProfiles/profiles_settings.xml
 backend/.idea/misc.xml
 backend/.idea/modules.xml
+backend/scripts/__pycache__/FBI_Crime_Data.cpython-36.pyc
+backend/scripts/__pycache__/extract_location_details.cpython-36.pyc
+backend/scripts/compiled_data.txt
