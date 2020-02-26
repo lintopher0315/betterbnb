@@ -41,4 +41,3 @@ compiled_dict['crime_data'] = write_crime_dict
 
 f = open("compiled_data.txt", "w")
 json.dump(compiled_dict, f)
-
