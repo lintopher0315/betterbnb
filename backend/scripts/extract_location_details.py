@@ -4,14 +4,6 @@ import unittest
 import googlemaps
 from googlemaps.exceptions import HTTPError
 
-# for zip code extraction from Airbnb
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options 
-import time
-from bs4 import BeautifulSoup
-import urllib.parse as urlparse
-from urllib.parse import parse_qs
-
 
 # API Key (intended use is Google Maps)
 CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
@@ -59,6 +51,30 @@ def extract_zipcode_with_url(website_url):
     listing_json = requests.get(FIRST_HALF_URL + listing_id + SECOND_HALF_URL).json()
     return extract_zipcode_with_lat_lng(listing_json['pdp_listing_detail']['lat'],
                                         listing_json['pdp_listing_detail']['lng'])
+
+
+def extract_lat_lng_with_url(website_url):
+    # upper case variables are constants
+    # 'r' means raw, doesn't worry about escape characters etc
+
+    FIRST_HALF_URL = r'https://www.airbnb.com/api/v2/pdp_listing_details/'
+    SECOND_HALF_URL = r'?_format=for_rooms_show&_p3_impression_id=p3_1579738698_5K3M9yAF%2FiR%2BU%2BHj&key=d306zoyjsyarp7ifhu67rjxn52tv0t20&'
+
+    # ONLY airbnb right now
+    # in the future define different methods with the
+    # different ways of retrieving the zipcode from the site
+
+    # strip the first 29 characters (get to beginning of listing id)
+    listing_id = website_url[29:]
+
+    # isolate the listing id
+    listing_id = listing_id[0:listing_id.find('?')]
+
+    # call the api, store the json in listing_json
+    listing_json = requests.get(FIRST_HALF_URL + listing_id + SECOND_HALF_URL).json()
+
+    # return the lat first then the lng
+    return listing_json['pdp_listing_detail']['lat'], listing_json['pdp_listing_detail']['lng']
 
 
 def extract_city_and_state_with_lat_lng(lat, lng):
@@ -126,7 +142,8 @@ def extract_city_and_state_with_address(address):
                     state = AllComponents['address_components'][j]['short_name']
                     return city, state
 
-def extrat_zip_code_from_airbnb(listing):
+'''
+def extract_zip_code_from_airbnb(listing):
     chrome_options = Options()  
     chrome_options.add_argument("--headless")  #if you don't want the GUI to pop up
     driver = webdriver.Chrome(options=chrome_options)
@@ -140,7 +157,7 @@ def extrat_zip_code_from_airbnb(listing):
     longt = float(latlong[1])
 
     return lat, longt
-
+'''
 
 # UNIT TEST CLASS BELOW #
 # UNIT TEST CLASS BELOW #
@@ -195,3 +212,15 @@ class TestZipcodeExtraction(unittest.TestCase):
         self.assertEqual(str(60026), str(extract_zipcode_with_address('4000 W Lake Ave, Glenview, IL')))
         self.assertEqual(str(10019), str(extract_zipcode_with_address('65 W 54th St, New York, NY')))
         self.assertEqual(str(94110), str(extract_zipcode_with_address('3416 19th St, San Franscisco, CA')))
+
+#if __name__ == "__main__":
+    #url = sys.argv[1] # get the URL
+    #latlong = extrat_zip_code_from_airbnb(url)
+    
+
+    #resp = dict()
+    #resp["latlong"] = str(latlong[0]) + "," + str(latlong[1]) 
+    #resp = json.dumps(resp) 
+    #loaded_resp = json.loads(resp)
+    #print(loaded_resp)
+    #sys.stdout.flush()
