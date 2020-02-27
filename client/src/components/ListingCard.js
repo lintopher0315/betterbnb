@@ -36,6 +36,7 @@ function ListingCard(props) {
     return (
         <Card elevation={0} className="listing-card-root">
             <CardMedia
+                id="card-media"
                 classes={mediaStyles}
                 image={
                     props.img
