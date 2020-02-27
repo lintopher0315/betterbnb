@@ -6,6 +6,7 @@ import Contact from './Contact.js'
 import Header from'./Header.js';
 import SearchResults from './SearchResults.js'
 import ListingPage from './ListingPage.js'
+import LoginPage from './LoginPage.js'
 
 function WebRouter() {
     return (
@@ -14,6 +15,7 @@ function WebRouter() {
             <Switch>
                 <Route exact path='/' component={() => <ListingPage />} />
                 <Route path='/contact' component={() => <Contact />} />
+                <Route path='/login' component={() => <LoginPage/>} />
             </Switch>
         </div>
     )

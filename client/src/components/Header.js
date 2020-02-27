@@ -22,9 +22,11 @@ function Header() {
                     </Link>
                 </Nav.Link>
                 <Nav.Link className="header-link">
+                    <Link className="header-redirect" to={{pathname: '/login'}}>
                     <div id='header-button'>
                         Login
                     </div>
+                    </Link>
                 </Nav.Link>
             </Nav>
         </Navbar>
