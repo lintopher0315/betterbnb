@@ -4,7 +4,7 @@ import AlgoliaPlaces from 'algolia-places-react';
 
 import ListingCard from './ListingCard.js'
 
-function SearchResults() {
+function SearchResults(props) {
     return (
         <div>
             <div id="listing-location-container">

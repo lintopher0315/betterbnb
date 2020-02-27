@@ -157,6 +157,18 @@ body {
     overflow: hidden;
 }
 
+#listing-card-title-link {
+    color: rgb(51, 51, 51);
+}
+
+#listing-card-title-link:hover {
+    text-decoration: none;
+}
+
+#listing-card-title-link:focus {
+    outline: none;
+}
+
 #listing-card-text {
     font-family: 'Dosis';
 }
