@@ -4,10 +4,11 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom';
 
 import { GoogleLogin } from "react-google-login";
 
-export default class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {    
     
     responseGoogle(googleUser) {
         let id_token = googleUser.getAuthResponse().id_token;
@@ -50,13 +51,13 @@ export default class LoginPage extends React.Component {
 
                     <Form>
                         <Form.Group controlId="formGroupEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" />
                         </Form.Group>
                         <Form.Group controlId="formGroupPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
+                        </Form.Group>   
                     </Form>
 
                     <p id="forgot-pass">Forgot password?</p>
@@ -77,7 +78,7 @@ export default class LoginPage extends React.Component {
                             cookiePolicy={'single_host_origin'}
                         />
                     </div>
-                    <h5>New to BetterBNB? Create Account</h5>
+                    <h5>New to BetterBNB? <Link to ='/registration'>Create Account</Link></h5>
                     </div>
                 </Col>
             </Row>
