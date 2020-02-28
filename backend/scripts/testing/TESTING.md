@@ -10,6 +10,8 @@ As of 2/28/20, registration works.
 
 Multiple different personal google accounts were registered succesfully and able to login via Google. 
 
+For future sprints we will need to connect login registration to our backend to save username information and link accoutns. This will be done in sprint 2.
+
 
 * User Story 3:
 As of 2/28/20, search bar autofill works correctly. Lists in alphabetical order/order of importance areas by letter.

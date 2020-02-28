@@ -140,6 +140,9 @@ if __name__ == "__main__":
 #print(get_nearby_cuisines(40.427326, -86.917446))
 #print(get_nearby_cuisines(41.141101, -73.356775))
 
+#print(get_nearby_restaurants_with_address("35 Gorham Ave, Westport, CT 06880"))
+#print(get_nearby_restaurants_with_address("Purdue University"))
+
 
 ### UNIT TESTS BELOW ###
 ### UNIT TESTS BELOW ###
@@ -203,3 +206,10 @@ class TestRestaurantData(unittest.TestCase):
       self.assertEqual({'Coffee and Tea', 'Sushi', 'American', 'Thai', 'Breakfast', 'Desserts', 'Japanese', 'Greek', 'Mediterranean', 'Indian', 'Vegetarian', 'Pizza', 'Fast Food', 'Tea', 'Sandwich', 'Burger'}, get_nearby_cuisines(40.427326, -86.917446))
     return
 
+    def testNearbyAddress(self):
+
+      #Just making sure the data is correct
+      self.assertEqual("901 Post Rd E, Westport 06880", get_nearby_restaurants_with_address("35 Gorham Ave, Westport, CT 06880").get('Sherwood Diner')['address'])
+      self.assertEqual("135 S Chauncey Ave, West Lafayette 47906", get_nearby_restaurants_with_address("Purdue University").get('Basil Thai')['address'])
+    
+      return
