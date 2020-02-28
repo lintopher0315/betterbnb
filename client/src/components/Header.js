@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <Navbar id="header" variant="dark" expand="large">
-            <Link to ='/'><Navbar.Brand className="header-link">
+            <Link className="header-link" to ='/'><Navbar.Brand className="header-link">
                 <img alt="" src={require("../res/betterbnb_small.png")}/>
             </Navbar.Brand></Link>
             <Nav className="header-nav">

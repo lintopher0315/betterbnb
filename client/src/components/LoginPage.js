@@ -78,7 +78,7 @@ export default class LoginPage extends React.Component {
                             cookiePolicy={'single_host_origin'}
                         />
                     </div>
-                    <h5>New to BetterBNB? <Link to ='/registration'>Create Account</Link></h5>
+                    <h5>New to BetterBNB? <Link id="create-account" to ='/registration'>Create Account</Link></h5>
                     </div>
                 </Col>
             </Row>
