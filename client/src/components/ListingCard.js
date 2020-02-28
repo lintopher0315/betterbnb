@@ -15,6 +15,7 @@ import FaceGroup from '@mui-treasury/components/group/face';
 import { useWideCardMediaStyles } from '@mui-treasury/styles/cardMedia/wide';
 import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
 import { usePushingGutterStyles } from '@mui-treasury/styles/gutter/pushing';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     content: {
@@ -35,6 +36,7 @@ function ListingCard(props) {
     return (
         <Card elevation={0} className="listing-card-root">
             <CardMedia
+                id="card-media"
                 classes={mediaStyles}
                 image={
                     props.img
@@ -44,7 +46,13 @@ function ListingCard(props) {
                 <IconButton className="listing-card-fav">
                     <Favorite />
                 </IconButton>
-                <h3 className="listing-card-title">{props.title}</h3>
+                
+                <Link id="listing-card-title-link" to='/details'>
+                    <h3 className="listing-card-title">
+                        {props.title}
+                    </h3>
+                </Link>
+                
                 <Box color={'grey.500'} display={'flex'} alignItems={'center'} mb={1}>
                     <LocationOn className="listing-card-loc" />
                     <span>{props.loc}</span>

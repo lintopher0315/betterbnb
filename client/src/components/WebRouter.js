@@ -13,9 +13,11 @@ function WebRouter() {
         <div>
             <Header />
             <Switch>
-                <Route exact path='/' component={() => <ListingPage />} />
+                <Route exact path='/' component={() => <Home />} />
                 <Route path='/contact' component={() => <Contact />} />
                 <Route path='/login' component={() => <LoginPage/>} />
+                <Route path='/results' component={() => <SearchResults/>} />
+                <Route path='/details' component={() => <ListingPage/>} />
             </Switch>
         </div>
     )
