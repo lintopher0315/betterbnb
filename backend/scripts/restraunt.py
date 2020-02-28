@@ -7,7 +7,6 @@ import collections
 This script expects a longitude and latitude passed in as command line arguments. It prints the 
 names of the nearby restraunts and cuisines. 
 """
-  
 
 def getCategories():
   categories = get("/categories", {})
@@ -130,3 +129,4 @@ if __name__ == "__main__":
 
   #print(address_to_lon_and_lat("Empire State Bulding"))
 
+print("Hello world")

@@ -12,3 +12,7 @@ def get_population_data_with_address(address):
     search = SearchEngine(simple_zipcode=False)
     zipcodeDetails = search.by_zipcode(str(zipcode))
     return zipcodeDetails.population
+
+# UNIT TEST CLASS BELOW #
+
+#class TestPopulationData(unittest.TestCase):
