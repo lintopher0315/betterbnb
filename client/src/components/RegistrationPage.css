@@ -1,0 +1,16 @@
+.page {
+    padding-top: 5rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+h1 {
+    padding-bottom: 5rem;
+    text-align: center;
+    font-family: 'Pacifico';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+}

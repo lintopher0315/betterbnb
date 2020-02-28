@@ -9,7 +9,7 @@ function Jumbotron(props) {
     return (
         <div id="container">
             <div id="container-text">
-                Travel safe with BetterBNB
+                Travel safe with BetterBnB
             </div>
             <div id="location-container">
                 <AlgoliaPlaces
