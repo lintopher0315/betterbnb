@@ -5,10 +5,10 @@ def get_population_data_with_lat_lng(lat, lng):
     zipcode = extract_zipcode_with_lat_lng(lat, lng)
     search = SearchEngine(simple_zipcode=False)
     zipcodeDetails = search.by_zipcode(str(zipcode))
-    return zipcodeDetails.population
+    return zipcodeDetails.population, zipcodeDetails.population_density # population density is per square mile
 
 def get_population_data_with_address(address):
     zipcode = extract_zipcode_with_address(address)
     search = SearchEngine(simple_zipcode=False)
     zipcodeDetails = search.by_zipcode(str(zipcode))
-    return zipcodeDetails.population
+    return zipcodeDetails.population, zipcodeDetails.population_density # population density is per square mile
