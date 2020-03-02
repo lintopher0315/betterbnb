@@ -31,7 +31,7 @@ def get_nearby_restaurants(lat, lon):
       names[rest['name']] ={'name': rest["name"], 'address': rest["location"]["address"], 'rating': rest["user_rating"]["aggregate_rating"], 'cuisine': rest['cuisines']}
       #names[rest['name']] = [rest["location"]["address"], rest["user_rating"]["aggregate_rating"], rest['cuisines']]
       #names.sort(reverse=True, key=get_my_key)
-    names = sorted(names.items(), key=lambda x: x[1]['rating'], reverse=True)
+    names = sorted(names.items(), key=lambda x: float(x[1]['rating']), reverse=True)
     names = dict(collections.OrderedDict(names))
     return names
 

@@ -26,6 +26,7 @@ export default class Landing extends Component {
                     axios.get('http://localhost:5000/api/report', {headers: {"url": currentUrl}})
                     .then(response => {
                         //res.send(response.data);
+                        console.log(response.data)
                         this.setState({dataObj: response.data})
                     })
                     .catch(err => {
@@ -60,16 +61,20 @@ export default class Landing extends Component {
                     <div className='text-center'>
                         <h5>Information:</h5>
                         <hr />
-                        <h6>Neighborhood Pop: {this.state.dataObj.population_data}</h6>
+                        <h6>Local Area Pop: {this.state.dataObj.population_data}</h6>
                         <hr />
                         <h6>City Crime Stats:</h6>
-                        <p>Robbery: {this.state.dataObj.crime_data.robbery}</p>
-                        <p>Burgarly: {this.state.dataObj.crime_data.burglary}</p>
-                        <p>Larceny: {this.state.dataObj.crime_data.larceny}</p>
+                        <p>
+                        Robbery: {this.state.dataObj.crime_data.robbery}<br /> 
+                        Burgarly: {this.state.dataObj.crime_data.burglary}<br /> 
+                        Larceny: {this.state.dataObj.crime_data.larceny}<br />
+                        </p>
                         <hr />
                         <h6>Nearby Restaurants:</h6>
                         <p>
-                            {this.getRestaurant(1)} | {this.getRestaurant(2)} | {this.getRestaurant(3)}
+                            {this.getRestaurant(1)} <br />
+                            {this.getRestaurant(2)} <br />
+                            {this.getRestaurant(3)} <br />
                         </p>
 
 

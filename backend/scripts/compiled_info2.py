@@ -18,12 +18,13 @@ def compile_info_lat_long(lat, longt):
     executor = concurrent.futures.ThreadPoolExecutor()
 
     # create object which will hold the return value of the threaded get_crime_data_with_lat_lng
-    crime_thread_obj = executor.submit(get_crime_data_with_lat_lng, lat, longt)
+    
+    #crime_thread_obj = executor.submit(get_crime_data_with_lat_lng, lat, longt)
     restraunt_thread_obj = executor.submit(get_nearby_restaurants, lat, longt)
     population_thread_obj = executor.submit(get_population_data_with_lat_lng, lat, longt)
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj)
+    generate_report(restraunt_thread_obj, population_thread_obj)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
@@ -37,27 +38,24 @@ def compile_info_addr(addr):
     population_thread_obj = executor.submit(get_population_data_with_address, addr)
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj,restraunt_thread_obj, population_thread_obj)
+    #generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj):
+def generate_report(restraunt_thread_obj, population_thread_obj):
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
     write_population = population_thread_obj.result() # THIS IS AN OUTLIER BECAUSE IT WILL RETURN ONLY ONE VALUE. ALL OF THESE SHOULD BE DICTS.
+    #write_crime_dict = crime_thread_obj.result()
     write_restraunt_dict = restraunt_thread_obj.result()
-    write_crime_dict = crime_thread_obj.result()
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
     compiled_dict = {}
     compiled_dict['population_data'] = write_population
-    compiled_dict['crime_data'] = write_crime_dict
+    #compiled_dict['crime_data'] = write_crime_dict
     compiled_dict['restraunt_data'] = write_restraunt_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
     f = open("compiled_data.txt", "w")
     json.dump(compiled_dict, f)
-
-#print(compile_info_lat_long(40.425, -86.90))
-
