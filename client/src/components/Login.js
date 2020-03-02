@@ -23,9 +23,6 @@ class Login extends React.Component {
     ReactDOM.render(<Logout />, document.getElementById('root'));
   }
 
-
-  
-
   render() {
 
     return (

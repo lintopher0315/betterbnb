@@ -4,7 +4,7 @@
   
     /* Full height */
     width: 100%;
-    height: 100vh;
+    height: 100%;
     align-content: right;
   
     /* Center and scale the image nicely */
@@ -17,20 +17,38 @@ h1 {
     padding-top: 6rem;
     text-align: center;
     font-family: 'Pacifico';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 h2 {
-    padding-top: 5rem;
+    padding-top: 2.5rem;
     text-align: center;
     padding-bottom: 5rem;
     color: #a9a9a9;
     font-family: 'Verdana';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
 }
 
-h3 {
-  text-align: right;
-  padding-bottom: 3rem;
-  font-size: 1.2rem;
+#forgot-pass {
+    text-align: right;
+    padding-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+#create-account:hover {
+    text-decoration: none;
+}
+
+#create-account:focus {
+    outline: none;
 }
 
 h4 {

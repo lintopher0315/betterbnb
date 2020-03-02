@@ -141,6 +141,14 @@ body {
     margin-right: auto;
 }
 
+#card-media {
+    transition: transform .2s;
+}
+
+#card-media:hover {
+    transform: scale(1.5);
+}
+
 .listing-card-root {
     overflow: initial;
     max-width: 304px;
@@ -155,6 +163,18 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+#listing-card-title-link {
+    color: rgb(51, 51, 51);
+}
+
+#listing-card-title-link:hover {
+    text-decoration: none;
+}
+
+#listing-card-title-link:focus {
+    outline: none;
 }
 
 #listing-card-text {
@@ -227,6 +247,11 @@ body {
 
 #listing-page-download {
     color: green;
+    transition: .3s all ease-in-out;
+}
+
+#listing-page-download-btn:hover #listing-page-download {
+    color: white;
 }
 
 #listing-page-download:focus {
