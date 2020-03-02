@@ -51,7 +51,8 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
     compiled_dict = {}
-    compiled_dict['population_data'] = write_population
+    compiled_dict['population_size'] = write_population[0] # the first return value of population_data.py (population size of zipcode)
+    compiled_dict['population_information'] = {"population_density_per_sq_mi": write_population[1]} # the second return value of population_data.py (population density per sq mi)
     compiled_dict['crime_data'] = write_crime_dict
     compiled_dict['restraunt_data'] = write_restraunt_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
@@ -59,5 +60,5 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     f = open("compiled_data.txt", "w")
     json.dump(compiled_dict, f)
 
-#print(compile_info_lat_long(40.425, -86.90))
 
+#compile_info_lat_long(40.4259, -86.9081)

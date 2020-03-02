@@ -1,5 +1,6 @@
 import requests
 import unittest
+import urllib3
 from json import JSONDecodeError
 from requests import ReadTimeout
 # Below line may be red.... still works though. Not sure about that one.
@@ -38,6 +39,12 @@ def get_crime_data_with_lat_lng(lat, lng):
         except ReadTimeout:
             if i == 1:
                 return {}
+        except urllib3.exceptions.MaxRetryError:
+            if i == 1:
+                return {}
+        except:
+            if i == 1:
+                return {}
 
     # Isolate only information pertaining to the state in the form of a dictionary in ori_iterator
     ori_iterator = agenciesList[state]
@@ -64,6 +71,12 @@ def get_crime_data_with_lat_lng(lat, lng):
             if i == 1:
                 return {}
         except ReadTimeout:
+            if i == 1:
+                return {}
+        except urllib3.exceptions.MaxRetryError:
+            if i == 1:
+                return {}
+        except:
             if i == 1:
                 return {}
 
@@ -106,7 +119,7 @@ class TestCrimeDataExtraction(unittest.TestCase):
 
     def test_GetCrimeDataWithLatLng(self):
         # Try valid lat/lng values...
-        first_expected_dict = {'property-crime': 1201, 'rape': 11, 'human-trafficing': 0, 'homicide': 0,
+        first_expected_dict = {'property-craime': 1201, 'rape': 11, 'human-trafficing': 0, 'homicide': 0,
                                'burglary': 188, 'robbery': 24, 'rape-legacy': 0, 'motor-vehicle-theft': 59,
                                'larceny': 954, 'arson': 11, 'violent-crime': 101, 'aggravated-assault': 66}
         self.assertDictEqual(first_expected_dict, get_crime_data_with_lat_lng(42.0334, -87.8834))
@@ -137,7 +150,3 @@ class TestCrimeDataExtraction(unittest.TestCase):
         empty_dict = {}
         self.assertDictEqual(empty_dict, get_crime_data_with_address("Some Fake Address, Nowhere, No-when."))
         self.assertDictEqual(empty_dict, get_crime_data_with_address("5943 Yolo Ln, SanJavonito, NO"))
-
-
-
-
