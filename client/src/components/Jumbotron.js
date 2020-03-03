@@ -21,7 +21,8 @@ function Jumbotron(props) {
                         history.push({
                             pathname: '/results',
                             name: suggestion.name,
-                            coord: suggestion.latlng
+                            coord: suggestion.latlng,
+                            search: `?q=${window.location.search.split('=')[1]}`
                         })
                     }}
                 />
