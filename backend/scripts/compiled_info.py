@@ -60,6 +60,7 @@ def compile_info_addr(addr):
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj)
+
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 

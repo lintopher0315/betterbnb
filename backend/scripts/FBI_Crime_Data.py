@@ -9,7 +9,7 @@ from extract_location_details import extract_city_and_state_with_lat_lng, extrac
 global foundORI
 
 # Constant API Key for the FBI Crime Data API
-CONST_FBI_API_KEY = "laMPLBGdkftFSLroMIATYWPFuZhTTYCSlrZF3QHd"
+CONST_FBI_API_KEY = "LTAZQtEddGPw8rHDjJcoIpGWfriWWGUMyJJUzqGO"
 
 
 # Returns a dictionary where the keys are crimes and the values are the number of them.
