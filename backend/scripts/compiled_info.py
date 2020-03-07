@@ -18,9 +18,20 @@ def compile_info_lat_long(lat, longt):
     executor = concurrent.futures.ThreadPoolExecutor()
 
     # create object which will hold the return value of the threaded get_crime_data_with_lat_lng
-    crime_thread_obj = executor.submit(get_crime_data_with_lat_lng, lat, longt)
-    restraunt_thread_obj = executor.submit(get_nearby_restaurants, lat, longt)
-    population_thread_obj = executor.submit(get_population_data_with_lat_lng, lat, longt)
+    try:
+        crime_thread_obj = executor.submit(get_crime_data_with_lat_lng, lat, longt)
+    except:
+        crime_thread_obj = None # default value if exception is thrown
+
+    try:
+        restraunt_thread_obj = executor.submit(get_nearby_restaurants, lat, longt)
+    except:
+        restraunt_thread_obj = None # default value if exception is thrown
+
+    try:
+        population_thread_obj = executor.submit(get_population_data_with_lat_lng, lat, longt)
+    except:
+        population_thread_obj = None # default value if exception is thrown
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj)
@@ -32,12 +43,24 @@ def compile_info_addr(addr):
     executor = concurrent.futures.ThreadPoolExecutor()
 
     # create object which will hold the return value of get_crime_data_with_lat_lng
-    crime_thread_obj = executor.submit(get_crime_data_with_address, addr)
-    restraunt_thread_obj = executor.submit(get_nearby_restaurants_with_address, addr)
-    population_thread_obj = executor.submit(get_population_data_with_address, addr)
+    try:
+        crime_thread_obj = executor.submit(get_crime_data_with_address, addr)
+    except:
+        crime_thread_obj = None # default value if exception is thrown
+
+    try:
+        restraunt_thread_obj = executor.submit(get_nearby_restaurants_with_address, addr)
+    except:
+        restraunt_thread_obj = None # default value if exception is thrown
+
+    try:
+        population_thread_obj = executor.submit(get_population_data_with_address, addr)
+    except:
+        population_thread_obj = None # default value if exception is thrown
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj)
+
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
@@ -45,15 +68,31 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
-    write_population = population_thread_obj.result() # THIS IS AN OUTLIER BECAUSE IT WILL RETURN ONLY ONE VALUE. ALL OF THESE SHOULD BE DICTS.
-    write_crime_dict = crime_thread_obj.result()
-    write_restraunt_dict = restraunt_thread_obj.result()
+    try:
+        write_population = population_thread_obj.result()  # THIS IS AN OUTLIER BECAUSE IT WILL RETURN ONLY ONE VALUE. ALL OF THESE SHOULD BE DICTS.
+    except:
+        write_population = (0, 0) # value if an exception is raised
+
+    try:
+        write_restraunt_dict = restraunt_thread_obj.result()
+    except:
+        write_restraunt_dict = {} # value if an exception is raised
+
+    try:
+        write_crime_dict = crime_thread_obj.result()
+    except:
+        write_crime_dict = {} # value if an exception is raised
+
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
-    compiled_dict = {}
-    compiled_dict['population_data'] = write_population
-    compiled_dict['crime_data'] = write_crime_dict
-    compiled_dict['restraunt_data'] = write_restraunt_dict
+    compiled_dict = {} # initialize dict that will be turned to json
+    compiled_dict['population_size'] = write_population[0] # the first return value of population_data.py (population size of zipcode)
+    compiled_dict['population_information'] = {"population_density_per_sq_mi": write_population[1]} # the second return value of population_data.py (population density per sq mi)
+
+
+
+    compiled_dict['crime_data'] = write_crime_dict         # like this one
+    compiled_dict['restraunt_data'] = write_restraunt_dict # or like this one
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
     f = open("compiled_data.txt", "w")

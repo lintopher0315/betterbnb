@@ -5,10 +5,9 @@ import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
-
 import { GoogleLogin } from "react-google-login";
 
-export default class LoginPage extends React.Component {    
+export default class LoginPage extends React.Component {
     
     responseGoogle(googleUser) {
         let id_token = googleUser.getAuthResponse().id_token;
@@ -26,7 +25,7 @@ export default class LoginPage extends React.Component {
         console.log({ googleId });
         console.log({ accessToken: id_token });
         //ReactDOM.render(<Logout />, document.getElementById('root'));
-        //window.location.href = '/';
+        window.location.href = `/userhome/?q=${id_token}`;
       }
 
     responseFacebook(response) {
@@ -78,7 +77,7 @@ export default class LoginPage extends React.Component {
                             cookiePolicy={'single_host_origin'}
                         />
                     </div>
-                    <h5>New to BetterBNB? <Link to ='/registration'>Create Account</Link></h5>
+                    <h5>New to BetterBNB? <Link id="create-account" to ='/registration'>Create Account</Link></h5>
                     </div>
                 </Col>
             </Row>

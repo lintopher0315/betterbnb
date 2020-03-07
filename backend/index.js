@@ -61,7 +61,8 @@ app.get('/api/report', function(req, res) {
             // Do something with the data returned from python script
             if (data.toString() !== "error") {
                 // process the text file
-                res.send(JSON.parse(data.toString())); 
+                console.log(data.toString());
+		res.send(JSON.parse(data.toString())); 
             }
         });
     }

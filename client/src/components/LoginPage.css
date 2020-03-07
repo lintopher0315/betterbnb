@@ -43,6 +43,14 @@ h2 {
     font-size: 1.2rem;
 }
 
+#create-account:hover {
+    text-decoration: none;
+}
+
+#create-account:focus {
+    outline: none;
+}
+
 h4 {
     text-align: center;
     padding-top: 1rem;

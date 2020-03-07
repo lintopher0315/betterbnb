@@ -305,3 +305,52 @@ body {
     float: left;
     width: 630px;
 }
+
+#user-header {
+    background: rgb(235, 235, 235);
+    position: relative;
+}
+
+#user-header-search-container {
+    position: absolute;
+    left: 100px;
+    width: 600px;
+}
+
+#user-header-button {
+    padding-right: 40px;
+    font-family: 'Montserrat';
+    color: rgb(59, 59, 59);
+    font-size: 14px;
+    font-weight: bold;
+    transition: .2s all ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+#user-header-button:hover {
+    margin-top: 10px;
+}
+
+#slider-container {
+    width: 1700px;
+    margin-left: 100px;
+    padding-bottom: 70px;
+}
+
+#slider-image {
+    margin-left: 65px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#popular-title {
+    font-family: 'Montserrat';
+    font-size: 28px;
+    padding-left: 218px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    font-weight: 500;
+    color: rgb(59, 59, 59);
+}

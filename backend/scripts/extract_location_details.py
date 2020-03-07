@@ -28,6 +28,24 @@ def extract_zipcode_with_lat_lng(lat, lng):
                 if 'postal_code' in reverse_geocode_result[i]['address_components'][j]['types']:
                     return reverse_geocode_result[i]['address_components'][j]['short_name']
 
+def extract_county_with_lat_lng(lat, lng):
+
+    reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
+
+    #iterate through list of nearby components
+    for i in range(len(reverse_geocode_result)):
+
+        #if that component contains a county (administrative_area_level_2)
+        if 'administrative_area_level_2' in reverse_geocode_result[i]['types']:
+
+            #check each of the address components within that component
+            for j in range(len(reverse_geocode_result[i]['address_components'])):
+                 # if that component is the postal code, return the postal code
+                if 'administrative_area_level_2' in reverse_geocode_result[i]['address_components'][j]['types']:
+                    return reverse_geocode_result[i]['address_components'][j]['short_name']
+
+
+
 
 def extract_zipcode_with_url(website_url):
 
@@ -147,7 +165,7 @@ def extract_city_and_state_with_lat_lng(lat, lng):
                 if 'postal_code' in reverse_geocode_result[i]['address_components'][j]['types']:
                     formatted_string = reverse_geocode_result[i]['formatted_address']
                     splitString = formatted_string.split(",")
-                    city = splitString[0];
+                    city = splitString[0]
                     state = splitString[1].strip()[:splitString[1].strip().index(" ")]
                     return city, state
 
