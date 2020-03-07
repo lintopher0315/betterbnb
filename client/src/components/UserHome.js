@@ -7,7 +7,7 @@ import Recommendations from './Recommendations.js'
 function UserHome() {
 
     return (
-        <div>
+        <div id="user-home">
             <Popular />
             <hr />
             <YourListings />

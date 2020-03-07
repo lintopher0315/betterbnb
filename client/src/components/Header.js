@@ -27,7 +27,7 @@ function Header(props) {
         <div>
             {key !== "undefined" ?
                 <Navbar id="user-header" variant="light" expand="large">
-                    <Link className="header-link" to ={{pathname: '/', search: `?q=${key}`}}><Navbar.Brand className="header-link">
+                    <Link className="header-link" to ={{pathname: '/userhome/', search: `?q=${key}`}}><Navbar.Brand className="header-link">
                         <img alt="" src={require("../res/betterbnb_small.png")}/>
                     </Navbar.Brand></Link>
                     <div id="user-header-search-container">
@@ -47,20 +47,22 @@ function Header(props) {
                         />
                     </div>
                     <Nav className="header-nav">
-                        <Nav.Link>
+                        <Nav.Link className="header-link">
                             <div id='user-header-button'>
                                 Your Listings
                             </div>
                         </Nav.Link>
-                        <Nav.Link>
+                        <Nav.Link className="header-link">
                                 <div id='user-header-button'>
                                     Recommendations
                                 </div>
                         </Nav.Link>
-                        <Nav.Link>
+                        <Nav.Link className="header-link">
+                            <Link className="header-redirect" onClick={setLogout} to={{pathname: '/login', search: `?q=undefined`}}>
                                 <div id='user-header-button'>
                                     Logout
                                 </div>
+                            </Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar>
