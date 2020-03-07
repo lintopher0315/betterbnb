@@ -4,6 +4,7 @@ const cors = require('cors');
 const axios = require('axios');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -64,6 +65,48 @@ app.get('/api/report', function(req, res) {
             }
         });
     }
+})
+
+// Route that receives a POST request to /auth
+app.post('/auth', function (req, res) {
+    const body = req.body.Body
+    res.set('Content-Type', 'text/plain')
+    res.send(`You sent: ${body} to Express`)
+})
+
+//Route that recieves a POST request to /email
+app.post('/email', function (req, res) {
+    const body = req.body.Body
+    res.set('Content-Type', 'text/plain')
+    res.send(`You sent: ${body} to Express`)
+    console.log(req['body'])
+
+    const message = "Email: " + req['body']['email'] + "\n\nMessage:\n" + req['body']['message']
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'betterBNBContact@gmail.com',
+            pass: 'betterBNB1234'
+        }
+    });
+
+    var mailOptions = {
+        from: 'betterBNBContact@gmail.com',
+        to: 'betterBNBContact@gmail.com',
+        subject: 'Contact Form Subject: ' + req['body']['subject'],
+        text: message
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    
 })
 
 
