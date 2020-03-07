@@ -47,17 +47,17 @@ function Header(props) {
                         />
                     </div>
                     <Nav className="header-nav">
-                        <Nav.Link className="header-link">
+                        <Nav.Link>
                             <div id='user-header-button'>
                                 Your Listings
                             </div>
                         </Nav.Link>
-                        <Nav.Link className="header-link">
+                        <Nav.Link>
                                 <div id='user-header-button'>
                                     Recommendations
                                 </div>
                         </Nav.Link>
-                        <Nav.Link className="header-link">
+                        <Nav.Link>
                                 <div id='user-header-button'>
                                     Logout
                                 </div>

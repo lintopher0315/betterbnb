@@ -25,7 +25,7 @@ export default class LoginPage extends React.Component {
         console.log({ googleId });
         console.log({ accessToken: id_token });
         //ReactDOM.render(<Logout />, document.getElementById('root'));
-        window.location.href = `/?q=${id_token}`;
+        window.location.href = `/userhome/?q=${id_token}`;
       }
 
     responseFacebook(response) {
