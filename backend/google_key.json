@@ -1,0 +1,14 @@
+{
+    "client": {
+        "id": "632393601114-gu49rgn5ic3e52odjg6u7cg9111ibdbv.apps.googleusercontent.com",
+        "secret": "El1uu17xccxACIv3Qmxo80BH",
+        "redirect": "/auth/google/callback"
+    },
+
+    "credentials": {
+        "access_token": "your access_token",
+        "token_type": "Bearer",
+        "expires_in": 3600,
+        "refresh_token": "your refresh_token"
+    }
+}

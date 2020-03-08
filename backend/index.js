@@ -5,6 +5,10 @@ const axios = require('axios');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const nodemailer = require('nodemailer');
+const OAuth2Data = require('./google_key.json')
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -19,6 +23,10 @@ app.use(express.json());
 const REDIRECT_URL = process.env.REDIRECT_URL;
 const MONGO_URL = process.env.MONGO_URL;
 const DB_NAME = process.env.DB_NAME;
+
+const CLIENT_ID = OAuth2Data.client.id;
+const CLIENT_SECRET = OAuth2Data.client.secret;
+const AUTH_REDIRECT = OAuth2Data.client.redirect;
 
 
 //Create a new MongoClient
@@ -68,12 +76,56 @@ app.get('/api/report', function(req, res) {
     }
 })
 
-// Route that receives a POST request to /auth
-app.post('/auth', function (req, res) {
-    const body = req.body.Body
-    res.set('Content-Type', 'text/plain')
-    res.send(`You sent: ${body} to Express`)
-})
+//Google Login Authentication
+app.use(require('serve-static')(__dirname + '/../../public'));
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new GoogleStrategy({
+    clientID: CLIENT_ID,
+    clientSecret: CLIENT_SECRET,
+    callbackURL: AUTH_REDIRECT
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    return cb(null, profile);
+  }
+));
+
+passport.serializeUser(function(user, cb) {
+    console.log("here");
+    console.log(user)
+    cb(null, user);
+});
+  
+passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
+    console.log("here2");
+});
+
+// Route that receives a GET request to /auth/google
+app.get('/login/google',
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+
+// GET /auth/google/callback
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
+  function(req, res) {
+    res.redirect('http://localhost:3000');
+  });
+
+app.get('/logout/google', function(req, res) {
+    console.log("logged out!");
+    req.logout();
+    res.redirect('http://localhost:3000/login');
+});
+
 
 //Route that recieves a POST request to /email
 app.post('/email', function (req, res) {

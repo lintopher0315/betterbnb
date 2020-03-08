@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
 export default class Contact extends React.Component {
@@ -31,16 +32,19 @@ export default class Contact extends React.Component {
 
         axios
             .post('http://localhost:5000/email', this.state)
-            .then(() => alert('Email Sent'))
+            .then(() => console.log('Email Sent'))
             .catch(err => {
                 console.error(err);
         });
-    }
 
-
-    cancelCourse() {
-        document.getElementById("contact-form").reset();
+        this.setState({
+            email: '',
+            subject: '',
+            message: ''
+        });
+        
     }
+    
     
 
     render() {
