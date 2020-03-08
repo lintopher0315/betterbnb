@@ -34,8 +34,36 @@ def getlanguage(lang):
     return switch.get(lang, "english")
 
 
-print(extract_county_with_lat_lng(40.435821, -86.916099))
-#url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=metropolitan%20statistical%20area/micropolitan%20statistical%20area:*&LAN=" + language_codes[0] + "&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
-#response = requests.get(url)
-#print(response.json())
+### Note ###
+#https://geo.fcc.gov/api/census/area is a good workaround for census data requireing FIPS code
+#It gets the code
+def get_data_with_lat_long(lat, lng):
+    #county = extract_county_with_lat_lng(lat, lng)
 
+    #URL used for API called to census geocode API to get fips code
+    fips_url = "https://geo.fcc.gov/api/census/area?lat=" + str(lat) + "&lon=" + str(lng)
+    fips_response = requests.get(fips_url)
+    fips_code = fips_response.json().get("results")[0].get('county_fips')
+
+    #URL used for API call to census lang prevlance data
+    stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
+    stat_response = requests.get(stat_url)
+
+    print(fips_code[2:5])
+    print(stat_response)
+   
+
+    
+
+
+
+
+#print(extract_county_with_lat_lng(40.435821, -86.916099))
+#print(https://api.census.gov/data/2010/dec/sf1?get=&for=county:)
+#url2 = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=metropolitan%20statistical%20area/micropolitan%20statistical%20area:*&LAN=" + language_codes[0] + "&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
+#url2 = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:013&in=state:04&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
+#resp = requests.get(url2)
+
+#print(resp.text)
+
+get_data_with_lat_long(40.891869, -74.020068)
