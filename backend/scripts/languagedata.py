@@ -3,6 +3,7 @@ import requests
 import googlemaps
 from googlemaps.exceptions import HTTPError
 from extract_location_details import extract_county_with_lat_lng
+import unittest
 def jprint(obj):
     # create a formatted string of the Python JSON object
     text = json.dumps(obj, sort_keys=True, indent=4)
@@ -43,16 +44,23 @@ def get_data_with_lat_long(lat, lng):
     #URL used for API called to census geocode API to get fips code
     fips_url = "https://geo.fcc.gov/api/census/area?lat=" + str(lat) + "&lon=" + str(lng)
     fips_response = requests.get(fips_url)
-    fips_code = fips_response.json().get("results")[0].get('county_fips')
+    fips_code = None
+    stat_url = None
+    stat_url = None
+    try:
+        fips_code = fips_response.json().get("results")[0].get('county_fips')
+        stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
+        stat_response = requests.get(stat_url)
+    except IndexError:
+        fips_code = None
 
     #URL used for API call to census lang prevlance data
-    stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
-    stat_response = requests.get(stat_url)
+   
 
     data_to_return = None
 
     # In case text body is empty
-    if stat_response.text:
+    if fips_code != None:
         
         #Handle any bad format with json and any erros after getting index
         try:
@@ -69,4 +77,25 @@ def get_data_with_lat_long(lat, lng):
         return data_to_return
         
        
-#print(get_data_with_lat_long(40.891869, -74.020068))
+#print(get_data_with_lat_long(47.535436, -122.286905))
+#print(None == get_data_with_lat_long(40.427708, -86.918695))
+
+
+class TestPopulation(unittest.TestCase):
+
+    #Testing a lat and lng with no county in the us
+    def test_bad_lat_lng(self):
+        self.assertEqual(None, get_data_with_lat_long(0, 0))
+        self.assertEqual(None, get_data_with_lat_long(5, 2))
+        self.assertEqual(None, get_data_with_lat_long(28.5, 98))
+
+    #Testing a lat and lng with a county in the us that has no data for lang prevalance
+    def test_no_data(self):
+        self.assertEqual(None, get_data_with_lat_long(40.427708, -86.918695))
+        self.assertEqual(None, get_data_with_lat_long(40.427707, -86.918699))
+        self.assertEqual(None, get_data_with_lat_long(40.423374, -86.889727))
+    
+    def test_working(self):
+        self.assertEqual(123185, get_data_with_lat_long(40.901796, -73.997409))
+        self.assertEqual(15865, get_data_with_lat_long(42.840341, -71.623169))
+        self.assertEqual(121930, get_data_with_lat_long(47.535436, -122.286905))
