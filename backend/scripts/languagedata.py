@@ -49,21 +49,24 @@ def get_data_with_lat_long(lat, lng):
     stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
     stat_response = requests.get(stat_url)
 
-    print(fips_code[2:5])
-    print(stat_response)
-   
+    data_to_return = None
 
+    # In case text body is empty
+    if stat_response.text:
+        
+        #Handle any bad format with json and any erros after getting index
+        try:
+            stat_response_json = stat_response.json()
+
+            #Will return the total number of speakers in a given area
+            data_to_return = stat_response_json[1][0]
+            return data_to_return
+            
+        except (ValueError, KeyError, TypeError):
+            return data_to_return
     
-
-
-
-
-#print(extract_county_with_lat_lng(40.435821, -86.916099))
-#print(https://api.census.gov/data/2010/dec/sf1?get=&for=county:)
-#url2 = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=metropolitan%20statistical%20area/micropolitan%20statistical%20area:*&LAN=" + language_codes[0] + "&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
-#url2 = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:013&in=state:04&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
-#resp = requests.get(url2)
-
-#print(resp.text)
-
-get_data_with_lat_long(40.891869, -74.020068)
+    else:
+        return data_to_return
+        
+       
+#print(get_data_with_lat_long(40.891869, -74.020068))
