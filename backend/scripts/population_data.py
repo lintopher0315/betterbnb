@@ -14,6 +14,10 @@ def get_population_data_with_address(address):
     zipcodeDetails = search.by_zipcode(str(zipcode))
     return zipcodeDetails.population, zipcodeDetails.population_density # population density is per square mile
 
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
+# UNIT TEST CLASS BELOW #
 
 class TestPopulation(unittest.TestCase):
 
@@ -25,8 +29,8 @@ class TestPopulation(unittest.TestCase):
 
     def test_ExtractPopulationDensity(self): # density retrieved from Wikipedia which cites the Census
         self.assertTrue(abs(1572.3 - get_population_data_with_lat_lng(42.0145, -87.8992)[1]) < 300) # 60018, ensure the retrieved and the expected are within 300 people of eachother (old data)
-        self.assertTrue(abs(543 - get_population_data_with_lat_lng(40.4933, -86.9624)[1]) < 300) # 47906
-        self.assertTrue(abs(10 - get_population_data_with_lat_lng(35.3700, -98.4294)[1]) < 300) # 73053
-        self.assertTrue(abs(301 - get_population_data_with_lat_lng(46.5990, -96.8030)[1]) < 300) # 58454
+        self.assertTrue(abs(543 - get_population_data_with_lat_lng(40.4933, -86.9624)[1]) < 300) # 47906, ensure the retrieved and the expected are within 300 people of eachother (old data)
+        self.assertTrue(abs(10 - get_population_data_with_lat_lng(35.3700, -98.4294)[1]) < 300) # 73053, ensure the retrieved and the expected are within 300 people of eachother (old data)
+        self.assertTrue(abs(301 - get_population_data_with_lat_lng(46.5990, -96.8030)[1]) < 300) # 58454, ensure the retrieved and the expected are within 300 people of eachother (old data)
 
 
