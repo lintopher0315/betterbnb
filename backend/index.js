@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 const OAuth2Data = require('./google_key.json')
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('./server/User');
 
 
 const app = express();
@@ -94,9 +95,31 @@ passport.use(new GoogleStrategy({
     callbackURL: AUTH_REDIRECT
   },
   function(accessToken, refreshToken, profile, cb) {
-    return cb(null, profile);
+    User.findOne({ 'google.id' : id}, (err, userMatch) => {
+        if (err) {
+            return cb(null, false);
+        } else if (userMatch) {
+            return cb(null, userMatch);
+        }
+        const newGoogleUser = new User({
+            'google.id': id,
+            firstName: 'John',
+            lastName: 'Doe'
+        })
+
+        newGoogleUser.save((err, savedUser) => {
+            if (err) {
+                console.log("couldn't save google user");
+                return cb(null, false)
+            } else {
+                return cb(null, savedUser);
+            }
+        })
+    })
   }
 ));
+
+
 
 passport.serializeUser(function(user, cb) {
     console.log("here");
