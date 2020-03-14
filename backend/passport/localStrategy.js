@@ -1,7 +1,7 @@
 const User = require('../server/User');
-const regularStrategy = require('passport-local').Strategy
+const localStrategy = require('passport-local').Strategy
 
-const localStrategy = new localStrategy(
+const strategy = new localStrategy(
     function(username, password, done) {
         User.findOne({ 'regularLogin.username': username }, function(err, user) {
             if (err) { return done(err); }
@@ -15,3 +15,5 @@ const localStrategy = new localStrategy(
           });
     }
 )
+
+module.exports = strategy

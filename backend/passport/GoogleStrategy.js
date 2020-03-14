@@ -1,6 +1,9 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../server/User');
 const OAuth2Data = require('../google_key.json');
+const CLIENT_ID = OAuth2Data.client.id;
+const CLIENT_SECRET = OAuth2Data.client.secret;
+const AUTH_REDIRECT = OAuth2Data.client.redirect;
 
 const strategy = new GoogleStrategy({
     clientID: CLIENT_ID,
