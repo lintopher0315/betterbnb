@@ -6,6 +6,7 @@ from FBI_Crime_Data import get_crime_data_with_lat_lng, get_crime_data_with_addr
 from restraunt import get_nearby_restaurants, get_nearby_restaurants_with_address, address_to_lon_and_lat
 from population_data import get_population_data_with_lat_lng, get_population_data_with_address
 from weather import get_weather_data_with_latitude_and_longitude, get_weather_data_with_address
+from lodging import get_lodging_data_with_lat_lng, get_lodging_data_with_address
 
 
 # NOTE: YOUR PYTHON SCRIPT MUST HAVE ONLY TWO FUNCTIONS.
@@ -38,9 +39,14 @@ def compile_info_lat_long(lat, longt):
         weather_thread_obj = executor.submit(get_weather_data_with_latitude_and_longitude, lat, longt)
     except:
         weather_thread_obj = None
+
+    try:
+        lodging_thread_obj = executor.submit(get_lodging_data_with_lat_lng, lat, longt)
+    except:
+        lodging_thread_obj = None
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj)
+    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
@@ -68,14 +74,19 @@ def compile_info_addr(addr):
         weather_thread_obj = executor.submit(get_weather_data_with_address, addr)
     except:
         weather_thread_obj = None
+
+    try:
+        lodging_thread_obj = executor.submit(get_lodging_data_with_address, addr)
+    except:
+        lodging_thread_obj = None
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj)
+    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
 
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj):
+def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj):
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
@@ -99,6 +110,10 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     except:
         write_weather_dict = {} # value if an exception is raised
 
+    try:
+        write_lodging_dict = lodging_thread_obj.result()
+    except:
+        write_lodging_dict = {} # value if an exception is raised
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
     compiled_dict = {} # initialize dict that will be turned to json
@@ -110,6 +125,7 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     compiled_dict['crime_data'] = write_crime_dict         # like this one
     compiled_dict['restraunt_data'] = write_restraunt_dict # or like this one
     compiled_dict['weather_data'] = write_weather_dict
+    compiled_dict['lodging_data'] = write_lodging_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
     f = open("compiled_data.txt", "w")
