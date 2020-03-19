@@ -23,9 +23,10 @@ def get_lodging_data_with_address(address):
 class TestLodging(unittest.TestCase):
 
     def testLodgingData(self): # Not flexible; tests will break when new lodging becomes available; if failed, must also check that there isn't new lodging
+        # Test with anecdotally KNOWN locations; find lodgings within 1500m of the given latitude/longitude
         self.assertEqual(4, len(get_lodging_data_with_lat_lng(40.4259, -86.9081)['results'])) # West Lafayette
         self.assertEqual(0, len(get_lodging_data_with_lat_lng(42.0778, -87.8223)['results'])) # Glenview
-        self.assertEqual(0, len(get_lodging_data_with_lat_lng(40.4259, -87.9081)['results'])) # West Lafayette
-        self.assertEqual(3, len(get_lodging_data_with_lat_lng(30.2241, -92.0198)['results'])) # Lafayette
+        self.assertEqual(1, len(get_lodging_data_with_lat_lng(42.0334, -87.8834)['results'])) # Des Plaines
+        self.assertEqual(7, len(get_lodging_data_with_lat_lng(30.2241, -92.0198)['results'])) # Lafayette
 
 # Supplementary (manual, extra thorough): Verify specific data to make sure that the CORRECT lodgings are being returned; not just the number.
