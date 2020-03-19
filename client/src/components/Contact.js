@@ -27,7 +27,6 @@ export default class Contact extends React.Component {
     }
 
     handleSubmit(event) {
-        //alert(this.state.email);
         event.preventDefault();
 
         axios

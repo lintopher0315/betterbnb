@@ -8,7 +8,7 @@ const strategy = new localStrategy(
             if (!user) {
               return done(null, false, { message: 'Incorrect username.' });
             }
-            if (!user.checkPassword(password)) {
+            if (!user.checkPassword(password, user.regularLogin.password)) {
               return done(null, false, { message: 'Incorrect password.' });
             }
             return done(null, user);
