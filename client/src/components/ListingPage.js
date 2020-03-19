@@ -116,7 +116,7 @@ function ListingPage() {
                     <Col style={{paddingLeft: '100px'}}>
                         <div id="map-col">
                             <div id="listing-map">
-                                <Map style={{width: '100%', height: '500px'}} center={position} zoom={13}>
+                                <Map style={{width: '100%', height: '500px', zIndex: 1}} center={position} zoom={13}>
                                     <TileLayer
                                         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 const OAuth2Data = require('./google_key.json')
 const passport = require('passport');
 const GoogleStrategy = require('./passport/GoogleStrategy');
-const LocalStrategy = require('./passport/LocalStrategy');
+const LocalStrategy = require('./passport/localStrategy');
 const User = require('./server/User');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -139,7 +139,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
   function(req, res) {
     //console.log(req.user);
-    res.redirect('http://localhost:3000/userhome?q=' + req.user.firstName);
+    res.redirect('http://localhost:3000/userhome?q=' + req.user._id);
   });
 
 // Route that recieves a POST to local login
@@ -148,7 +148,8 @@ app.post('/login',
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-    res.redirect('http://localhost:3000/userhome?q=' + req.user.firstName);
+    //console.log(req.user);
+    res.redirect('http://localhost:3000/userhome?q=' + req.user._id);
   });
 
 // Route that recieves a GET for logout  
