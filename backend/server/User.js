@@ -11,7 +11,8 @@ const UserSchema = new mongoose.Schema({
     regularLogin: {
         username: { type: String, unique: false, required: false},
         password: { type: String, unique: false, required: false},
-    }
+    },
+    listings: []
 })
 
 UserSchema.methods.hashPassword = password => {

@@ -173,13 +173,27 @@ app.post('/register', function(req, res) {
     console.log("registered!");
 })
 
-// Router the recieves a GET request for obtaining user information
+// Route that recieves a GET request for obtaining user information
 app.get('/userinfo', function(req, res) {
-    console.log(user);
+    console.log(req.user);
+    return req.user;
 })
 
-
-
+// Route that recieves a POST request to remove a listing
+app.post('/removeListing', function(req, res) {
+    id = req.body.id;
+    listingId = req.body.listingId;
+    listings = listings.filter(function(listing) {
+        return listing.id !== listingId;
+    });
+    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Removed listing with id: " + listingId);
+        }
+    });
+})
 
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
