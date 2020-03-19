@@ -1,6 +1,6 @@
-# BetterBNB
+# Betterbnb
 
-BetterBNB is a web application with associated browser extensions that enables travelers to get need-to-know information 
+Betterbnb is a web application with associated browser extensions that enables travelers to get need-to-know information 
 about rental lisings quickly and effectively. 
 
 ## Outline 
