@@ -9,6 +9,7 @@ import ListingPage from './ListingPage.js'
 import LoginPage from './LoginPage.js'
 import RegistrationPage from './RegistrationPage.js'
 import UserHome from './UserHome.js'
+import Report from './Report.js'
 
 function WebRouter() {
     return (
@@ -22,6 +23,8 @@ function WebRouter() {
                 <Route path='/details' component={() => <ListingPage />} />
                 <Route path='/registration' component={() => <RegistrationPage />} />
                 <Route path='/userhome' component={() => <UserHome />} />
+                <Route path='/report' component={() => <Report />} />
+                
             </Switch>
         </div>
     )
