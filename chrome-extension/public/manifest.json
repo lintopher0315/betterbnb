@@ -1,6 +1,6 @@
 {
-  "short_name": "BetterBNB",
-  "name": "BetterBNB Chrome Extension",
+  "short_name": "Betterbnb",
+  "name": "Betterbnb Chrome Extension",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

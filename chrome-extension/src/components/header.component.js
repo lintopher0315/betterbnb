@@ -9,7 +9,7 @@ export default class Header extends Component {
                 <Card.Header>
                 <div className='container'>
                     <div className='text-center'>
-                        <h1><b>BetterBNB</b></h1>
+                        <h1><b>Betterbnb</b></h1>
                     </div>
                 </div> 
                 </Card.Header>

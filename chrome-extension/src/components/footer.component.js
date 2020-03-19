@@ -4,6 +4,17 @@ import { Card, Row, Col } from 'react-bootstrap'
 
 export default class Footer extends Component {
     
+    constructor(props) {
+        super(props)
+        
+        this.createNewTab = this.createNewTab.bind(this )
+
+    }
+
+    createNewTab() {
+        window.chrome.tabs.create({'url': 'http://localhost:3000/'})
+
+    }
     
     render() {
         return(
@@ -15,7 +26,7 @@ export default class Footer extends Component {
                             <Link to='/'><i class="fas fa-home"></i></Link>
                         </Col>    
                         <Col>
-                            <Link href="#"><i class="fas fa-link"></i></Link>
+                            <Link onClick={this.createNewTab}><i class="fas fa-link"></i></Link>
                         </Col>      
                         <Col>
                             <Link to='/settings'><i class="fas fa-cog"></i></Link>

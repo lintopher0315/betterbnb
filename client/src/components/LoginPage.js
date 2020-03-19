@@ -62,8 +62,8 @@ export default class LoginPage extends React.Component {
                 </Col>
                 <Col>
                     <div className="right">
-                        <h1>BetterBNB</h1>
-                        <h2>Welcome to BetterBNB</h2>
+                        <h1>Betterbnb</h1>
+                        <h2>Welcome to Betterbnb</h2>
 
                     <Form>
                         <Form.Group controlId="formGroupEmail">
@@ -88,7 +88,7 @@ export default class LoginPage extends React.Component {
                     <div class="button">
                         <a href="http://localhost:5000/login/google"><img src={googleButton}></img></a>                    
                     </div>
-                    <h5>New to BetterBNB? <Link id="create-account" to ='/registration'>Create Account</Link></h5>
+                    <h5>New to Betterbnb? <Link id="create-account" to ='/registration'>Create Account</Link></h5>
                     </div>
                 </Col>
             </Row>

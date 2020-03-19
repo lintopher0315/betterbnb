@@ -72,7 +72,7 @@ export default class Settings extends Component {
                             onChange={() => this.langHandle()}
                         />
                     </p>
-                    <p><b>Coming Soon:</b> Sign-in with BetterBNB</p>
+                    <p><b>Coming Soon:</b> Sign-in with Betterbnb</p>
                 </div>
             </div>
         )

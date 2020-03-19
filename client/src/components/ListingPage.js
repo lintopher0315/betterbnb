@@ -164,7 +164,7 @@ export default class ListingPage extends React.Component {
                                     award-winning Central Business District Hotel, with historic 
                                     The Rocks and Circular Quay right next door. Head out to explore the nearby shopping, 
                                     outdoor adventure and vibrant social scene that surround us, 
-                                    then meet back at Mode Kitchen & Bar for fresh, local cuisine and drinks at Grain. 
+                                    then meet back at Mode Kitchen &amp; Bar for fresh, local cuisine and drinks at Grain. 
                                     In Sydney, work and play are never too far apart. And that’s just the way we like it.
                                 </div>
                                 <hr />
