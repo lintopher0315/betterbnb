@@ -21,6 +21,7 @@ function Header(props) {
 
     function setLogout() {
         setKey('undefined');
+        window.location.href = "http://localhost:5000/logout";
     }
 
     return (
@@ -58,7 +59,7 @@ function Header(props) {
                                 </div>
                         </Nav.Link>
                         <Nav.Link className="header-link">
-                            <Link className="header-redirect" onClick={setLogout} to={{pathname: '/login', search: `?q=undefined`}}>
+                            <Link className="header-redirect" onClick={setLogout}>
                                 <div id='user-header-button'>
                                     Logout
                                 </div>

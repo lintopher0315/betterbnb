@@ -8,16 +8,6 @@ class Login extends React.Component {
   responseGoogle(googleUser) {
     let id_token = googleUser.getAuthResponse().id_token;
     let googleId = googleUser.getId();
-
-    /* var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:5000');
-    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
-      console.log('Signed in as: ' + xhr.responseText);
-    };
-    xhr.send('idtoken=' + id_token);
-    */
-    
     console.log({ googleId });
     console.log({ accessToken: id_token });
     ReactDOM.render(<Logout />, document.getElementById('root'));

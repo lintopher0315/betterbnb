@@ -11,6 +11,9 @@ const strategy = new GoogleStrategy({
     callbackURL: AUTH_REDIRECT
   },
   function(accessToken, refreshToken, profile, cb) {
+    const id = profile.id;
+    const firstName = profile.name.givenName;
+    const lastName = profile.name.familyName;
     User.findOne({ 'google.id' : id}, (err, userMatch) => {
         if (err) {
             return cb(null, false);
@@ -19,8 +22,8 @@ const strategy = new GoogleStrategy({
         }
         const newGoogleUser = new User({
             'google.id': id,
-            firstName: 'John',
-            lastName: 'Doe'
+            firstName: firstName,
+            lastName: lastName
         })
 
         newGoogleUser.save((err, savedUser) => {

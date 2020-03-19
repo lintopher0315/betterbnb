@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     },
     regularLogin: {
         username: { type: String, unique: false, required: false},
-        username: { type: String, unique: false, required: false},
+        password: { type: String, unique: false, required: false},
     }
 })
 
@@ -18,8 +18,8 @@ UserSchema.methods.hashPassword = password => {
     return bcrypt.hashSync(password, SALT_WORK_FACTOR);
 }
 
-UserSchema.methods.checkPassword = password => {
-    return bcrypt.compareSync(password, this.regularLogin.password);
+UserSchema.methods.checkPassword = (password, actualPassword) => {
+    return bcrypt.compareSync(password, actualPassword);
 }
 
 UserSchema.pre('save', function(next) {
@@ -28,6 +28,7 @@ UserSchema.pre('save', function(next) {
         next();
     } else {
         this.regularLogin.password = this.hashPassword(this.regularLogin.password);
+        next();
     }
 })
 

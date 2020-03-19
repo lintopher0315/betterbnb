@@ -10,6 +10,9 @@ const passport = require('passport');
 const GoogleStrategy = require('./passport/GoogleStrategy');
 const LocalStrategy = require('./passport/LocalStrategy');
 const User = require('./server/User');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 
 const app = express();
@@ -32,7 +35,7 @@ const AUTH_REDIRECT = OAuth2Data.client.redirect;
 
 
 //Create a new MongoClient
-const client = new  MongoClient(MONGO_URL, {useUnifiedTopology: true});
+/* const client = new  MongoClient(MONGO_URL, {useUnifiedTopology: true});
 
 client.connect(function(err, client) {
     assert.equal(null, err);
@@ -44,10 +47,18 @@ client.connect(function(err, client) {
         if (err) throw err;
         console.log(result);
         //db.close();   
-
     });
-    
   });
+*/
+
+
+//Creating a Mongo instance
+mongoose.connect('mongodb+srv://Anudeep:abcd1234@cluster0-94hkc.gcp.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function(callback) {
+    console.log("connection to db open")
+});
 
 
 /**
@@ -78,7 +89,7 @@ app.get('/api/report', function(req, res) {
     }
 })
 
-//Google Login Authentication
+//Authentication 
 app.use(require('serve-static')(__dirname + '/../../public'));
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
@@ -89,40 +100,88 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(
+	session({
+		secret: 'foo',
+		store: new MongoStore({ mongooseConnection: db }),
+		resave: false,
+		saveUninitialized: false
+	})
+)
+
 
 passport.use(GoogleStrategy);
 passport.use(LocalStrategy);
 
-passport.serializeUser(function(user, cb) {
-    console.log("here");
-    console.log(user)
-    cb(null, user);
+
+passport.serializeUser(function(user, done) {
+    console.log("id: " + user.id);
+    done(null, user.id);
 });
   
-passport.deserializeUser(function(obj, cb) {
-    cb(null, obj);
-    console.log("here2");
+passport.deserializeUser(function(id, done) {
+    User.findOne(
+		{ _id: id },
+		(err, user) => {
+			console.log(user);
+			done(null, user);
+		}
+	)
+    console.log("deserialize");
 });
 
 // Route that receives a GET request to /auth/google
 app.get('/login/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+  passport.authenticate('google', { scope: ['profile'] }));
 
 // GET /auth/google/callback
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
   function(req, res) {
-    res.redirect('http://localhost:3000');
+    //console.log(req.user);
+    res.redirect('http://localhost:3000/userhome?q=' + req.user.firstName);
   });
 
-app.get('/logout/google', function(req, res) {
-    console.log("logged out!");
+// Route that recieves a POST to local login
+app.post('/login',
+  passport.authenticate('local', { failureRedirect: 'http://localhost:3000/login' }),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect('http://localhost:3000/userhome?q=' + req.user.firstName);
+  });
+
+// Route that recieves a GET for logout  
+app.get('/logout', function(req, res) {
+    console.log("Logging Out");
     req.logout();
-    res.redirect('http://localhost:3000/login');
+    res.redirect('http://localhost:3000');
 });
 
+// Route that recieves a POST request for register
+app.post('/register', function(req, res) {
+    const newUser = new User({
+        'regularLogin.username': req.body.email,
+        'regularLogin.password': req.body.password
+    })
+    newUser.save(function(err) {
+        if (err) {
+            return self.error(err);
+        }
+        console.log("saved!")
+    });
+    console.log("registered!");
+})
 
-//Route that recieves a POST request to /email
+// Router the recieves a GET request for obtaining user information
+app.get('/userinfo', function(req, res) {
+    console.log(user);
+})
+
+
+
+
+// Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
     const body = req.body.Body
     res.set('Content-Type', 'text/plain')
