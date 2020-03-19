@@ -46,7 +46,7 @@ def compile_info_lat_long(lat, longt):
         lodging_thread_obj = None
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
+    generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
@@ -81,12 +81,13 @@ def compile_info_addr(addr):
         lodging_thread_obj = None
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
+    # TODO: lat and longt is needed for the ListingPage component 
+    generate_report(-1, -1, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
 
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj):
+def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj):
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
@@ -117,6 +118,8 @@ def generate_report(crime_thread_obj, restraunt_thread_obj, population_thread_ob
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
     compiled_dict = {} # initialize dict that will be turned to json
+    compiled_dict["lat"] = lat
+    compiled_dict["longt"] = longt
     compiled_dict['population_size'] = write_population[0] # the first return value of population_data.py (population size of zipcode)
     compiled_dict['population_information'] = {"population_density_per_sq_mi": write_population[1]} # the second return value of population_data.py (population density per sq mi)
 

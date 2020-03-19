@@ -20,7 +20,8 @@ function WebRouter() {
                 <Route path='/contact' component={() => <Contact />} />
                 <Route path='/login' component={() => <LoginPage />} />
                 <Route path='/results' component={() => <SearchResults />} />
-                <Route path='/details' component={() => <ListingPage />} />
+                <Route exact path='/details/:url' component={() => <ListingPage />} />
+                <Route path='/details/' component={() => <ListingPage />} />
                 <Route path='/registration' component={() => <RegistrationPage />} />
                 <Route path='/userhome' component={() => <UserHome />} />
                 <Route path='/report' component={() => <Report />} />
