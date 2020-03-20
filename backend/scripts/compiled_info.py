@@ -131,5 +131,5 @@ def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, populati
     compiled_dict['lodging_data'] = write_lodging_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
-    f = open("compiled_data.txt", "w")
-    json.dump(compiled_dict, f)
+    with open('compiled_data.json', 'w', encoding='utf-8') as f:
+        json.dump(compiled_dict, f, ensure_ascii=False, indent=4)

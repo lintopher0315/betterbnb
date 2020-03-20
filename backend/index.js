@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const fetch = require("node-fetch");
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const nodemailer = require('nodemailer');
@@ -69,6 +70,8 @@ db.once('open', function(callback) {
  * 
  */
 app.get('/api/report', function(req, res) {
+    console.log("request received...\n")
+
     let listing_url = req.headers.url; 
     if (listing_url === undefined) {
         res.redirect(REDIRECT_URL)
@@ -80,11 +83,20 @@ app.get('/api/report', function(req, res) {
 
         pythonProcess.stdout.on('data', (data) => {
             // Do something with the data returned from python script
-            if (data.toString() !== "error") {
-                // process the text file
-                console.log(data.toString());
-		res.send(JSON.parse(data.toString())); 
+            console.log(data.toString())
+            if (data.toString() === "success") {
+                let response = require('./compiled_data.json'); 
+                res.send(response)
             }
+            else {
+                res.status(400).send({message: "error"}) 
+            }
+
+            /*
+            console.log("here\n\n")
+            console.log(data.toString())
+            res.send(JSON.parse(data.toString()))
+            */
         });
     }
 })

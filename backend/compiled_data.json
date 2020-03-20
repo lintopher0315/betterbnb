@@ -1,0 +1,330 @@
+{
+    "lat": 40.77078,
+    "longt": -111.90048,
+    "population_size": 21084,
+    "population_information": {
+        "population_density_per_sq_mi": 1397.0
+    },
+    "crime_data": {
+        "motor-vehicle-theft": 4131,
+        "property-crime": 34464,
+        "rape": 564,
+        "larceny": 26487,
+        "rape-legacy": 0,
+        "human-trafficing": 0,
+        "robbery": 964,
+        "homicide": 20,
+        "violent-crime": 3433,
+        "burglary": 3846,
+        "arson": 75,
+        "aggravated-assault": 1885
+    },
+    "restraunt_data": {
+        "Bruges Waffles and Frites": {
+            "name": "Bruges Waffles and Frites",
+            "address": "336 West 300,Broadway, Salt Lake City 84101",
+            "rating": "4.9",
+            "cuisine": "Belgian, Desserts, European"
+        },
+        "Gourmandise The Bakery": {
+            "name": "Gourmandise The Bakery",
+            "address": "250 South 300 East 84111",
+            "rating": "4.7",
+            "cuisine": "Coffee and Tea, Sandwich"
+        },
+        "Eva": {
+            "name": "Eva",
+            "address": "317 S Main Street 84111",
+            "rating": "4.6",
+            "cuisine": "Mediterranean, Tapas"
+        },
+        "Red Rock Brewing Company": {
+            "name": "Red Rock Brewing Company",
+            "address": "254 South 200 West 84101",
+            "rating": "4.5",
+            "cuisine": "Burger, Bar Food, Steak"
+        },
+        "The Copper Onion": {
+            "name": "The Copper Onion",
+            "address": "111 E Broadway Ste 170, Salt Lake City 84111",
+            "rating": "4.5",
+            "cuisine": "Breakfast, European"
+        },
+        "Takashi": {
+            "name": "Takashi",
+            "address": "18 W Market St, Salt Lake City 84101",
+            "rating": "4.5",
+            "cuisine": "Japanese, Sushi"
+        },
+        "Settebello": {
+            "name": "Settebello",
+            "address": "260 S 200 W, Salt Lake City 84101",
+            "rating": "4.4",
+            "cuisine": "Italian, Pizza"
+        },
+        "Squatters Pub Brewery": {
+            "name": "Squatters Pub Brewery",
+            "address": "147 West Broadway 84101",
+            "rating": "4.3",
+            "cuisine": "American, Burger, Bar Food"
+        },
+        "Cucina Toscana": {
+            "name": "Cucina Toscana",
+            "address": "282 S 300 W, Salt Lake City 84101",
+            "rating": "4.3",
+            "cuisine": "European, Italian"
+        }
+    },
+    "weather_data": {
+        "main_weather": "Clouds",
+        "main_weather_description": "scattered clouds"
+    },
+    "lodging_data": {
+        "html_attributions": [],
+        "results": [
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 40.7697352,
+                        "lng": -111.8950545
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.77092877989272,
+                            "lng": -111.8935665701073
+                        },
+                        "southwest": {
+                            "lat": 40.76822912010728,
+                            "lng": -111.8962662298927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "02f60030d51e8c4554a8d78c4eba6baf96470ba3",
+                "name": "Salt Lake Plaza Hotel Temple Square",
+                "photos": [
+                    {
+                        "height": 4032,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/115210179271953456196\">Robert Turner</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAdE_ThfGsJ3OXm8WhN61l81HUFyMegFqbPvDhdGSTiFKYAKMYRr1hcfrlO1shqdM8Jh44xk_fpEH9ytEG72eoxRQEov8HCMrdAcDBHbIctkyNPktgI3zfEMpn4ccTX932EhDogRNKHndF2cAZIs0Ki-auGhRxeQxFQiaINIgGl8jPXYM93AqAqg",
+                        "width": 3024
+                    }
+                ],
+                "place_id": "ChIJtZZlsgf1UocR5t_TpWDJixs",
+                "plus_code": {
+                    "compound_code": "Q493+VX Salt Lake City, Utah",
+                    "global_code": "85GCQ493+VX"
+                },
+                "rating": 4,
+                "reference": "ChIJtZZlsgf1UocR5t_TpWDJixs",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1127,
+                "vicinity": "122 W S Temple, Salt Lake City"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 40.767576,
+                        "lng": -111.8933291
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.76893097989272,
+                            "lng": -111.8922444701073
+                        },
+                        "southwest": {
+                            "lat": 40.76623132010728,
+                            "lng": -111.8949441298927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "c7efd5e57686e7725da12b33564800620dc29df6",
+                "name": "Salt Lake Marriott Downtown at City Creek",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1366,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/107174266598787616406\">Salt Lake Marriott Downtown at City Creek</a>"
+                        ],
+                        "photo_reference": "CmRZAAAAl0ZCuGfnqmryAtrqayNWflGMQtnvH_drLeawLNwdtodheziD5gYys8dr94yI4z27U_QBXyqF_-v9lAtEEeSO0F65VpSVWpJD2RbT9GX5Cnp2RSlJbQTX299LBsuKPWGEEhBG3i6mlaK8qfrJicnGoNAGGhTjWJPm9gSpTUJGvf8mixjsAxaxUg",
+                        "width": 2048
+                    }
+                ],
+                "place_id": "ChIJO_lt8wf1UocR0i-kG7tzsOI",
+                "plus_code": {
+                    "compound_code": "Q494+2M Salt Lake City, Utah",
+                    "global_code": "85GCQ494+2M"
+                },
+                "rating": 4.3,
+                "reference": "ChIJO_lt8wf1UocR0i-kG7tzsOI",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1634,
+                "vicinity": "75 S W Temple, Salt Lake City"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 40.768988,
+                        "lng": -111.8978173
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.77039497989272,
+                            "lng": -111.8962216701073
+                        },
+                        "southwest": {
+                            "lat": 40.76769532010728,
+                            "lng": -111.8989213298927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "ec969fbd75ab33a03abf8794d44423c6bbbdb3a5",
+                "name": "Radisson Hotel Salt Lake City Downtown",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1192,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/116152865319305342743\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAWW2CNlBlEZ9IPlfAlxTrM4dIMOXPY7nfnsm_bjRCjkppyBz3fFiC8_ayoQLT49IGXhcVWcogqgluHZ_MNS0TWQqZL6WjWfJbNVh9PLEWGCKK3FOQvJzN5VscHc0nB6FKEhCkszGytauaRPWFpnJkHDRTGhSbRv968v7YOYuAS0PqyVfn-srJHw",
+                        "width": 2119
+                    }
+                ],
+                "place_id": "ChIJQduGJAf1UocREJ_IC1TRhpk",
+                "plus_code": {
+                    "compound_code": "Q492+HV Salt Lake City, Utah",
+                    "global_code": "85GCQ492+HV"
+                },
+                "rating": 4.1,
+                "reference": "ChIJQduGJAf1UocREJ_IC1TRhpk",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1549,
+                "vicinity": "215 W S Temple, Salt Lake City"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 40.7646945,
+                        "lng": -111.8944379
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.76620452989272,
+                            "lng": -111.8931678701073
+                        },
+                        "southwest": {
+                            "lat": 40.76350487010728,
+                            "lng": -111.8958675298927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "7f147095bb982a77f927a05e0babb8a70631c701",
+                "name": "Holiday Inn Express Salt Lake City Downtown",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1152,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/104307029491085365971\">Holiday Inn Express Salt Lake City Downtown</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAzFIIOxtfa4k7Bk5kCN0AA53jKGNVnXEE07Jwyq6aPRYB1lAyfNi9pU0nphz-ai_L68yQFTYBGHDnPI-SiyhH3t2htu_2w_ejnCNKdP2j070HYirQ9QPq65cIXS16XcOWEhBgbnLcHI_31W0m8Q8bKep2GhQrbz9-LDFLg3a9oHNfps3RdJyYGA",
+                        "width": 2048
+                    }
+                ],
+                "place_id": "ChIJs2wtpwX1UocR7f7mIHwXfXs",
+                "plus_code": {
+                    "compound_code": "Q474+V6 Salt Lake City, Utah",
+                    "global_code": "85GCQ474+V6"
+                },
+                "rating": 4.3,
+                "reference": "ChIJs2wtpwX1UocR7f7mIHwXfXs",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1188,
+                "vicinity": "206 S W Temple, Salt Lake City"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 40.7647558,
+                        "lng": -111.8973346
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 40.76624037989272,
+                            "lng": -111.8960311201073
+                        },
+                        "southwest": {
+                            "lat": 40.76354072010728,
+                            "lng": -111.8987307798927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "379df7ce1d038d9c761e2a5ddbbc67f64166f5c6",
+                "name": "AC Hotel by Marriott Salt Lake City Downtown",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 3382,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/117589896733999279605\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAM5ZEI4f3GYgPoSXuvdQJGb2XgawJsUN0SplbNmetz9icFTS3V5a2fLdmIDT8inqJnx5wuCcl7CfdVfNczY8Iwr2pTGoahmsQJTiFyVeVMCO0zApxxd1LND4HPFInRrEREhCZkr7UQQOQaHZbXDZDZbIUGhTHK8PJT4dEhh_2Sj91Hytv9cOR6Q",
+                        "width": 5072
+                    }
+                ],
+                "place_id": "ChIJ6dqybwT1UocRw9Z4zhzGJ-4",
+                "plus_code": {
+                    "compound_code": "Q473+W3 Salt Lake City, Utah",
+                    "global_code": "85GCQ473+W3"
+                },
+                "rating": 4.5,
+                "reference": "ChIJ6dqybwT1UocRw9Z4zhzGJ-4",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 310,
+                "vicinity": "225 W 200 S, Salt Lake City"
+            }
+        ],
+        "status": "OK"
+    }
+}

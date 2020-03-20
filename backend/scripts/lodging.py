@@ -9,7 +9,7 @@ CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
 
 def get_lodging_data_with_lat_lng(lat, lng):
     lodging_data_json = requests.get(FIRST_HALF_QUERY + str(lat) + "," + str(lng)+ SECOND_HALF_QUERY + CONSTANT_GOOGLE_API_KEY).json()
-    return lodging_data_json # dict object, contains a list named 'results'
+    return dict(lodging_data_json) # dict object, contains a list named 'results'
                              # each index is a dict corresponding to each result (i.e. each place of lodging)
 
 def get_lodging_data_with_address(address):
