@@ -1,83 +1,83 @@
 {
-    "lat": 40.77078,
-    "longt": -111.90048,
-    "population_size": 21084,
+    "lat": 41.87864,
+    "longt": -87.64043,
+    "population_size": 2308,
     "population_information": {
-        "population_density_per_sq_mi": 1397.0
+        "population_density_per_sq_mi": 9034.0
     },
     "crime_data": {
-        "motor-vehicle-theft": 4131,
-        "property-crime": 34464,
-        "rape": 564,
-        "larceny": 26487,
+        "robbery": 11,
         "rape-legacy": 0,
+        "rape": 0,
+        "violent-crime": 18,
+        "motor-vehicle-theft": 3,
+        "property-crime": 481,
+        "larceny": 459,
         "human-trafficing": 0,
-        "robbery": 964,
-        "homicide": 20,
-        "violent-crime": 3433,
-        "burglary": 3846,
-        "arson": 75,
-        "aggravated-assault": 1885
+        "homicide": 0,
+        "aggravated-assault": 7,
+        "burglary": 19,
+        "arson": 0
     },
     "restraunt_data": {
-        "Bruges Waffles and Frites": {
-            "name": "Bruges Waffles and Frites",
-            "address": "336 West 300,Broadway, Salt Lake City 84101",
-            "rating": "4.9",
-            "cuisine": "Belgian, Desserts, European"
+        "Girl & The Goat": {
+            "name": "Girl & The Goat",
+            "address": "809 West Randolph 60607",
+            "rating": "4.8",
+            "cuisine": "New American"
         },
-        "Gourmandise The Bakery": {
-            "name": "Gourmandise The Bakery",
-            "address": "250 South 300 East 84111",
+        "Au Cheval": {
+            "name": "Au Cheval",
+            "address": "800 W Randolph Street, Chicago 60607",
             "rating": "4.7",
-            "cuisine": "Coffee and Tea, Sandwich"
+            "cuisine": "Burger, New American, Diner"
         },
-        "Eva": {
-            "name": "Eva",
-            "address": "317 S Main Street 84111",
+        "Lou Malnati's Pizzeria": {
+            "name": "Lou Malnati's Pizzeria",
+            "address": "439 N Wells Street 60654",
             "rating": "4.6",
-            "cuisine": "Mediterranean, Tapas"
+            "cuisine": "Pizza"
         },
-        "Red Rock Brewing Company": {
-            "name": "Red Rock Brewing Company",
-            "address": "254 South 200 West 84101",
+        "The Publican": {
+            "name": "The Publican",
+            "address": "837 W Fulton Market, Chicago 60607",
+            "rating": "4.6",
+            "cuisine": "American"
+        },
+        "Greek Islands": {
+            "name": "Greek Islands",
+            "address": "200 S Halsted Street, Chicago 60661",
+            "rating": "4.6",
+            "cuisine": "Greek, Mediterranean"
+        },
+        "Carnivale": {
+            "name": "Carnivale",
+            "address": "702 W Fulton Market, Chicago 60661",
             "rating": "4.5",
-            "cuisine": "Burger, Bar Food, Steak"
+            "cuisine": "Cuban, Mexican, Latin American"
         },
-        "The Copper Onion": {
-            "name": "The Copper Onion",
-            "address": "111 E Broadway Ste 170, Salt Lake City 84111",
+        "Little Goat Diner": {
+            "name": "Little Goat Diner",
+            "address": "820 West. Randolph Street 60607",
             "rating": "4.5",
-            "cuisine": "Breakfast, European"
+            "cuisine": "New American, Bakery"
         },
-        "Takashi": {
-            "name": "Takashi",
-            "address": "18 W Market St, Salt Lake City 84101",
+        "Avec": {
+            "name": "Avec",
+            "address": "615 W Randolph Street, Chicago 60661",
             "rating": "4.5",
-            "cuisine": "Japanese, Sushi"
+            "cuisine": "Mediterranean"
         },
-        "Settebello": {
-            "name": "Settebello",
-            "address": "260 S 200 W, Salt Lake City 84101",
+        "Blackbird": {
+            "name": "Blackbird",
+            "address": "619 W Randolph Street, Chicago 60661",
             "rating": "4.4",
-            "cuisine": "Italian, Pizza"
-        },
-        "Squatters Pub Brewery": {
-            "name": "Squatters Pub Brewery",
-            "address": "147 West Broadway 84101",
-            "rating": "4.3",
-            "cuisine": "American, Burger, Bar Food"
-        },
-        "Cucina Toscana": {
-            "name": "Cucina Toscana",
-            "address": "282 S 300 W, Salt Lake City 84101",
-            "rating": "4.3",
-            "cuisine": "European, Italian"
+            "cuisine": "American"
         }
     },
     "weather_data": {
         "main_weather": "Clouds",
-        "main_weather_description": "scattered clouds"
+        "main_weather_description": "overcast clouds"
     },
     "lodging_data": {
         "html_attributions": [],
@@ -85,244 +85,150 @@
             {
                 "geometry": {
                     "location": {
-                        "lat": 40.7697352,
-                        "lng": -111.8950545
+                        "lat": 41.8760598,
+                        "lng": -87.6321639
                     },
                     "viewport": {
                         "northeast": {
-                            "lat": 40.77092877989272,
-                            "lng": -111.8935665701073
+                            "lat": 41.87735587989273,
+                            "lng": -87.63060762010728
                         },
                         "southwest": {
-                            "lat": 40.76822912010728,
-                            "lng": -111.8962662298927
+                            "lat": 41.87465622010728,
+                            "lng": -87.63330727989272
                         }
                     }
                 },
                 "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "02f60030d51e8c4554a8d78c4eba6baf96470ba3",
-                "name": "Salt Lake Plaza Hotel Temple Square",
+                "id": "a90534d37384d2982430056db4bc75ff53cb2e97",
+                "name": "The Buckingham Hotel",
+                "opening_hours": {
+                    "open_now": true
+                },
                 "photos": [
                     {
-                        "height": 4032,
+                        "height": 4899,
                         "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/115210179271953456196\">Robert Turner</a>"
+                            "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
                         ],
-                        "photo_reference": "CmRaAAAAdE_ThfGsJ3OXm8WhN61l81HUFyMegFqbPvDhdGSTiFKYAKMYRr1hcfrlO1shqdM8Jh44xk_fpEH9ytEG72eoxRQEov8HCMrdAcDBHbIctkyNPktgI3zfEMpn4ccTX932EhDogRNKHndF2cAZIs0Ki-auGhRxeQxFQiaINIgGl8jPXYM93AqAqg",
-                        "width": 3024
+                        "photo_reference": "CmRaAAAAv9HAdEKDXOVOt24r-HfM8doSARLxOahSppLZPC2it_Epx7cM5h7FLeK16SPsfF7NVnUOykVFSC5OP7UwONrnusiE09y5euZUKsKYGvAJ2k3WixM1J1EjoTb9GnPgmYjmEhAEBu-7ZHzMwHKQkqFnL8ZeGhQAKtSqv6UZEVzZEd-CuFHTb-hL6g",
+                        "width": 7341
                     }
                 ],
-                "place_id": "ChIJtZZlsgf1UocR5t_TpWDJixs",
+                "place_id": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
                 "plus_code": {
-                    "compound_code": "Q493+VX Salt Lake City, Utah",
-                    "global_code": "85GCQ493+VX"
+                    "compound_code": "V9G9+C4 Chicago, Illinois",
+                    "global_code": "86HJV9G9+C4"
                 },
-                "rating": 4,
-                "reference": "ChIJtZZlsgf1UocR5t_TpWDJixs",
+                "rating": 4.4,
+                "reference": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
                 "scope": "GOOGLE",
                 "types": [
                     "lodging",
                     "point_of_interest",
                     "establishment"
                 ],
-                "user_ratings_total": 1127,
-                "vicinity": "122 W S Temple, Salt Lake City"
+                "user_ratings_total": 136,
+                "vicinity": "425 S Financial Pl, Chicago"
             },
             {
                 "geometry": {
                     "location": {
-                        "lat": 40.767576,
-                        "lng": -111.8933291
+                        "lat": 41.884301,
+                        "lng": -87.63367029999999
                     },
                     "viewport": {
                         "northeast": {
-                            "lat": 40.76893097989272,
-                            "lng": -111.8922444701073
+                            "lat": 41.88574622989272,
+                            "lng": -87.63231797010727
                         },
                         "southwest": {
-                            "lat": 40.76623132010728,
-                            "lng": -111.8949441298927
+                            "lat": 41.88304657010728,
+                            "lng": -87.6350176298927
                         }
                     }
                 },
                 "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "c7efd5e57686e7725da12b33564800620dc29df6",
-                "name": "Salt Lake Marriott Downtown at City Creek",
+                "id": "af9cfc6ef381ff5439a28552596fd25e228822d6",
+                "name": "Kimpton Hotel Allegro",
                 "opening_hours": {
                     "open_now": true
                 },
                 "photos": [
                     {
-                        "height": 1366,
+                        "height": 2268,
                         "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/107174266598787616406\">Salt Lake Marriott Downtown at City Creek</a>"
+                            "<a href=\"https://maps.google.com/maps/contrib/115406849697464711082\">Saul Horowitz</a>"
                         ],
-                        "photo_reference": "CmRZAAAAl0ZCuGfnqmryAtrqayNWflGMQtnvH_drLeawLNwdtodheziD5gYys8dr94yI4z27U_QBXyqF_-v9lAtEEeSO0F65VpSVWpJD2RbT9GX5Cnp2RSlJbQTX299LBsuKPWGEEhBG3i6mlaK8qfrJicnGoNAGGhTjWJPm9gSpTUJGvf8mixjsAxaxUg",
-                        "width": 2048
+                        "photo_reference": "CmRaAAAAe-xQjep8CVHjggKxWweToA8UkPn2nTIDAg3HR9leIfodON-eaCepsQpg85C1N7J9kcNV6V6yMrmRI9jZIHtLGYWYPPbFPOwmNro2EZkGygWzgBppoX3UBMx_Rtapc1AJEhC0lZHdkdO6CXE6neZE5DsvGhR6aVfeXZPzcJXq9CUJ_VS7JonpFQ",
+                        "width": 4032
                     }
                 ],
-                "place_id": "ChIJO_lt8wf1UocR0i-kG7tzsOI",
+                "place_id": "ChIJqWzZ9bksDogRMhdu6qnb4cg",
                 "plus_code": {
-                    "compound_code": "Q494+2M Salt Lake City, Utah",
-                    "global_code": "85GCQ494+2M"
+                    "compound_code": "V9M8+PG Chicago, Illinois",
+                    "global_code": "86HJV9M8+PG"
                 },
                 "rating": 4.3,
-                "reference": "ChIJO_lt8wf1UocR0i-kG7tzsOI",
+                "reference": "ChIJqWzZ9bksDogRMhdu6qnb4cg",
                 "scope": "GOOGLE",
                 "types": [
                     "lodging",
                     "point_of_interest",
                     "establishment"
                 ],
-                "user_ratings_total": 1634,
-                "vicinity": "75 S W Temple, Salt Lake City"
+                "user_ratings_total": 2220,
+                "vicinity": "171 W Randolph St, Chicago"
             },
             {
                 "geometry": {
                     "location": {
-                        "lat": 40.768988,
-                        "lng": -111.8978173
+                        "lat": 41.88374,
+                        "lng": -87.64830680000001
                     },
                     "viewport": {
                         "northeast": {
-                            "lat": 40.77039497989272,
-                            "lng": -111.8962216701073
+                            "lat": 41.88509977989272,
+                            "lng": -87.64709922010728
                         },
                         "southwest": {
-                            "lat": 40.76769532010728,
-                            "lng": -111.8989213298927
+                            "lat": 41.88240012010728,
+                            "lng": -87.64979887989273
                         }
                     }
                 },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "ec969fbd75ab33a03abf8794d44423c6bbbdb3a5",
-                "name": "Radisson Hotel Salt Lake City Downtown",
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+                "id": "f2cd28d0e930257f791ee7d45afa5c3cabfd6127",
+                "name": "Soho House Chicago",
                 "opening_hours": {
                     "open_now": true
                 },
                 "photos": [
                     {
-                        "height": 1192,
+                        "height": 2220,
                         "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/116152865319305342743\">A Google User</a>"
+                            "<a href=\"https://maps.google.com/maps/contrib/116178456521318098828\">Soho House Chicago</a>"
                         ],
-                        "photo_reference": "CmRaAAAAWW2CNlBlEZ9IPlfAlxTrM4dIMOXPY7nfnsm_bjRCjkppyBz3fFiC8_ayoQLT49IGXhcVWcogqgluHZ_MNS0TWQqZL6WjWfJbNVh9PLEWGCKK3FOQvJzN5VscHc0nB6FKEhCkszGytauaRPWFpnJkHDRTGhSbRv968v7YOYuAS0PqyVfn-srJHw",
-                        "width": 2119
+                        "photo_reference": "CmRaAAAAiVC-BgnvuYo8WjA88MtnTXQBuKjBOVXgR0dJGFKz0uLDXV8krfRiiyMqTALqP17LIPCCzfKNfUPlLnnzc555VlsZKBwJslei0UNeaNH9T8V4LNUmRltwLnOYIwoTlmFsEhA7Kwnw_g-GLBR9OxMET2iuGhSYEbNgWE4HLy7_laG_MlMRvnCESA",
+                        "width": 4096
                     }
                 ],
-                "place_id": "ChIJQduGJAf1UocREJ_IC1TRhpk",
+                "place_id": "ChIJD-S50tosDogRThdFPfd__lE",
                 "plus_code": {
-                    "compound_code": "Q492+HV Salt Lake City, Utah",
-                    "global_code": "85GCQ492+HV"
+                    "compound_code": "V9M2+FM Chicago, Illinois",
+                    "global_code": "86HJV9M2+FM"
                 },
-                "rating": 4.1,
-                "reference": "ChIJQduGJAf1UocREJ_IC1TRhpk",
+                "rating": 4.6,
+                "reference": "ChIJD-S50tosDogRThdFPfd__lE",
                 "scope": "GOOGLE",
                 "types": [
+                    "spa",
                     "lodging",
                     "point_of_interest",
                     "establishment"
                 ],
-                "user_ratings_total": 1549,
-                "vicinity": "215 W S Temple, Salt Lake City"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 40.7646945,
-                        "lng": -111.8944379
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 40.76620452989272,
-                            "lng": -111.8931678701073
-                        },
-                        "southwest": {
-                            "lat": 40.76350487010728,
-                            "lng": -111.8958675298927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "7f147095bb982a77f927a05e0babb8a70631c701",
-                "name": "Holiday Inn Express Salt Lake City Downtown",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 1152,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/104307029491085365971\">Holiday Inn Express Salt Lake City Downtown</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAzFIIOxtfa4k7Bk5kCN0AA53jKGNVnXEE07Jwyq6aPRYB1lAyfNi9pU0nphz-ai_L68yQFTYBGHDnPI-SiyhH3t2htu_2w_ejnCNKdP2j070HYirQ9QPq65cIXS16XcOWEhBgbnLcHI_31W0m8Q8bKep2GhQrbz9-LDFLg3a9oHNfps3RdJyYGA",
-                        "width": 2048
-                    }
-                ],
-                "place_id": "ChIJs2wtpwX1UocR7f7mIHwXfXs",
-                "plus_code": {
-                    "compound_code": "Q474+V6 Salt Lake City, Utah",
-                    "global_code": "85GCQ474+V6"
-                },
-                "rating": 4.3,
-                "reference": "ChIJs2wtpwX1UocR7f7mIHwXfXs",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 1188,
-                "vicinity": "206 S W Temple, Salt Lake City"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 40.7647558,
-                        "lng": -111.8973346
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 40.76624037989272,
-                            "lng": -111.8960311201073
-                        },
-                        "southwest": {
-                            "lat": 40.76354072010728,
-                            "lng": -111.8987307798927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "379df7ce1d038d9c761e2a5ddbbc67f64166f5c6",
-                "name": "AC Hotel by Marriott Salt Lake City Downtown",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 3382,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/117589896733999279605\">A Google User</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAM5ZEI4f3GYgPoSXuvdQJGb2XgawJsUN0SplbNmetz9icFTS3V5a2fLdmIDT8inqJnx5wuCcl7CfdVfNczY8Iwr2pTGoahmsQJTiFyVeVMCO0zApxxd1LND4HPFInRrEREhCZkr7UQQOQaHZbXDZDZbIUGhTHK8PJT4dEhh_2Sj91Hytv9cOR6Q",
-                        "width": 5072
-                    }
-                ],
-                "place_id": "ChIJ6dqybwT1UocRw9Z4zhzGJ-4",
-                "plus_code": {
-                    "compound_code": "Q473+W3 Salt Lake City, Utah",
-                    "global_code": "85GCQ473+W3"
-                },
-                "rating": 4.5,
-                "reference": "ChIJ6dqybwT1UocRw9Z4zhzGJ-4",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 310,
-                "vicinity": "225 W 200 S, Salt Lake City"
+                "user_ratings_total": 1305,
+                "vicinity": "113-125 N Green St, Chicago"
             }
         ],
         "status": "OK"
