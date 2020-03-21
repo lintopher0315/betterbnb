@@ -19,5 +19,5 @@ if __name__ == "__main__":
 
     os.system("npm start &")
     os.chdir("../backend")
-    os.system("nodemon")
+    os.system("npm start")
 
