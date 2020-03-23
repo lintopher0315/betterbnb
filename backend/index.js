@@ -195,17 +195,38 @@ app.get('/userinfo', function(req, res) {
 // Route that recieves a POST request to remove a listing
 app.post('/removeListing', function(req, res) {
     id = req.body.id;
-    listingId = req.body.listingId;
+    url = req.body.url;
     listings = listings.filter(function(listing) {
-        return listing.id !== listingId;
+        return listing !== url;
     });
     User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
         } else {
-            console.log("Removed listing with id: " + listingId);
+            console.log("Removed listing with url: " + url);
         }
     });
+})
+
+app.post('/addListing', function(req, res) {
+    id = req.body.id;
+    url = req.body.url;
+    listings = listings.add(url)
+    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Added listing with url: " + url);
+        }
+    });
+})
+
+app.post('/getListings', function(req, res) {
+    id = req.body.id
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { return done(err); }
+        return user.listings
+      });
 })
 
 // Route that recieves a POST request to /email

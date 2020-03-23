@@ -76,12 +76,61 @@
         }
     },
     "weather_data": {
-        "main_weather": "Clouds",
-        "main_weather_description": "overcast clouds"
+        "main_weather": "Rain",
+        "main_weather_description": "light rain"
     },
     "lodging_data": {
         "html_attributions": [],
         "results": [
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 41.882755,
+                        "lng": -87.6356806
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 41.88405437989272,
+                            "lng": -87.63415397010728
+                        },
+                        "southwest": {
+                            "lat": 41.88135472010728,
+                            "lng": -87.63685362989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "dc6f8004b8916b3b5f9a12eab72fe98032108155",
+                "name": "Hyatt Place Chicago/Downtown-The Loop",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 2048,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/102926870711363279861\">Samir Shah</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAvKm8bL9aVuOHOMR2oIFovSglXrvV_SmzCIUcQuFbBhSxOlFD3Yo2ynndCul1IaoDfoHhduHeDH6bD1N-Mv5W9oRmtXoZs11mhp6g8qevxGcSGTvj9wt6mJmShICK-2b0EhAhAP5Pt94sfWmPvcHAATh6GhQUGQoB832ErAUB9CTDaVeFS3v4LA",
+                        "width": 1536
+                    }
+                ],
+                "place_id": "ChIJTVDiBbksDogR8twg49DuejM",
+                "plus_code": {
+                    "compound_code": "V9M7+4P Chicago, Illinois",
+                    "global_code": "86HJV9M7+4P"
+                },
+                "rating": 4.4,
+                "reference": "ChIJTVDiBbksDogR8twg49DuejM",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1270,
+                "vicinity": "28 N Franklin St, Chicago"
+            },
             {
                 "geometry": {
                     "location": {
@@ -111,7 +160,7 @@
                         "html_attributions": [
                             "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
                         ],
-                        "photo_reference": "CmRaAAAAv9HAdEKDXOVOt24r-HfM8doSARLxOahSppLZPC2it_Epx7cM5h7FLeK16SPsfF7NVnUOykVFSC5OP7UwONrnusiE09y5euZUKsKYGvAJ2k3WixM1J1EjoTb9GnPgmYjmEhAEBu-7ZHzMwHKQkqFnL8ZeGhQAKtSqv6UZEVzZEd-CuFHTb-hL6g",
+                        "photo_reference": "CmRaAAAA3Cu77NSKQXeSx7ccN6eRwdXNhBkIJVfn-WZODbqcevhmr6yUQpnY2K9fgEV4C-3DzPw1CuQJBF7W2vEbzdphJzdUxzRg01Ql5C4X_xTPNH0EAyGhZ_3ACFvtSx-r1KkrEhBobtJDKwzXmHl6az85HMTgGhTQva9dAiHNO8O6W5aUoCY_KzL-nw",
                         "width": 7341
                     }
                 ],
@@ -160,7 +209,7 @@
                         "html_attributions": [
                             "<a href=\"https://maps.google.com/maps/contrib/115406849697464711082\">Saul Horowitz</a>"
                         ],
-                        "photo_reference": "CmRaAAAAe-xQjep8CVHjggKxWweToA8UkPn2nTIDAg3HR9leIfodON-eaCepsQpg85C1N7J9kcNV6V6yMrmRI9jZIHtLGYWYPPbFPOwmNro2EZkGygWzgBppoX3UBMx_Rtapc1AJEhC0lZHdkdO6CXE6neZE5DsvGhR6aVfeXZPzcJXq9CUJ_VS7JonpFQ",
+                        "photo_reference": "CmRaAAAAOQMvx061BYcrgi1sOoAEXxmmAhR8vZYmIe7qXLTVR6dgr8GE-6uplzmQTDV7-FqChmQowsCSA9zp6LJB2wfzhHZhKvaJm-Hl0FY8p3w8DOxSacZqKjjcHC8BNkCuPt49EhB-omAMz4nRcl672qxtDVelGhQrH8koHBj6uU7krBz31caYM8f4cA",
                         "width": 4032
                     }
                 ],
@@ -183,52 +232,100 @@
             {
                 "geometry": {
                     "location": {
-                        "lat": 41.88374,
-                        "lng": -87.64830680000001
+                        "lat": 41.8838435,
+                        "lng": -87.6430652
                     },
                     "viewport": {
                         "northeast": {
-                            "lat": 41.88509977989272,
-                            "lng": -87.64709922010728
+                            "lat": 41.88520047989272,
+                            "lng": -87.64154102010727
                         },
                         "southwest": {
-                            "lat": 41.88240012010728,
-                            "lng": -87.64979887989273
+                            "lat": 41.88250082010728,
+                            "lng": -87.64424067989272
                         }
                     }
                 },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-                "id": "f2cd28d0e930257f791ee7d45afa5c3cabfd6127",
-                "name": "Soho House Chicago",
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "d3e5846bab4de80127215ce4c075fae5dcd32bbe",
+                "name": "Hampton Inn Chicago Downtown West Loop",
                 "opening_hours": {
                     "open_now": true
                 },
                 "photos": [
                     {
-                        "height": 2220,
+                        "height": 4000,
                         "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/116178456521318098828\">Soho House Chicago</a>"
+                            "<a href=\"https://maps.google.com/maps/contrib/102864565241352840124\">Hampton Inn Chicago West Loop</a>"
                         ],
-                        "photo_reference": "CmRaAAAAiVC-BgnvuYo8WjA88MtnTXQBuKjBOVXgR0dJGFKz0uLDXV8krfRiiyMqTALqP17LIPCCzfKNfUPlLnnzc555VlsZKBwJslei0UNeaNH9T8V4LNUmRltwLnOYIwoTlmFsEhA7Kwnw_g-GLBR9OxMET2iuGhSYEbNgWE4HLy7_laG_MlMRvnCESA",
-                        "width": 4096
+                        "photo_reference": "CmRaAAAA66ySXcbFUzg2-IKcZB5sCDaAOdCk4pI5YxqdG1f2g56nFUar8J3o6Lx3-W-Uat7KYFjKeYBH-7V9hdy20QkvaF5Ft9htJ8OVmib-zemw_k5Ogp0Ef4U-LxyizytaI5TrEhBm94jVhLSR8mwtZ9SaQYKiGhSgG45PLrtpPWydV9psv3IwPAfBJw",
+                        "width": 5992
                     }
                 ],
-                "place_id": "ChIJD-S50tosDogRThdFPfd__lE",
+                "place_id": "ChIJ21QlcMYsDogRM_HmOgyBA34",
                 "plus_code": {
-                    "compound_code": "V9M2+FM Chicago, Illinois",
-                    "global_code": "86HJV9M2+FM"
+                    "compound_code": "V9M4+GQ Chicago, Illinois",
+                    "global_code": "86HJV9M4+GQ"
                 },
-                "rating": 4.6,
-                "reference": "ChIJD-S50tosDogRThdFPfd__lE",
+                "rating": 4.5,
+                "reference": "ChIJ21QlcMYsDogRM_HmOgyBA34",
                 "scope": "GOOGLE",
                 "types": [
-                    "spa",
                     "lodging",
                     "point_of_interest",
                     "establishment"
                 ],
-                "user_ratings_total": 1305,
-                "vicinity": "113-125 N Green St, Chicago"
+                "user_ratings_total": 819,
+                "vicinity": "116 N Jefferson St, Chicago"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 41.8746699,
+                        "lng": -87.6399903
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 41.87605382989272,
+                            "lng": -87.63912552010727
+                        },
+                        "southwest": {
+                            "lat": 41.87335417010728,
+                            "lng": -87.64182517989272
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "d446c8c806ad87a6b00aca793c008cc89a774b85",
+                "name": "Holiday Inn & Suites Chicago-Downtown",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 3744,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/100015399913844177819\">Holiday Inn and Suites Chicago-Downtown</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAAYBunlat7X4M_nzV-znngqiWSxWLytiADf2ws92V9iJio4pkorL0KIchZ6YfN7vPFHd9QvkHh2a-WlwIsszQy6xQZ1hR9Ut3o9lhC-7dU79lSDqfwC8J6NHtjm2FMAIVEhC1J4bYsiqfu1oNU762r4AsGhRW4a_Lic-abppWLkUthLvYd916uA",
+                        "width": 5616
+                    }
+                ],
+                "place_id": "ChIJ34L_kuosDogRODW49JEHGaY",
+                "plus_code": {
+                    "compound_code": "V9F6+V2 Chicago, Illinois",
+                    "global_code": "86HJV9F6+V2"
+                },
+                "rating": 3.8,
+                "reference": "ChIJ34L_kuosDogRODW49JEHGaY",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1078,
+                "vicinity": "506 W Harrison St, Chicago"
             }
         ],
         "status": "OK"
