@@ -24,6 +24,9 @@ function Header(props) {
         window.location.href = "http://localhost:5000/logout";
     }
 
+    function seeListings()  {
+    }
+
     return (
         <div>
             {key !== "undefined" ?
@@ -49,9 +52,11 @@ function Header(props) {
                     </div>
                     <Nav className="header-nav">
                         <Nav.Link className="header-link">
-                            <div id='user-header-button'>
-                                Your Listings
-                            </div>
+                            <Link className="header-redirect" to={{pathname: '/savedlistings', search: `?q=${key}`}}>
+                                <div id='user-header-button'>
+                                    Your Listings
+                                </div>
+                            </Link>
                         </Nav.Link>
                         <Nav.Link className="header-link">
                                 <div id='user-header-button'>
