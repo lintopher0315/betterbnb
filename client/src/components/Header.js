@@ -24,8 +24,7 @@ function Header(props) {
         window.location.href = "http://localhost:5000/logout";
     }
 
-    function seeListings()  {
-    }
+    
 
     return (
         <div>

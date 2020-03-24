@@ -13,18 +13,41 @@ export default class ListingPage extends React.Component {
     
     constructor(props) {
         super(props)
+
+        this.onSaveListing = this.onSaveListing.bind(this);
         
         this.state =  {
+            id: "p3_1585010024_ZGvx2cquxL%2B11WGI",
+            url: "",
             data: undefined,
             redirection: false
         }
 
+       
+
+    }
+
+    onSaveListing(e) {
+        e.preventDefault()
+
+        const requestObj = {
+            id: this.state.id,
+            url:  this.state.url
+        }
+
+        console.log(requestObj)
+        axios.post("http://localhost:5000/addListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
         let currentUrlSplit = currentUrl.split("details/")
 
+        /* If not logged in, redirect */
         if (currentUrlSplit.length != 2 || currentUrlSplit[1] === "") {
             this.setState({
                 redirection: true
@@ -32,7 +55,8 @@ export default class ListingPage extends React.Component {
         }
         else {
             currentUrl = currentUrlSplit[1]
-            console.log(currentUrl)
+            console.log("the current url is", currentUrl)
+            this.setState({url: currentUrl})
         }
 
         
@@ -48,8 +72,6 @@ export default class ListingPage extends React.Component {
                     })
         
     }
-
-    
 
 
     render() {
@@ -151,8 +173,12 @@ export default class ListingPage extends React.Component {
                                     value={5}
                                     size={'medium'}
                                 />
-                                <Button id="listing-page-download-btn" variant="outline-success" size="sm">
-                                    <a id="listing-page-download" href='../res/sample_pdf.pdf' download>Download PDF</a>
+                                <Button className="listing-page-btn" variant="outline-success" size="sm">
+                                    <a className="listing-page-link" href='../res/sample_pdf.pdf' download>Download PDF</a>
+                                </Button>
+                                <Button onClick={this.onSaveListing} className="listing-page-btn" variant="outline-success" size="sm">
+                                    {/* <a className="listing-page-link">{this.state.id}</a> */}
+                                    Save Listing  
                                 </Button>
                                 <hr />
                                 <div id="listing-sub-title">
