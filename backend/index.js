@@ -196,6 +196,11 @@ app.get('/userinfo', function(req, res) {
 app.post('/removeListing', function(req, res) {
     id = req.body.id;
     url = req.body.url;
+    listings = []
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { console.log("user doesn't exist"); }
+        listings = user.listings
+      });
     listings = listings.filter(function(listing) {
         return listing !== url;
     });
@@ -211,6 +216,11 @@ app.post('/removeListing', function(req, res) {
 app.post('/addListing', function(req, res) {
     id = req.body.id;
     url = req.body.url;
+    listings = []
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { console.log("user doesn't exist") }
+        listings = user.listings
+      });
     listings = listings.add(url)
     User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
         if (err) {
