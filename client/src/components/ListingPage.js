@@ -229,6 +229,44 @@ export default class ListingPage extends React.Component {
                         <Col>
                             <div id="area-col">
                                 <div id="listing-sub-title-second">
+                                    Population
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div style={{float: 'right', paddingRight: '100px'}}>
+                                <img alt="population" src={require("../res/population.png")} />
+                            </div>
+                        </Col>
+                        
+                        <Col>
+                            <div style={{float: 'left', paddingLeft: '100px'}}>
+                                <img alt="pop_density" src={require("../res/pop_density.png")} />
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="listing-desc-text" style={{float: 'right', paddingRight: '143px'}}>
+                                {this.state.data.population_size} Total
+                            </div>
+                        </Col>
+
+                        <Col>
+                            <div id="listing-desc-text" style={{float: 'left', paddingLeft: '105px'}}>
+                                {this.state.data.population_information.population_density_per_sq_mi} per Square Mile
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
                                     Crime
                                 </div>
                             </div>
