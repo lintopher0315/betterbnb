@@ -39,7 +39,7 @@ export default class ListingPage extends React.Component {
         axios.get('http://localhost:5000/api/report', {headers: {"url": currentUrl}})
                     .then(response => {
                         //res.send(response.data);
-                        //console.log(response.data)
+                        console.log(response.data)
                         this.setState({data: response.data})
                     })
                     .catch(err => {
@@ -201,6 +201,37 @@ export default class ListingPage extends React.Component {
                         </Col>
                         <Col>
                         
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Weather
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <img alt="clear_sun" src={require("../res/clear_sun.png")} />
+                                <div id="listing-desc-text">
+                                    Local weather indicates signs of {this.state.data.weather_data.main_weather_description}.
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Crime
+                                </div>
+                            </div>
                         </Col>
                     </Row>
 
