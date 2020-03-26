@@ -1,9 +1,9 @@
 {
-    "lat": 41.87864,
-    "longt": -87.64043,
-    "population_size": 2308,
+    "lat": 41.87373,
+    "longt": -87.64751,
+    "population_size": 23897,
     "population_information": {
-        "population_density_per_sq_mi": 9034.0
+        "population_density_per_sq_mi": 10299.0
     },
     "crime_data": {
         "robbery": 11,
@@ -20,59 +20,59 @@
         "arson": 0
     },
     "restraunt_data": {
-        "Girl & The Goat": {
-            "name": "Girl & The Goat",
-            "address": "809 West Randolph 60607",
-            "rating": "4.8",
-            "cuisine": "New American"
-        },
-        "Au Cheval": {
-            "name": "Au Cheval",
-            "address": "800 W Randolph Street, Chicago 60607",
-            "rating": "4.7",
-            "cuisine": "Burger, New American, Diner"
-        },
-        "Lou Malnati's Pizzeria": {
-            "name": "Lou Malnati's Pizzeria",
-            "address": "439 N Wells Street 60654",
-            "rating": "4.6",
-            "cuisine": "Pizza"
-        },
-        "The Publican": {
-            "name": "The Publican",
-            "address": "837 W Fulton Market, Chicago 60607",
-            "rating": "4.6",
-            "cuisine": "American"
-        },
         "Greek Islands": {
             "name": "Greek Islands",
             "address": "200 S Halsted Street, Chicago 60661",
             "rating": "4.6",
             "cuisine": "Greek, Mediterranean"
         },
-        "Carnivale": {
-            "name": "Carnivale",
-            "address": "702 W Fulton Market, Chicago 60661",
-            "rating": "4.5",
-            "cuisine": "Cuban, Mexican, Latin American"
+        "Tufano's Vernon Park Tap": {
+            "name": "Tufano's Vernon Park Tap",
+            "address": "1073 W Vernon Park Plaza, Chicago 60607",
+            "rating": "4.6",
+            "cuisine": "Italian"
         },
-        "Little Goat Diner": {
-            "name": "Little Goat Diner",
-            "address": "820 West. Randolph Street 60607",
+        "Manny's Cafeteria & Delicatessen": {
+            "name": "Manny's Cafeteria & Delicatessen",
+            "address": "1141 S Jefferson Street, Chicago 60607",
             "rating": "4.5",
-            "cuisine": "New American, Bakery"
+            "cuisine": "Sandwich, Deli"
         },
-        "Avec": {
-            "name": "Avec",
-            "address": "615 W Randolph Street, Chicago 60661",
+        "Davanti Enoteca": {
+            "name": "Davanti Enoteca",
+            "address": "1359 W Taylor Street, Chicago 60607",
             "rating": "4.5",
-            "cuisine": "Mediterranean"
+            "cuisine": "Italian"
         },
-        "Blackbird": {
-            "name": "Blackbird",
-            "address": "619 W Randolph Street, Chicago 60661",
+        "Meli Cafe": {
+            "name": "Meli Cafe",
+            "address": "301 S Halsted Street, Chicago 60661",
             "rating": "4.4",
+            "cuisine": "American, Healthy Food"
+        },
+        "Artopolis": {
+            "name": "Artopolis",
+            "address": "306 S Halsted Street, Chicago 60661",
+            "rating": "4.4",
+            "cuisine": "Greek, Mediterranean"
+        },
+        "Sweet Maple Cafe": {
+            "name": "Sweet Maple Cafe",
+            "address": "1339 W. Taylor Street, Chicago 60607",
+            "rating": "4.3",
             "cuisine": "American"
+        },
+        "Al's #1 Italian Beef": {
+            "name": "Al's #1 Italian Beef",
+            "address": "1079 West Taylor Street 60607",
+            "rating": "4.0",
+            "cuisine": "Fast Food, Italian, Sandwich"
+        },
+        "Athena": {
+            "name": "Athena",
+            "address": "212 S Halsted Street, Chicago 60661",
+            "rating": "4.0",
+            "cuisine": "Greek, Mediterranean"
         }
     },
     "weather_data": {
@@ -81,156 +81,7 @@
     },
     "lodging_data": {
         "html_attributions": [],
-        "results": [
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.8760598,
-                        "lng": -87.6321639
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.87735587989273,
-                            "lng": -87.63060762010728
-                        },
-                        "southwest": {
-                            "lat": 41.87465622010728,
-                            "lng": -87.63330727989272
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "a90534d37384d2982430056db4bc75ff53cb2e97",
-                "name": "The Buckingham Hotel",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 4899,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAv9HAdEKDXOVOt24r-HfM8doSARLxOahSppLZPC2it_Epx7cM5h7FLeK16SPsfF7NVnUOykVFSC5OP7UwONrnusiE09y5euZUKsKYGvAJ2k3WixM1J1EjoTb9GnPgmYjmEhAEBu-7ZHzMwHKQkqFnL8ZeGhQAKtSqv6UZEVzZEd-CuFHTb-hL6g",
-                        "width": 7341
-                    }
-                ],
-                "place_id": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "plus_code": {
-                    "compound_code": "V9G9+C4 Chicago, Illinois",
-                    "global_code": "86HJV9G9+C4"
-                },
-                "rating": 4.4,
-                "reference": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 136,
-                "vicinity": "425 S Financial Pl, Chicago"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.884301,
-                        "lng": -87.63367029999999
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.88574622989272,
-                            "lng": -87.63231797010727
-                        },
-                        "southwest": {
-                            "lat": 41.88304657010728,
-                            "lng": -87.6350176298927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "af9cfc6ef381ff5439a28552596fd25e228822d6",
-                "name": "Kimpton Hotel Allegro",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 2268,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/115406849697464711082\">Saul Horowitz</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAe-xQjep8CVHjggKxWweToA8UkPn2nTIDAg3HR9leIfodON-eaCepsQpg85C1N7J9kcNV6V6yMrmRI9jZIHtLGYWYPPbFPOwmNro2EZkGygWzgBppoX3UBMx_Rtapc1AJEhC0lZHdkdO6CXE6neZE5DsvGhR6aVfeXZPzcJXq9CUJ_VS7JonpFQ",
-                        "width": 4032
-                    }
-                ],
-                "place_id": "ChIJqWzZ9bksDogRMhdu6qnb4cg",
-                "plus_code": {
-                    "compound_code": "V9M8+PG Chicago, Illinois",
-                    "global_code": "86HJV9M8+PG"
-                },
-                "rating": 4.3,
-                "reference": "ChIJqWzZ9bksDogRMhdu6qnb4cg",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 2220,
-                "vicinity": "171 W Randolph St, Chicago"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.88374,
-                        "lng": -87.64830680000001
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.88509977989272,
-                            "lng": -87.64709922010728
-                        },
-                        "southwest": {
-                            "lat": 41.88240012010728,
-                            "lng": -87.64979887989273
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
-                "id": "f2cd28d0e930257f791ee7d45afa5c3cabfd6127",
-                "name": "Soho House Chicago",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 2220,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/116178456521318098828\">Soho House Chicago</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAiVC-BgnvuYo8WjA88MtnTXQBuKjBOVXgR0dJGFKz0uLDXV8krfRiiyMqTALqP17LIPCCzfKNfUPlLnnzc555VlsZKBwJslei0UNeaNH9T8V4LNUmRltwLnOYIwoTlmFsEhA7Kwnw_g-GLBR9OxMET2iuGhSYEbNgWE4HLy7_laG_MlMRvnCESA",
-                        "width": 4096
-                    }
-                ],
-                "place_id": "ChIJD-S50tosDogRThdFPfd__lE",
-                "plus_code": {
-                    "compound_code": "V9M2+FM Chicago, Illinois",
-                    "global_code": "86HJV9M2+FM"
-                },
-                "rating": 4.6,
-                "reference": "ChIJD-S50tosDogRThdFPfd__lE",
-                "scope": "GOOGLE",
-                "types": [
-                    "spa",
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 1305,
-                "vicinity": "113-125 N Green St, Chicago"
-            }
-        ],
-        "status": "OK"
+        "results": [],
+        "status": "ZERO_RESULTS"
     }
 }

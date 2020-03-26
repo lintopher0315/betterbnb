@@ -12,8 +12,11 @@ export default class Footer extends Component {
     }
 
     createNewTab() {
-        window.chrome.tabs.create({'url': 'http://localhost:3000/'})
-
+        window.chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+            let currentUrl = tabs[0].url;
+            let redirectUrl = 'http://localhost:3000/details/' + currentUrl
+            window.chrome.tabs.create({'url': redirectUrl})
+        });
     }
     
     render() {
