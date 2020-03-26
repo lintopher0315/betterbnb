@@ -16,8 +16,9 @@ export default class ListingPage extends React.Component {
 
         this.onSaveListing = this.onSaveListing.bind(this);
         
+        /* id is a placeholder*/
         this.state =  {
-            id: "p3_1585010024_ZGvx2cquxL%2B11WGI",
+            id: "5e71ac28aa15bf83b708ed15",
             url: "",
             data: undefined,
             redirection: false
@@ -29,7 +30,7 @@ export default class ListingPage extends React.Component {
 
     onSaveListing(e) {
         e.preventDefault()
-
+        
         const requestObj = {
             id: this.state.id,
             url:  this.state.url

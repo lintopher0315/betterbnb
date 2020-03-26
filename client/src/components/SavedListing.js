@@ -8,12 +8,7 @@ export class SavedListing extends Component {
         console.log(props)
         
     }
-
     
-
- 
-
-
     render() {
         console.log("Here", this.props);
         return (

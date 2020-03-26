@@ -217,11 +217,14 @@ app.post('/addListing', function(req, res) {
     let id = req.body.id;
     let url = req.body.url;
     let listings = []
+    console.log(id);
+    console.log(url)
     User.findOne({ _id : id }, function(err, user) {
         if (err) { console.log("user doesn't exist") }
         listings = user.listings
       });
-    listings = listings.add(url)
+    console.log(listings);
+    listings = listings.push(url)
     User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
