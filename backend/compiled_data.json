@@ -76,8 +76,8 @@
         }
     },
     "weather_data": {
-        "main_weather": "Clouds",
-        "main_weather_description": "overcast clouds"
+        "main_weather": "Rain",
+        "main_weather_description": "light rain"
     },
     "lodging_data": {
         "html_attributions": [],
@@ -111,7 +111,7 @@
                         "html_attributions": [
                             "<a href=\"https://maps.google.com/maps/contrib/102864565241352840124\">Hampton Inn Chicago West Loop</a>"
                         ],
-                        "photo_reference": "CmRaAAAALOXys3HJ28dsdNQDsH8Uyph-SVp_IE9vNNJQFTVPdAP88zQa76ZiwNCJByK7dZFCsxxD3p5PcM4n5eRhqiQBzakdnCp9Yp56Lxsa8La72xZdFp-ooueohiDJBO0MKXJGEhBwNQXdOz7ubmerO-ebw9xsGhTYoM2D4ZB5ffVxUEyVi9g3foSDVA",
+                        "photo_reference": "CmRaAAAAr_Kgn9_immsmC_Xcq6qUOezjlNXzwfPpByKuzjeyMacO8SDW9FAW8nmaGTLtGElgAtMI0CAESnRdqSRywQoEtP-pZkyYy2qTgFFkbRtAMSZ1npUJDuShZjnK6-1h2ogLEhAAcboSR2xfQVElysCL0wLKGhQo275nDRbTJO5dkF6Fs0v0ybvJqQ",
                         "width": 5992
                     }
                 ],

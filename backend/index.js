@@ -86,6 +86,7 @@ app.get('/api/report', function(req, res) {
             console.log(data.toString())
             if (data.toString() === "success") {
                 let response = require('./compiled_data.json'); 
+                console.log(response)
                 res.send(response)
             }
             else {
