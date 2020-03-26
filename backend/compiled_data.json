@@ -1,83 +1,83 @@
 {
-    "lat": 40.73145,
-    "longt": -74.00621,
-    "population_size": 31959,
+    "lat": 41.87843,
+    "longt": -87.64054,
+    "population_size": 2308,
     "population_information": {
-        "population_density_per_sq_mi": 56119.0
+        "population_density_per_sq_mi": 9034.0
     },
     "crime_data": {
-        "motor-vehicle-theft": 0,
-        "larceny": 59,
+        "robbery": 11,
+        "rape-legacy": 0,
+        "rape": 0,
+        "violent-crime": 18,
+        "motor-vehicle-theft": 3,
+        "property-crime": 481,
+        "larceny": 459,
         "human-trafficing": 0,
         "homicide": 0,
-        "rape": 2,
-        "property-crime": 63,
-        "rape-legacy": 0,
-        "burglary": 4,
-        "robbery": 1,
-        "arson": 0,
-        "aggravated-assault": 1,
-        "violent-crime": 4
+        "aggravated-assault": 7,
+        "burglary": 19,
+        "arson": 0
     },
     "restraunt_data": {
-        "Ippudo": {
-            "name": "Ippudo",
-            "address": "65 4th Avenue, New York 10003",
-            "rating": "4.9",
-            "cuisine": "Ramen"
+        "Girl & The Goat": {
+            "name": "Girl & The Goat",
+            "address": "809 West Randolph 60607",
+            "rating": "4.8",
+            "cuisine": "New American"
         },
-        "Buddakan": {
-            "name": "Buddakan",
-            "address": "75 9th Avenue 10011",
-            "rating": "4.9",
-            "cuisine": "Chinese, Fusion, Asian"
-        },
-        "Lombardi's Pizza": {
-            "name": "Lombardi's Pizza",
-            "address": "32 Spring Street, New York 10012",
-            "rating": "4.9",
-            "cuisine": "Pizza, Italian"
-        },
-        "Balthazar": {
-            "name": "Balthazar",
-            "address": "80 Spring Street 10012",
+        "Au Cheval": {
+            "name": "Au Cheval",
+            "address": "800 W Randolph Street, Chicago 60607",
             "rating": "4.7",
-            "cuisine": "French, Seafood, Bakery"
+            "cuisine": "Burger, New American, Diner"
         },
-        "The Spotted Pig": {
-            "name": "The Spotted Pig",
-            "address": "314 West 11th Street 10014",
-            "rating": "4.7",
-            "cuisine": "Burger, Bar Food"
+        "Lou Malnati's Pizzeria": {
+            "name": "Lou Malnati's Pizzeria",
+            "address": "439 N Wells Street 60654",
+            "rating": "4.6",
+            "cuisine": "Pizza"
         },
-        "Gramercy Tavern": {
-            "name": "Gramercy Tavern",
-            "address": "42 E 20th Street 10003",
-            "rating": "4.5",
+        "The Publican": {
+            "name": "The Publican",
+            "address": "837 W Fulton Market, Chicago 60607",
+            "rating": "4.6",
             "cuisine": "American"
         },
-        "Cafeteria": {
-            "name": "Cafeteria",
-            "address": "119 7th Avenue",
+        "Greek Islands": {
+            "name": "Greek Islands",
+            "address": "200 S Halsted Street, Chicago 60661",
+            "rating": "4.6",
+            "cuisine": "Greek, Mediterranean"
+        },
+        "Carnivale": {
+            "name": "Carnivale",
+            "address": "702 W Fulton Market, Chicago 60661",
             "rating": "4.5",
+            "cuisine": "Cuban, Mexican, Latin American"
+        },
+        "Little Goat Diner": {
+            "name": "Little Goat Diner",
+            "address": "820 West. Randolph Street 60607",
+            "rating": "4.5",
+            "cuisine": "New American, Bakery"
+        },
+        "Avec": {
+            "name": "Avec",
+            "address": "615 W Randolph Street, Chicago 60661",
+            "rating": "4.5",
+            "cuisine": "Mediterranean"
+        },
+        "Blackbird": {
+            "name": "Blackbird",
+            "address": "619 W Randolph Street, Chicago 60661",
+            "rating": "4.4",
             "cuisine": "American"
-        },
-        "Babbo": {
-            "name": "Babbo",
-            "address": "110 Waverly Pl, Greenwich Village 10011",
-            "rating": "4.3",
-            "cuisine": "Italian"
-        },
-        "Catch NYC": {
-            "name": "Catch NYC",
-            "address": "21 9th Avenue.",
-            "rating": 0,
-            "cuisine": "Asian, Fusion"
         }
     },
     "weather_data": {
         "main_weather": "Clouds",
-        "main_weather_description": "overcast clouds"
+        "main_weather_description": "broken clouds"
     },
     "lodging_data": {
         "html_attributions": [],
@@ -85,146 +85,51 @@
             {
                 "geometry": {
                     "location": {
-                        "lat": 40.7269539,
-                        "lng": -74.0061781
+                        "lat": 41.8760598,
+                        "lng": -87.6321639
                     },
                     "viewport": {
                         "northeast": {
-                            "lat": 40.72843172989272,
-                            "lng": -74.00475677010728
+                            "lat": 41.87735587989273,
+                            "lng": -87.63060762010728
                         },
                         "southwest": {
-                            "lat": 40.72573207010727,
-                            "lng": -74.00745642989273
+                            "lat": 41.87465622010728,
+                            "lng": -87.63330727989272
                         }
                     }
                 },
                 "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "42ed37b9eaef09ab41bf3b322435be56ab8883a5",
-                "name": "Four Points by Sheraton Manhattan SoHo Village",
+                "id": "a90534d37384d2982430056db4bc75ff53cb2e97",
+                "name": "The Buckingham Hotel",
                 "opening_hours": {
                     "open_now": true
                 },
                 "photos": [
                     {
-                        "height": 2048,
+                        "height": 4899,
                         "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/110329397745332192615\">Four Points by Sheraton Manhattan SoHo Village</a>"
+                            "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
                         ],
-                        "photo_reference": "CmRaAAAA15HS_EXAB1C-I3r0XDSjDyiepLF72Jq2xXIQrNtwzfgztxBJ_kHrW1n-ZUjfqOAM_-ikbZBvXAj2LJgDMR6vJmq5DaOTudz3z4gXGa9zdYtjORpR2WxXw0WtG1yH72l2EhAAmcT7svsLkZaeKoMlM0oXGhSRIuKVuiOhKVmYSRHRVAvNzRg_-w",
-                        "width": 1654
+                        "photo_reference": "CmRaAAAACOaCSIvkNL_F__6UB2YW6jQwovAT9BpWJmS8FzK6bgkdP8bOqAiZO-1iyzwKSmYXKgf6dTdn17zWrbd1rnhggbcXw9be5hbw8BrJt4jdGsT2IFDZPYYSnzQYbRy4NDQxEhDBCkk2rELTXpHmTV79wXYfGhS0YXgf_humDg-fgfWMzKAee_ecIg",
+                        "width": 7341
                     }
                 ],
-                "place_id": "ChIJ0f8UMY1ZwokRb9wR5codn2g",
+                "place_id": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
                 "plus_code": {
-                    "compound_code": "PXGV+QG New York",
-                    "global_code": "87G7PXGV+QG"
-                },
-                "rating": 3.9,
-                "reference": "ChIJ0f8UMY1ZwokRb9wR5codn2g",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 598,
-                "vicinity": "66 Charlton St, New York"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 40.7378878,
-                        "lng": -74.004182
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 40.73929192989272,
-                            "lng": -74.00290012010728
-                        },
-                        "southwest": {
-                            "lat": 40.73659227010728,
-                            "lng": -74.00559977989272
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "9983ac8853570c4caac648ee30af8698ff72fc7b",
-                "name": "Incentra Village Hotel",
-                "opening_hours": {
-                    "open_now": false
-                },
-                "photos": [
-                    {
-                        "height": 3421,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/109921526694550209287\">Incentra Village House</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAlKlWm6cyankb3QX352-tmnnZVeFmiZsWjTM3ZLXAUvQH7pmIbubLesGoQ-QCVUo7sglVhjQTzZWmx09oeLlBOfhe6C5qititUf9mrMusuiUv_QktgYVSl07vp0QjyobVEhCgZl7O9zIeqHst_kFI7O4NGhTJhc5sr30Q4vYtSzFabTrtang8TQ",
-                        "width": 4356
-                    }
-                ],
-                "place_id": "ChIJAdfxepVZwokRzluAKiaJtLM",
-                "plus_code": {
-                    "compound_code": "PXQW+58 New York",
-                    "global_code": "87G7PXQW+58"
-                },
-                "rating": 4,
-                "reference": "ChIJAdfxepVZwokRzluAKiaJtLM",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 54,
-                "vicinity": "32 8th Ave, New York"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 40.7325032,
-                        "lng": -73.9986893
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 40.73376997989272,
-                            "lng": -73.99742722010727
-                        },
-                        "southwest": {
-                            "lat": 40.73107032010727,
-                            "lng": -74.0001268798927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "f91a183a025cf3c63c3305683fbf12d627788ab0",
-                "name": "Washington Square Hotel",
-                "photos": [
-                    {
-                        "height": 4160,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/112897870670558391054\">Jonathan Sullivan</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAnNnFoAA2rsiey8fOiIawjYwWdtbQdRljFILajNhsxDpWjrDDu5KsGnXw_jZQDFnHB_hMgjzD_KG3Di0lyhSSLBgBdU0v6Tj-B2fQHmuw5KE5RATIKsbrVFK6tmjoNisbEhAfa-WpBLl3p7uCBr4Xl5t4GhSgehbXvae0eDu10C9Ug82TKR8R5w",
-                        "width": 3120
-                    }
-                ],
-                "place_id": "ChIJs_xsNJFZwokRhqdldztPi2U",
-                "plus_code": {
-                    "compound_code": "P2M2+2G New York",
-                    "global_code": "87G8P2M2+2G"
+                    "compound_code": "V9G9+C4 Chicago, Illinois",
+                    "global_code": "86HJV9G9+C4"
                 },
                 "rating": 4.4,
-                "reference": "ChIJs_xsNJFZwokRhqdldztPi2U",
+                "reference": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
                 "scope": "GOOGLE",
                 "types": [
                     "lodging",
                     "point_of_interest",
                     "establishment"
                 ],
-                "user_ratings_total": 508,
-                "vicinity": "103 Waverly Pl, New York"
+                "user_ratings_total": 136,
+                "vicinity": "425 S Financial Pl, Chicago"
             }
         ],
         "status": "OK"

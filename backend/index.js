@@ -204,7 +204,7 @@ app.post('/removeListing', function(req, res) {
     listings = listings.filter(function(listing) {
         return listing !== url;
     });
-    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+    User.update({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
         } else {
@@ -217,18 +217,22 @@ app.post('/addListing', function(req, res) {
     let id = req.body.id;
     let url = req.body.url;
     let listings = []
+    console.log(id);
+    console.log(url)
     User.findOne({ _id : id }, function(err, user) {
         if (err) { console.log("user doesn't exist") }
         listings = user.listings
       });
-    listings = listings.add(url)
-    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+    console.log(listings);
+    listings.push(url)
+    User.update({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
         } else {
             console.log("Added listing with url: " + url);
         }
     });
+    console.log(listings)
 })
 
 app.post('/getListings', function(req, res) {
