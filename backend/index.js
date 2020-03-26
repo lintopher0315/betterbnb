@@ -194,9 +194,9 @@ app.get('/userinfo', function(req, res) {
 
 // Route that recieves a POST request to remove a listing
 app.post('/removeListing', function(req, res) {
-    id = req.body.id;
-    url = req.body.url;
-    listings = []
+    let id = req.body.id;
+    let url = req.body.url;
+    let listings = []
     User.findOne({ _id : id }, function(err, user) {
         if (err) { console.log("user doesn't exist"); }
         listings = user.listings
@@ -214,9 +214,9 @@ app.post('/removeListing', function(req, res) {
 })
 
 app.post('/addListing', function(req, res) {
-    id = req.body.id;
-    url = req.body.url;
-    listings = []
+    let id = req.body.id;
+    let url = req.body.url;
+    let listings = []
     User.findOne({ _id : id }, function(err, user) {
         if (err) { console.log("user doesn't exist") }
         listings = user.listings
@@ -232,7 +232,7 @@ app.post('/addListing', function(req, res) {
 })
 
 app.post('/getListings', function(req, res) {
-    id = req.body.id
+    let id = req.body.id
     User.findOne({ _id : id }, function(err, user) {
         if (err) { return done(err); }
         return user.listings
