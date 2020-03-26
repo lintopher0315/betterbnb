@@ -204,7 +204,7 @@ app.post('/removeListing', function(req, res) {
     listings = listings.filter(function(listing) {
         return listing !== url;
     });
-    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+    User.update({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
         } else {
@@ -224,14 +224,15 @@ app.post('/addListing', function(req, res) {
         listings = user.listings
       });
     console.log(listings);
-    listings = listings.push(url)
-    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+    listings.push(url)
+    User.update({_id : id}, {$addToSet: {listings: listings}}, err => {
         if (err) {
             console.log(err);
         } else {
             console.log("Added listing with url: " + url);
         }
     });
+    console.log(listings)
 })
 
 app.post('/getListings', function(req, res) {

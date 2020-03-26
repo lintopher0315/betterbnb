@@ -1,9 +1,9 @@
 {
-    "lat": 41.87843,
-    "longt": -87.64054,
-    "population_size": 2308,
+    "lat": 41.87946,
+    "longt": -87.64915,
+    "population_size": 23897,
     "population_information": {
-        "population_density_per_sq_mi": 9034.0
+        "population_density_per_sq_mi": 10299.0
     },
     "crime_data": {
         "robbery": 11,
@@ -77,60 +77,11 @@
     },
     "weather_data": {
         "main_weather": "Clouds",
-        "main_weather_description": "broken clouds"
+        "main_weather_description": "overcast clouds"
     },
     "lodging_data": {
         "html_attributions": [],
         "results": [
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.8760598,
-                        "lng": -87.6321639
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.87735587989273,
-                            "lng": -87.63060762010728
-                        },
-                        "southwest": {
-                            "lat": 41.87465622010728,
-                            "lng": -87.63330727989272
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "a90534d37384d2982430056db4bc75ff53cb2e97",
-                "name": "The Buckingham Hotel",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 4899,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
-                        ],
-                        "photo_reference": "CmRaAAAA7_tDyv-iiSXZPmQXGt8l6z19HVA9cIx2UXT3wH5ybPQWrrIzutLFzQP1ciNO3QZHUCWiC4kZPC2ZEs_-Hs4YxXw6VBPhJu8JIAWJ4rmLSldjIlhPdRXZ06WJ5tocaPwbEhBiTtMQkxeYP7wjho9X19qmGhSrUsjwHeDCd2GxjEOa78i_LbitOg",
-                        "width": 7341
-                    }
-                ],
-                "place_id": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "plus_code": {
-                    "compound_code": "V9G9+C4 Chicago, Illinois",
-                    "global_code": "86HJV9G9+C4"
-                },
-                "rating": 4.4,
-                "reference": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 136,
-                "vicinity": "425 S Financial Pl, Chicago"
-            },
             {
                 "geometry": {
                     "location": {
@@ -160,7 +111,7 @@
                         "html_attributions": [
                             "<a href=\"https://maps.google.com/maps/contrib/102864565241352840124\">Hampton Inn Chicago West Loop</a>"
                         ],
-                        "photo_reference": "CmRaAAAAhjpCIDg3TibO_Vr9gSgVUAdjumcprmLfMCekuCqUh1vn7inNbbMmfB837BdB4QkzSGzjaN6zJOpStvyLhHvfxGbKWvaBa-TWpvN2qufcnDcKeHgVCa-AbwJVpCcAuE5cEhBcpRi4ZrryjDRpRhgcABbQGhSrmFTvFZ2-hoMyTGYPIDbecT1Nyw",
+                        "photo_reference": "CmRaAAAALOXys3HJ28dsdNQDsH8Uyph-SVp_IE9vNNJQFTVPdAP88zQa76ZiwNCJByK7dZFCsxxD3p5PcM4n5eRhqiQBzakdnCp9Yp56Lxsa8La72xZdFp-ooueohiDJBO0MKXJGEhBwNQXdOz7ubmerO-ebw9xsGhTYoM2D4ZB5ffVxUEyVi9g3foSDVA",
                         "width": 5992
                     }
                 ],
