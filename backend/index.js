@@ -239,7 +239,7 @@ app.post('/getListings', function(req, res) {
     let id = req.body.id
     User.findOne({ _id : id }, function(err, user) {
         if (err) { return done(err); }
-        return user.listings
+        res.send(user.listings);
       });
 })
 
