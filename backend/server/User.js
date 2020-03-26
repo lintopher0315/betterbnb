@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
         username: { type: String, unique: false, required: false},
         password: { type: String, unique: false, required: false},
     },
-    listings: []
+    listings: [],
 })
 
 UserSchema.methods.hashPassword = password => {

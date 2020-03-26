@@ -10,6 +10,7 @@ import LoginPage from './LoginPage.js'
 import RegistrationPage from './RegistrationPage.js'
 import UserHome from './UserHome.js'
 import Report from './Report.js'
+import SavedListing from './SavedListing.js'
 
 function WebRouter() {
     return (
@@ -25,6 +26,7 @@ function WebRouter() {
                 <Route path='/registration' component={() => <RegistrationPage />} />
                 <Route path='/userhome' component={() => <UserHome />} />
                 <Route path='/report' component={() => <Report />} />
+                <Route path='/savedlistings' component={() => <SavedListing />} />
                 
             </Switch>
         </div>

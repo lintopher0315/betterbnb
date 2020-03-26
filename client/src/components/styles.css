@@ -240,32 +240,45 @@ body {
     padding-bottom: 30px;
 }
 
-#listing-page-download-btn {
-    margin-left: 30px;
+.listing-page-btn {
+    margin-left: 20px;
     margin-bottom: 10px;
 }
 
-#listing-page-download {
+.listing-page-link {
     color: green;
     transition: .3s all ease-in-out;
 }
 
-#listing-page-download-btn:hover #listing-page-download {
+.listing-page-btn:hover #listing-page-link {
     color: white;
 }
 
-#listing-page-download:focus {
+.listing-page-link:focus {
     outline: none;
 }
 
-#listing-page-download:hover {
+.listing-page-link:hover {
     text-decoration: none;
+}
+
+#listing-page-save-btn {
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
 #listing-sub-title {
     font-family: 'Dosis';
     font-weight: bold;
     font-size: 32px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#listing-sub-title-second {
+    font-family: 'Dosis';
+    font-weight: bold;
+    font-size: 24px;
     padding-top: 30px;
     padding-bottom: 30px;
 }

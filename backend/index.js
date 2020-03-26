@@ -86,6 +86,7 @@ app.get('/api/report', function(req, res) {
             console.log(data.toString())
             if (data.toString() === "success") {
                 let response = require('./compiled_data.json'); 
+                console.log(response)
                 res.send(response)
             }
             else {
@@ -194,18 +195,53 @@ app.get('/userinfo', function(req, res) {
 
 // Route that recieves a POST request to remove a listing
 app.post('/removeListing', function(req, res) {
-    id = req.body.id;
-    listingId = req.body.listingId;
+    let id = req.body.id;
+    let url = req.body.url;
+    let listings = []
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { console.log("user doesn't exist"); }
+        listings = user.listings
+      });
     listings = listings.filter(function(listing) {
-        return listing.id !== listingId;
+        return listing !== url;
     });
-    User.findOneAndUpdate({_id : id}, {listings: listings}, err => {
+    User.update({_id : id}, {listings: listings}, err => {
         if (err) {
             console.log(err);
         } else {
-            console.log("Removed listing with id: " + listingId);
+            console.log("Removed listing with url: " + url);
         }
     });
+})
+
+app.post('/addListing', function(req, res) {
+    let id = req.body.id;
+    let url = req.body.url;
+    let listings = []
+    console.log(id);
+    console.log(url)
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { console.log("user doesn't exist") }
+        listings = user.listings
+      });
+    console.log(listings);
+    listings.push(url)
+    User.update({_id : id}, {$addToSet: {listings: listings}}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Added listing with url: " + url);
+        }
+    });
+    console.log(listings)
+})
+
+app.post('/getListings', function(req, res) {
+    let id = req.body.id
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { return done(err); }
+        res.send(user.listings);
+      });
 })
 
 // Route that recieves a POST request to /email

@@ -13,18 +13,42 @@ export default class ListingPage extends React.Component {
     
     constructor(props) {
         super(props)
+
+        this.onSaveListing = this.onSaveListing.bind(this);
         
+        /* id is a placeholder*/
         this.state =  {
+            id: "5e793b4e25eca81d644b12a5",
+            url: "",
             data: undefined,
             redirection: false
         }
 
+       
+
+    }
+
+    onSaveListing(e) {
+        e.preventDefault()
+        
+        const requestObj = {
+            id: this.state.id,
+            url:  this.state.url
+        }
+
+        console.log(requestObj)
+        axios.post("http://localhost:5000/addListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
         let currentUrlSplit = currentUrl.split("details/")
 
+        /* If not logged in, redirect */
         if (currentUrlSplit.length != 2 || currentUrlSplit[1] === "") {
             this.setState({
                 redirection: true
@@ -32,14 +56,15 @@ export default class ListingPage extends React.Component {
         }
         else {
             currentUrl = currentUrlSplit[1]
-            console.log(currentUrl)
+            console.log("the current url is", currentUrl)
+            this.setState({url: currentUrl})
         }
 
         
         axios.get('http://localhost:5000/api/report', {headers: {"url": currentUrl}})
                     .then(response => {
                         //res.send(response.data);
-                        //console.log(response.data)
+                        console.log(response.data)
                         this.setState({data: response.data})
                     })
                     .catch(err => {
@@ -48,8 +73,6 @@ export default class ListingPage extends React.Component {
                     })
         
     }
-
-    
 
 
     render() {
@@ -151,8 +174,12 @@ export default class ListingPage extends React.Component {
                                     value={5}
                                     size={'medium'}
                                 />
-                                <Button id="listing-page-download-btn" variant="outline-success" size="sm">
-                                    <a id="listing-page-download" href='../res/sample_pdf.pdf' download>Download PDF</a>
+                                <Button className="listing-page-btn" variant="outline-success" size="sm">
+                                    <a className="listing-page-link" href='../res/sample_pdf.pdf' download>Download PDF</a>
+                                </Button>
+                                <Button onClick={this.onSaveListing} className="listing-page-btn" variant="outline-success" size="sm">
+                                    {/* <a className="listing-page-link">{this.state.id}</a> */}
+                                    Save Listing  
                                 </Button>
                                 <hr />
                                 <div id="listing-sub-title">
@@ -201,6 +228,75 @@ export default class ListingPage extends React.Component {
                         </Col>
                         <Col>
                         
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Weather
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <img alt="clear_sun" src={require("../res/clear_sun.png")} />
+                                <div id="listing-desc-text">
+                                    Local weather indicates signs of {this.state.data.weather_data.main_weather_description}.
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Population
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div style={{float: 'right', paddingRight: '100px'}}>
+                                <img alt="population" src={require("../res/population.png")} />
+                            </div>
+                        </Col>
+                        
+                        <Col>
+                            <div style={{float: 'left', paddingLeft: '100px'}}>
+                                <img alt="pop_density" src={require("../res/pop_density.png")} />
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="listing-desc-text" style={{float: 'right', paddingRight: '143px'}}>
+                                {this.state.data.population_size} Total
+                            </div>
+                        </Col>
+
+                        <Col>
+                            <div id="listing-desc-text" style={{float: 'left', paddingLeft: '105px'}}>
+                                {this.state.data.population_information.population_density_per_sq_mi} per Square Mile
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Crime
+                                </div>
+                            </div>
                         </Col>
                     </Row>
 

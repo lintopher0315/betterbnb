@@ -76,8 +76,8 @@
         }
     },
     "weather_data": {
-        "main_weather": "Clouds",
-        "main_weather_description": "overcast clouds"
+        "main_weather": "Rain",
+        "main_weather_description": "light rain"
     },
     "lodging_data": {
         "html_attributions": [],
