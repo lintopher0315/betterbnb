@@ -31,7 +31,7 @@ def get_crime_data_with_lat_lng(lat, lng):
     # If JSON decoding fails twice in a row, return an empty dictionary.
     for i in range(0, 2, 1):
         try:
-            agenciesList = requests.get(r'https://api.usa.gov/crime/fbi/sapi/api/agencies?API_KEY=' + CONST_FBI_API_KEY, timeout=20).json()
+            agenciesList = requests.get(r'https://api.usa.gov/crime/fbi/sapi/api/agencies?API_KEY=' + CONST_FBI_API_KEY, timeout=5).json()
             break
         except JSONDecodeError:
             if i == 1:
@@ -65,7 +65,7 @@ def get_crime_data_with_lat_lng(lat, lng):
     # If JSON decoding fails twice in a row, return an empty dictionary.
     for i in range(0, 2, 1):
         try:
-            data = requests.get('https://api.usa.gov/crime/fbi/sapi/api/summarized/agencies/' + foundORI + '/offenses/2015/2016?API_KEY=' + CONST_FBI_API_KEY, timeout=20).json()
+            data = requests.get('https://api.usa.gov/crime/fbi/sapi/api/summarized/agencies/' + foundORI + '/offenses/2015/2016?API_KEY=' + CONST_FBI_API_KEY, timeout=5).json()
             break
         except JSONDecodeError:
             if i == 1:
