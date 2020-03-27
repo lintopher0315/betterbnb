@@ -11,6 +11,7 @@ import RegistrationPage from './RegistrationPage.js'
 import UserHome from './UserHome.js'
 import Report from './Report.js'
 import SavedListing from './SavedListing.js'
+import Preferences from './Preferences.js';
 
 function WebRouter() {
     return (
@@ -27,6 +28,7 @@ function WebRouter() {
                 <Route path='/userhome' component={() => <UserHome />} />
                 <Route path='/report' component={() => <Report />} />
                 <Route path='/savedlistings' component={() => <SavedListing />} />
+                <Route path='/preferences' component={() => <Preferences />} />
                 
             </Switch>
         </div>

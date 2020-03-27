@@ -63,6 +63,13 @@ function Header(props) {
                                 </div>
                         </Nav.Link>
                         <Nav.Link className="header-link">
+                            <Link className="header-redirect" to={{pathname: '/preferences', search: `?q=${key}`}}>
+                                <div id='user-header-button'>
+                                    Preferences
+                                </div>
+                            </Link>
+                        </Nav.Link>
+                        <Nav.Link className="header-link">
                             <Link className="header-redirect" onClick={setLogout}>
                                 <div id='user-header-button'>
                                     Logout
