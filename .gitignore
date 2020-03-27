@@ -29,6 +29,7 @@ yarn-error.log*
 /server/node_modules
 
 # backend
+/backend/compiled_data.json
 /backend/node_modules
 /backend/scripts/reqs/
 /backend/scripts/env/
