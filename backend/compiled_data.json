@@ -1,7 +1,7 @@
 {
-    "lat": 33.99144,
-    "longt": -118.46773,
-    "population_size": 28341,
+    "lat": 41.87373,
+    "longt": -87.64751,
+    "population_size": 23897,
     "population_information": {
         "population_density_per_sq_mi": 11359.0
     },
@@ -9,59 +9,59 @@
         "NO_KEY": "NO MATCHING ORI WAS FOUND FOR CITY Playa Del Rey"
     },
     "restraunt_data": {
-        "Gjelina": {
-            "name": "Gjelina",
-            "address": "1429 Abbot Kinney Blvd, Venice 90291",
-            "rating": "4.7",
-            "cuisine": "American"
+        "Greek Islands": {
+            "name": "Greek Islands",
+            "address": "200 S Halsted Street, Chicago 60661",
+            "rating": "4.6",
+            "cuisine": "Greek, Mediterranean"
         },
-        "C&O Cucina": {
-            "name": "C&O Cucina",
-            "address": "3016 Washington Boulevard 90292",
+        "Tufano's Vernon Park Tap": {
+            "name": "Tufano's Vernon Park Tap",
+            "address": "1073 W Vernon Park Plaza, Chicago 60607",
+            "rating": "4.6",
+            "cuisine": "Italian"
+        },
+        "Manny's Cafeteria & Delicatessen": {
+            "name": "Manny's Cafeteria & Delicatessen",
+            "address": "1141 S Jefferson Street, Chicago 60607",
+            "rating": "4.5",
+            "cuisine": "Sandwich, Deli"
+        },
+        "Davanti Enoteca": {
+            "name": "Davanti Enoteca",
+            "address": "1359 W Taylor Street, Chicago 60607",
             "rating": "4.5",
             "cuisine": "Italian"
         },
-        "Abbot's Pizza Company": {
-            "name": "Abbot's Pizza Company",
-            "address": "1407 Abbot Kinney Boulevard 90291",
-            "rating": "4.5",
-            "cuisine": "Pizza"
-        },
-        "Baby Blues BBQ": {
-            "name": "Baby Blues BBQ",
-            "address": "444 Lincoln Boulevard, Venice 90291",
+        "Meli Cafe": {
+            "name": "Meli Cafe",
+            "address": "301 S Halsted Street, Chicago 60661",
             "rating": "4.4",
-            "cuisine": "American, BBQ"
+            "cuisine": "American, Healthy Food"
         },
-        "26 Beach Restaurant": {
-            "name": "26 Beach Restaurant",
-            "address": "3100 Washington Blvd, Marina Del Rey 90292",
+        "Artopolis": {
+            "name": "Artopolis",
+            "address": "306 S Halsted Street, Chicago 60661",
             "rating": "4.4",
-            "cuisine": "American, Breakfast, Burger"
+            "cuisine": "Greek, Mediterranean"
         },
-        "Killer Shrimp": {
-            "name": "Killer Shrimp",
-            "address": "4211 Admiralty Way 90292",
-            "rating": "3.7",
-            "cuisine": "American, Seafood, California"
+        "Sweet Maple Cafe": {
+            "name": "Sweet Maple Cafe",
+            "address": "1339 W. Taylor Street, Chicago 60607",
+            "rating": "4.3",
+            "cuisine": "American"
         },
-        "Beachside Restaurant & Bar": {
-            "name": "Beachside Restaurant & Bar",
-            "address": "14160 Palawan Way 90292",
-            "rating": "3.5",
-            "cuisine": "Breakfast, Seafood, California"
+        "Al's #1 Italian Beef": {
+            "name": "Al's #1 Italian Beef",
+            "address": "1079 West Taylor Street 60607",
+            "rating": "4.0",
+            "cuisine": "Fast Food, Italian, Sandwich"
         },
-        "Killer Cafe": {
-            "name": "Killer Cafe",
-            "address": "4211 Admiralty Way 90292",
-            "rating": "3.4",
-            "cuisine": "American, Breakfast, California"
-        },
-        "The Butcher's Daughter": {
-            "name": "The Butcher's Daughter",
-            "address": "1205 Abbot Kinney",
-            "rating": "3.0",
-            "cuisine": ""
+        "Athena": {
+            "name": "Athena",
+            "address": "212 S Halsted Street, Chicago 60661",
+            "rating": "4.0",
+            "cuisine": "Greek, Mediterranean"
         }
     },
     "weather_data": {
@@ -70,106 +70,7 @@
     },
     "lodging_data": {
         "html_attributions": [],
-        "results": [
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 33.9873389,
-                        "lng": -118.4646893
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 33.98882937989272,
-                            "lng": -118.4632843201072
-                        },
-                        "southwest": {
-                            "lat": 33.98612972010728,
-                            "lng": -118.4659839798927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "716558b43775d1939bf4092a6c2a4982ac171da4",
-                "name": "PodShare Venice",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 1221,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/104306262431044537445\">Tanguy_ Sw</a>"
-                        ],
-                        "photo_reference": "CmRaAAAAJ3Uqk6W4oSuaxy6_gW8poGamxBzKqbxhqUM0zx1pV1_KVhoB4imdVkTIfFCmAgryc2gwaKW8YHxncHggjr42CjpuvfbWuygd8f0rBylauvo6ZTIYGy66fxYc-t4bPI8aEhCKCRLqqRT2dOxVgfILQyM4GhTUBx8-YQPjKAPpTI-1JGDx7m2SNA",
-                        "width": 2576
-                    }
-                ],
-                "place_id": "ChIJ3e59c766woAR_LuLtJaF7gk",
-                "plus_code": {
-                    "compound_code": "XGPP+W4 Venice, Los Angeles, CA",
-                    "global_code": "8553XGPP+W4"
-                },
-                "rating": 4.3,
-                "reference": "ChIJ3e59c766woAR_LuLtJaF7gk",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 204,
-                "vicinity": "522 Venice Blvd, Venice"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 33.98695,
-                        "lng": -118.47245
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 33.98846232989272,
-                            "lng": -118.4708424701073
-                        },
-                        "southwest": {
-                            "lat": 33.98576267010728,
-                            "lng": -118.4735421298927
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "cef4e1ab9a121f4b7ee3d55f030bc0d06fe891f4",
-                "name": "Hotel Erwin",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 2269,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/114337980874516679943\">A Google User</a>"
-                        ],
-                        "photo_reference": "CmRaAAAA4HGHjEauFsYZVwi0WsXVfysTKpV94CFBO_QGeeydAsXwEoZ5JsGv5LnLypge3mMt8mbrg5WmCcbbEsng66kQvT1MzPhwsDlkkcdNm0ijR93nG-wpJ5wCrqU-RlDhfV_TEhD5k4uDTZrYawbdv3aAxg2ZGhRcRqZXTR1LCCHckmycQSmQeBEv4w",
-                        "width": 4032
-                    }
-                ],
-                "place_id": "ChIJ2y1Dpbm6woARP3MtcSoZ8OI",
-                "plus_code": {
-                    "compound_code": "XGPH+Q2 Venice, Los Angeles, CA",
-                    "global_code": "8553XGPH+Q2"
-                },
-                "rating": 4.3,
-                "reference": "ChIJ2y1Dpbm6woARP3MtcSoZ8OI",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 1583,
-                "vicinity": "1697 Pacific Ave, Venice"
-            }
-        ],
-        "status": "OK"
+        "results": [],
+        "status": "ZERO_RESULTS"
     }
 }
