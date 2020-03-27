@@ -3,21 +3,10 @@
     "longt": -87.64171,
     "population_size": 23897,
     "population_information": {
-        "population_density_per_sq_mi": 10299.0
+        "population_density_per_sq_mi": 11359.0
     },
     "crime_data": {
-        "robbery": 11,
-        "rape-legacy": 0,
-        "rape": 0,
-        "violent-crime": 18,
-        "motor-vehicle-theft": 3,
-        "property-crime": 481,
-        "larceny": 459,
-        "human-trafficing": 0,
-        "homicide": 0,
-        "aggravated-assault": 7,
-        "burglary": 19,
-        "arson": 0
+        "NO_KEY": "NO MATCHING ORI WAS FOUND FOR CITY Playa Del Rey"
     },
     "restraunt_data": {
         "Yolk (South Loop)": {

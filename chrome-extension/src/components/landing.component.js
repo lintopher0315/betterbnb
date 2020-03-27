@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spinner } from 'react-bootstrap'
+import { Spinner, Form, Button } from 'react-bootstrap'
 import axios from 'axios'
 
 export default class Landing extends Component {
@@ -9,9 +9,11 @@ export default class Landing extends Component {
         this.state = {
             currentMsg: "Visit an Airbnb listing to get started...",
             gathering: false,
-            dataObj: undefined
+            dataObj: undefined,
+            url: undefined
         }
-        this.getRestaurant=this.getRestaurant.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         
         
         window.chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -37,8 +39,11 @@ export default class Landing extends Component {
             }
           })
 
-    } 
+        this.enteredUrl = (newUrl) => this.setState({
+            url: newUrl
+        })
 
+    }
 
     componentDidMount() {
         //                configData: message.configData
@@ -49,6 +54,21 @@ export default class Landing extends Component {
     getRestaurant(someint) {
         let restaurants = Object.keys(this.state.dataObj.restraunt_data)
         return restaurants[someint]
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        this.setState({
+            url: value
+        });
+    }
+
+    handleSubmit(event) {
+        let currentUrl = this.state.url
+        let redirectUrl = 'http://localhost:3000/details/' + currentUrl
+        window.chrome.tabs.create({'url': redirectUrl})
+        
     }
 
     
@@ -84,10 +104,19 @@ export default class Landing extends Component {
         }
         else if (!this.state.gathering) {
             return(
-                <div className='container' style={{paddingTop: "35%"}}>
+                <div className='container' style={{paddingTop: "10%"}}>
                     <div className='text-center'>
                         <Spinner animation="grow" variant="dark" />
                         <p>{this.state.currentMsg}</p> 
+                        <hr />
+                        <h3>OR</h3>
+                        <Form>
+                            <Form.Group controlId="formAirbnbUrl">
+                                <Form.Control type="text" placeholder="Airbnb url" value={this.state.url} onChange={this.handleInputChange} />
+                            </Form.Group>
+                            <Button variant='outline-primary' onClick={this.handleSubmit}>Enter</Button>
+                        </Form>
+                        
                     </div>
                 </div>
             )

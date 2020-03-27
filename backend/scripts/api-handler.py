@@ -16,7 +16,8 @@ if __name__ == "__main__":
         compile_info_lat_long(latlong[0], latlong[1])
         print("success", end="")
         sys.stdout.flush()
-    except: 
+    except Exception as err: 
+        print(err)
         print("error", end="")
         sys.stdout.flush()
 

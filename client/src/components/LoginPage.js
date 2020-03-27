@@ -34,11 +34,13 @@ export default class LoginPage extends React.Component {
         console.log(this.state);
         axios
             .post('http://localhost:5000/login', {username: this.state.email, password: this.state.password})
-            .then(() => console.log('Attempting to Login'))
+            .then((res) => {
+                window.location.href = `/userhome/?q=` + res['data'];
+            })
             .catch(err => {
                 console.error(err);
         });   
-        //window.location.href = `/userhome/?q=`;
+        
         this.setState({
             email: '',
             password: ''
