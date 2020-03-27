@@ -152,6 +152,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: 'http://localhost:3000/login' }),
   function(req, res) {
     //console.log(req.user);
+    //console.log(res)
     res.redirect('http://localhost:3000/userhome?q=' + req.user._id);
   });
 
@@ -161,9 +162,11 @@ app.post('/login',
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-    //console.log(req.user);
-    res.redirect('http://localhost:3000/userhome?q=' + req.user._id);
+    //console.log(res);
+    console.log(req.user.id);
+    res.send(req.user.id);
   });
+
 
 // Route that recieves a GET for logout  
 app.get('/logout', function(req, res) {
@@ -198,14 +201,15 @@ app.post('/removeListing', function(req, res) {
     let id = req.body.id;
     let url = req.body.url;
     let listings = []
-    User.findOne({ _id : id }, function(err, user) {
+    /*User.findOne({ _id : id }, function(err, user) {
         if (err) { console.log("user doesn't exist"); }
         listings = user.listings
       });
     listings = listings.filter(function(listing) {
         return listing !== url;
     });
-    User.update({_id : id}, {listings: listings}, err => {
+    */
+    User.update({_id : id}, { $pull: { listings: url } } , err => {
         if (err) {
             console.log(err);
         } else {
@@ -220,20 +224,19 @@ app.post('/addListing', function(req, res) {
     let listings = []
     console.log(id);
     console.log(url)
-    User.findOne({ _id : id }, function(err, user) {
-        if (err) { console.log("user doesn't exist") }
-        listings = user.listings
-      });
-    console.log(listings);
-    listings.push(url)
-    User.update({_id : id}, {$addToSet: {listings: listings}}, err => {
+    //User.findOne({ _id : id }, function(err, user) {
+    //    if (err) { console.log("user doesn't exist") }
+    //    listings = user.listings
+    //  });
+    //console.log(listings);
+    //listings.push(url)
+    User.update({_id : id}, {$addToSet: {listings: url}}, err => {
         if (err) {
             console.log(err);
         } else {
             console.log("Added listing with url: " + url);
         }
     });
-    console.log(listings)
 })
 
 app.post('/getListings', function(req, res) {
