@@ -11,8 +11,14 @@ function Header(props) {
     const [key, setKey] = useState(0);
 
     useEffect(() => {
-        if (window.location.search.includes('=')) {
-            setKey(window.location.search.split('=')[1]);
+        if (window.location.search.includes('?q=')) {
+            let query = window.location.search.split('=')[1];
+            if (query.includes("&url")) {
+                setKey(query.substring(0, query.indexOf("&url")));
+            }
+            else {
+                setKey(query);
+            }
         }
         else {
             setKey('undefined');
