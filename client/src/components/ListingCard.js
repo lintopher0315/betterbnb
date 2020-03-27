@@ -47,7 +47,7 @@ function ListingCard(props) {
                     <Favorite />
                 </IconButton>
                 
-                <Link id="listing-card-title-link" to={{pathname: '/details', search: window.location.search.split('=')[1]}}>
+                <Link id="listing-card-title-link" to={{pathname: '/details', search: `?q=${window.location.search.split('=')[1]}`}}>
                     <h3 className="listing-card-title">
                         {props.title}
                     </h3>
