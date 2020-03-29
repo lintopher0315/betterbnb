@@ -8,10 +8,64 @@ export class Preferences extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: null
+            preferences: [["crime", 50], ["langprevalence", 50],
+             ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
         }
         
     }
+
+    componentDidMount() {
+        //console.log(this.props.match.params)
+    }
+
+
+    handleChildClick  = (data) => {
+        console.log("The data is", data)
+
+        /* updating corresponding part of state*/
+        let cpyarr;
+        switch (data.pref) {
+            
+            case 'crime':
+                cpyarr = this.state.preferences
+                cpyarr[0][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+            case 'langprevalence':
+                cpyarr = this.state.preferences
+                cpyarr[1][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+            case 'restaurants':
+                cpyarr = this.state.preferences
+                cpyarr[2][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+            case 'lodging':
+                cpyarr = this.state.preferences
+                cpyarr[3][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+            case 'population':
+                cpyarr = this.state.preferences
+                cpyarr[4][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+            case 'weather':
+                cpyarr = this.state.preferences
+                cpyarr[5][1] = data.x
+                this.setState({preferences: cpyarr})
+                break;
+              
+          }
+        
+    }
+
+    handleButtonClick = () => {
+        console.log(this.state)
+
+    }
+
     render() {
         return (
             <div>
@@ -30,8 +84,7 @@ export class Preferences extends Component {
                         </Row>
                         
                         <Row>
-                            <SliderComp x={50}/>
-
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[0][0]} x={50}/>
                         </Row>
                         
                     </div>
@@ -49,7 +102,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp x={50}/>
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[1][0]} x={50}/>
                         </Row>
                            
                     </div>
@@ -65,7 +118,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp x={50}/>
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[2][0]} x={50}/>
                         </Row>
                            
                     </div>
@@ -82,7 +135,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp x={50}/>
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[3][0]} x={50}/>
                         </Row>
                            
                     </div>
@@ -100,7 +153,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp x={50}/>
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[4][0]} x={50}/>
                         </Row>
                            
                     </div>
@@ -118,9 +171,15 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp x={50}/>
+                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[5][0]} x={50}/>
                         </Row>
                            
+                    </div>
+                    <div>
+                        <Row>
+                            <Button onClick={this.handleButtonClick} className="pref-button">Save My Preferences</Button>
+                        </Row>
+                        
                     </div>
                 </Container>
               

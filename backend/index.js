@@ -247,6 +247,14 @@ app.post('/getListings', function(req, res) {
       });
 })
 
+app.post('/getprefs', function(req, res) {
+    let id = req.body.id
+    User.findOne({ _id: id}, function(req, res) {
+        if (err) { return done(err); }
+        res.send(user.preferences)
+    });
+})
+
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
     const body = req.body.Body

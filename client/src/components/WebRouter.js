@@ -28,7 +28,7 @@ function WebRouter() {
                 <Route path='/userhome' component={() => <UserHome />} />
                 <Route path='/report' component={() => <Report />} />
                 <Route path='/savedlistings' component={() => <SavedListing />} />
-                <Route path='/preferences' component={() => <Preferences />} />
+                <Route path='/preferences/' component={() => <Preferences />} />
                 
             </Switch>
         </div>

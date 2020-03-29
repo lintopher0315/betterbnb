@@ -6,13 +6,31 @@ import "./SliderComp.css"
 /*  https://reactjsexample.com/react-input-slider-component/  */
 /*  Full styling props can be found there                     */
 
-function SliderComp(props) {
-    const [state, setState] = useState({ x: props.x, y: props.y });
 
+function SliderComp(props) {
+
+    const [state, setState] = useState({ preference: props.pref, x: props.x, y: props.y});
+    const mypref = props.pref
+
+    // handleClick = () => {
+    //   onChildClick(state)
+      
+
+    // }
+
+    function handleClick(event) {
+      const obj = {
+        x: state.x,
+        y: 0,
+        pref: mypref
+      }
+      props.onChildClick(obj)
+    }
+
+    
     return (
-        <div>
-     
-            <Slider  className="customSlider" axis="x" x={state.x} y={state.y} onChange={setState} 
+        <div> 
+            <Slider  className="customSlider" axis="x" x={state.x} onChange={setState} onMouseUp={handleClick}
             
             styles={{
                 track: {
@@ -23,8 +41,8 @@ function SliderComp(props) {
                   backgroundColor: '#3fb7eb'
                 },
                 thumb: {
-                  width: 25,
-                  height: 25
+                  width: 35,
+                  height: 35
                 }
               }}
               />
