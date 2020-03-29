@@ -1,22 +1,51 @@
 import React, { Component } from 'react'
 import SliderComp from './SliderComp.js'
+import Slider from 'react-input-slider'
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 import "./Preferences.css"
+import axios from 'axios'
 
 export class Preferences extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            id: "default",
             preferences: [["crime", 50], ["langprevalence", 50],
              ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
+            loaded: false
+            
         }
         
     }
 
-    componentDidMount() {
-        //console.log(this.props.match.params)
+    componentWillMount() {
+        /* grabing the userid */
+       
+
     }
+
+    componentDidMount() {
+        if (window.location.search) {
+            let userid = window.location.search.split('=')[1]
+            this.setState({id: userid})
+
+            axios.post('http://localhost:5000/getprefs', {id: userid})
+                    .then(response => {
+                        console.log(response.data)
+                        this.setState({preferences: response.data})
+                        this.setState({loaded: true})
+                        console.log("Updated state")
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+           
+
+        }
+    }
+
+    getData() {}
 
 
     handleChildClick  = (data) => {
@@ -61,8 +90,28 @@ export class Preferences extends Component {
         
     }
 
+    /* 
+    axios.post("http://localhost:5000/addListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
+    
+    
+    */
     handleButtonClick = () => {
-        console.log(this.state)
+
+        console.log("State is ", this.state.preferences)
+
+        let requestObj = {
+            id: this.state.id,
+            prefs: this.state.preferences
+        }
+        axios.post("http://localhost:5000/setprefs", requestObj)
+            .then(() => console.log("Set preferences"))
+            .catch(err => {
+                console.log(err)
+            })
 
     }
 
@@ -72,7 +121,6 @@ export class Preferences extends Component {
                 <h1 id="title">Preferences</h1>
                 <hr id="line"></hr>
                 <Container>
-                    
                     <div className="preferencesBlock">
                         <Row>
                             <h3>Crime Data</h3>
@@ -84,7 +132,7 @@ export class Preferences extends Component {
                         </Row>
                         
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[0][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[0][0]} x={this.state.preferences[0][1]}/>
                         </Row>
                         
                     </div>
@@ -102,7 +150,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[1][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[1][0]} x={this.state.preferences[1][1]}/>
                         </Row>
                            
                     </div>
@@ -118,7 +166,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[2][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[2][0]} x={this.state.preferences[2][1]}/>
                         </Row>
                            
                     </div>
@@ -135,7 +183,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[3][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[3][0]} x={this.state.preferences[3][1]}/>
                         </Row>
                            
                     </div>
@@ -153,7 +201,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[4][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[4][0]} x={this.state.preferences[4][1]}/>
                         </Row>
                            
                     </div>
@@ -171,7 +219,7 @@ export class Preferences extends Component {
                         </Row>
 
                         <Row>
-                            <SliderComp onChildClick={this.handleChildClick} pref={this.state.preferences[5][0]} x={50}/>
+                            <SliderComp key={this.state.loaded} onChildClick={this.handleChildClick} pref={this.state.preferences[5][0]} x={this.state.preferences[5][1]}/>
                         </Row>
                            
                     </div>

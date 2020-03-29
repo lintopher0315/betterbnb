@@ -10,6 +10,7 @@ import "./SliderComp.css"
 function SliderComp(props) {
 
     const [state, setState] = useState({ preference: props.pref, x: props.x, y: props.y});
+    //const [state, setState] = useState({x: props.x, y: props.y});
     const mypref = props.pref
 
     // handleClick = () => {
@@ -18,7 +19,7 @@ function SliderComp(props) {
 
     // }
 
-    function handleClick(event) {
+    function handleClick() {
       const obj = {
         x: state.x,
         y: 0,

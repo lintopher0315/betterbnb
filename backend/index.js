@@ -248,12 +248,30 @@ app.post('/getListings', function(req, res) {
 })
 
 app.post('/getprefs', function(req, res) {
+    console.log("inside getprefs")
+    console.log(req.body.id)
     let id = req.body.id
-    User.findOne({ _id: id}, function(req, res) {
+    User.findOne({ _id: id}, function(err, user) {
         if (err) { return done(err); }
+        console.log(user)
         res.send(user.preferences)
     });
 })
+
+app.post('/setprefs', function(req, res) {
+    let id = req.body.id
+    let prefs = req.body.prefs
+    User.update({ _id: id}, {preferences: prefs}, err => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(200)
+            console.log("Preferences are now" + prefs)
+        }
+    })
+
+})
+    
 
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
