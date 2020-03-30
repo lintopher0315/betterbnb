@@ -35,6 +35,7 @@ export default class Contact extends React.Component {
             .catch(err => {
                 console.error(err);
         });
+        alert("Thank you for contacting betterbnb.");
 
         this.setState({
             email: '',
