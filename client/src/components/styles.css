@@ -392,3 +392,30 @@ body {
 #user-home {
     padding-top: 100px;
 }
+
+#saved-listing-title {
+    font-family: 'Dosis';
+    font-size: 32px;
+}
+
+#saved-listing-btn {
+    padding-left: 20px;
+    background: white;
+    transition: all .25s ease;
+    width: 580px;
+    height: 460px;
+    border-radius: 10px;
+}
+
+#saved-listing-btn:hover #saved-listing-img {
+    height: 290px;
+    width: 530px;
+}
+
+#saved-listing-img {
+    border-radius: 10px;
+    height: 300px;
+    width: 540px;
+    margin-bottom: 20px;
+    transition: all .25s ease;
+}
