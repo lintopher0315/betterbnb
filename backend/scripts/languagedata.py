@@ -38,9 +38,10 @@ def getlanguage(lang):
 ### Note ###
 #https://geo.fcc.gov/api/census/area is a good workaround for census data requireing FIPS code
 #It gets the code
-def get_data_with_lat_long(lat, lng):
+def get_data_with_lat_long(lat, lng, language):
     #county = extract_county_with_lat_lng(lat, lng)
 
+    
     #URL used for API called to census geocode API to get fips code
     fips_url = "https://geo.fcc.gov/api/census/area?lat=" + str(lat) + "&lon=" + str(lng)
     fips_response = requests.get(fips_url)
@@ -49,7 +50,7 @@ def get_data_with_lat_long(lat, lng):
     stat_url = None
     try:
         fips_code = fips_response.json().get("results")[0].get('county_fips')
-        stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=625&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
+        stat_url = "https://api.census.gov/data/2013/language?get=EST,LANLABEL,NAME&for=county:" + str(fips_code[2:5]) + "&in=state:" + str(fips_code[0:2]) + "&LAN=" + str(getlanguage(language)) + "&key=2de98270881029a50d90a8e6f4d56c6fb6216872"
         stat_response = requests.get(stat_url)
     except IndexError:
         fips_code = None

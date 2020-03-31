@@ -1,0 +1,33 @@
+#######Contact Page Manual Tests#######
+
+###Test Case 1###
+Test case 1: Ensure messages can be sent with a subject to the service
+
+Steps:
+Go to the contact page
+Fill out the email address field with "test@gmail.com"
+Fill out the subject field with "Hello"
+Fill out the message field with "The quick brown fox jumped over the lazy dog"
+
+
+Expected results:
+An email from "test@gmail.com" with the subject "Hello" with the message "The quick brown fox jumped over the lazy dog"
+
+Acutal resutls:
+As expected
+
+
+###Test Case 2###
+Test case 2: Ensure messages can be sent without subject to the service
+
+Steps:
+Go to the contact page
+Fill out the email address field with "test@gmail.com"
+Fill out the message field with "The quick brown fox jumped over the lazy dog"
+
+
+Expected results:
+An email from "test@gmail.com" and with the message "The quick brown fox jumped over the lazy dog"
+
+Acutal resutls:
+As expected

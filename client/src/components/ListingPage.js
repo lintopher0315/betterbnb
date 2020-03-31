@@ -1,13 +1,23 @@
 import React from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
+
+const CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
+
+const carousel_settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+}
 
 export default class ListingPage extends React.Component {
     
@@ -23,9 +33,6 @@ export default class ListingPage extends React.Component {
             data: undefined,
             redirection: false
         }
-
-       
-
     }
 
     onSaveListing(e) {
@@ -150,6 +157,39 @@ export default class ListingPage extends React.Component {
             }]
         }
 
+        let lodgings = this.state.data.lodging_data.results.map((result, i) => {
+            if (typeof(result.photos) !== "undefined") {
+                return (
+                    <div style={{position: "relative"}} key={i}>
+                        <img id="lodging-img" alt={result.name} src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${result.photos[0].photo_reference}&sensor=false&maxheight=400&maxwidth=400&key=${CONSTANT_GOOGLE_API_KEY}`} />
+                        <div id="lodging-info">
+                            {
+                                result.name.length>25 ? result.name.substring(0, 25)+"..." : result.name
+                            }
+                            <div style={{top: '50px', fontSize: "16px"}}>
+                                {result.vicinity}
+                            </div>
+                            <div style={{position: "relative", top: "10px", fontSize: '18px'}}>
+                                <Rating
+                                    name={'rating'}
+                                    value={result.rating}
+                                    size={'small'}
+                                />
+                                ({result.user_ratings_total})
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            else {
+                return (
+                    <div style={{position: "relative"}} key={i}>
+                        <img id="lodging-img" alt={result.name} src="https://i.picsum.photos/id/237/400/400.jpg" />
+                    </div>
+                )
+            }
+        })
+
         return (
             <div>
                 <div id="carousel-container">
@@ -246,6 +286,14 @@ export default class ListingPage extends React.Component {
                                 </div>
                             </div>
                         </Col>
+
+                        <Col>
+                            <div id="area-col-next">
+                                <div id="listing-sub-title-second">
+                                    Population
+                                </div>
+                            </div>
+                        </Col>
                     </Row>
 
                     <Row>
@@ -257,13 +305,45 @@ export default class ListingPage extends React.Component {
                                 </div>
                             </div>
                         </Col>
+
+                        <Col>
+                            <Container style={{paddingTop: "50px"}}>
+                                <Row>
+                                    <Col>
+                                        <div style={{float: 'right', paddingRight: '200px'}}>
+                                            <img alt="population" src={require("../res/population.png")} />
+                                        </div>
+                                    </Col>
+                                    
+                                    <Col>
+                                        <div style={{float: 'left', paddingLeft: '0px'}}>
+                                            <img alt="pop_density" src={require("../res/pop_density.png")} />
+                                        </div>
+                                    </Col>
+                                </Row>
+
+                                <Row>
+                                    <Col>
+                                        <div id="listing-desc-text" style={{float: 'right', paddingRight: '230px'}}>
+                                            {this.state.data.population_size} Total
+                                        </div>
+                                    </Col>
+
+                                    <Col>
+                                        <div id="listing-desc-text" style={{float: 'left', paddingLeft: '5px'}}>
+                                            {this.state.data.population_information.population_density_per_sq_mi} per Square Mile
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Col>
                     </Row>
 
                     <Row>
                         <Col>
                             <div id="area-col">
                                 <div id="listing-sub-title-second">
-                                    Population
+                                    Nearby Lodging
                                 </div>
                             </div>
                         </Col>
@@ -271,28 +351,10 @@ export default class ListingPage extends React.Component {
 
                     <Row>
                         <Col>
-                            <div style={{float: 'right', paddingRight: '100px'}}>
-                                <img alt="population" src={require("../res/population.png")} />
-                            </div>
-                        </Col>
-                        
-                        <Col>
-                            <div style={{float: 'left', paddingLeft: '100px'}}>
-                                <img alt="pop_density" src={require("../res/pop_density.png")} />
-                            </div>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col>
-                            <div id="listing-desc-text" style={{float: 'right', paddingRight: '143px'}}>
-                                {this.state.data.population_size} Total
-                            </div>
-                        </Col>
-
-                        <Col>
-                            <div id="listing-desc-text" style={{float: 'left', paddingLeft: '105px'}}>
-                                {this.state.data.population_information.population_density_per_sq_mi} per Square Mile
+                            <div id="lodging-container">
+                                <Slider {...carousel_settings}>
+                                    {lodgings}
+                                </Slider>
                             </div>
                         </Col>
                     </Row>

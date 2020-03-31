@@ -1,78 +1,78 @@
 {
-    "lat": 41.87864,
-    "longt": -87.64043,
-    "population_size": 2308,
+    "lat": 41.87781,
+    "longt": -87.77756,
+    "population_size": 17231,
     "population_information": {
-        "population_density_per_sq_mi": 9034.0
+        "population_density_per_sq_mi": 11244.0
     },
     "crime_data": {
-        "robbery": 11,
-        "rape-legacy": 0,
-        "rape": 0,
-        "violent-crime": 18,
-        "motor-vehicle-theft": 3,
-        "property-crime": 481,
-        "larceny": 459,
+        "property-crime": 1619,
+        "rape": 2,
+        "motor-vehicle-theft": 85,
         "human-trafficing": 0,
+        "larceny": 1157,
+        "rape-legacy": 0,
         "homicide": 0,
-        "aggravated-assault": 7,
-        "burglary": 19,
-        "arson": 0
+        "robbery": 74,
+        "burglary": 377,
+        "violent-crime": 115,
+        "arson": 3,
+        "aggravated-assault": 39
     },
     "restraunt_data": {
-        "Girl & The Goat": {
-            "name": "Girl & The Goat",
-            "address": "809 West Randolph 60607",
-            "rating": "4.8",
-            "cuisine": "New American"
-        },
-        "Au Cheval": {
-            "name": "Au Cheval",
-            "address": "800 W Randolph Street, Chicago 60607",
-            "rating": "4.7",
-            "cuisine": "Burger, New American, Diner"
-        },
-        "Lou Malnati's Pizzeria": {
-            "name": "Lou Malnati's Pizzeria",
-            "address": "439 N Wells Street 60654",
-            "rating": "4.6",
-            "cuisine": "Pizza"
-        },
-        "The Publican": {
-            "name": "The Publican",
-            "address": "837 W Fulton Market, Chicago 60607",
-            "rating": "4.6",
-            "cuisine": "American"
-        },
-        "Greek Islands": {
-            "name": "Greek Islands",
-            "address": "200 S Halsted Street, Chicago 60661",
-            "rating": "4.6",
-            "cuisine": "Greek, Mediterranean"
-        },
-        "Carnivale": {
-            "name": "Carnivale",
-            "address": "702 W Fulton Market, Chicago 60661",
-            "rating": "4.5",
-            "cuisine": "Cuban, Mexican, Latin American"
-        },
-        "Little Goat Diner": {
-            "name": "Little Goat Diner",
-            "address": "820 West. Randolph Street 60607",
-            "rating": "4.5",
-            "cuisine": "New American, Bakery"
-        },
-        "Avec": {
-            "name": "Avec",
-            "address": "615 W Randolph Street, Chicago 60661",
-            "rating": "4.5",
-            "cuisine": "Mediterranean"
-        },
-        "Blackbird": {
-            "name": "Blackbird",
-            "address": "619 W Randolph Street, Chicago 60661",
+        "Maya Del Sol": {
+            "name": "Maya Del Sol",
+            "address": "144 South Oak Park Avenue, Oak Park 60304",
             "rating": "4.4",
-            "cuisine": "American"
+            "cuisine": "Latin American, Mexican"
+        },
+        "New Rebozo Mexican Restaurant": {
+            "name": "New Rebozo Mexican Restaurant",
+            "address": "1116 Madison Street, Oak Park 60302",
+            "rating": "4.4",
+            "cuisine": "Mexican"
+        },
+        "Five Guys Burgers and Fries": {
+            "name": "Five Guys Burgers and Fries",
+            "address": "1115 Lake Street, Oak Park 60301",
+            "rating": "4.4",
+            "cuisine": "Burger"
+        },
+        "Mama Thai": {
+            "name": "Mama Thai",
+            "address": "1112 Madison Street, Oak Park 60302",
+            "rating": "4.3",
+            "cuisine": "Thai"
+        },
+        "Poor Phil's Bar & Grill": {
+            "name": "Poor Phil's Bar & Grill",
+            "address": "139 S. Marion Street, Oak Park 60302",
+            "rating": "4.2",
+            "cuisine": "American, Sandwich, Seafood"
+        },
+        "Cucina Paradiso": {
+            "name": "Cucina Paradiso",
+            "address": "814 North Boulevard, Oak Park 60301",
+            "rating": "4.2",
+            "cuisine": "Italian"
+        },
+        "Giordano's": {
+            "name": "Giordano's",
+            "address": "1115 Chicago Avenue 60302",
+            "rating": "4.0",
+            "cuisine": "Italian, Pizza"
+        },
+        "Jerusalem Cafe": {
+            "name": "Jerusalem Cafe",
+            "address": "1030 Lake Street, Oak Park 60301",
+            "rating": "3.7",
+            "cuisine": "Middle Eastern"
+        },
+        "Khyber Pass": {
+            "name": "Khyber Pass",
+            "address": "1031 Lake Street 60301",
+            "rating": "3.7",
+            "cuisine": "Indian"
         }
     },
     "weather_data": {
@@ -81,155 +81,7 @@
     },
     "lodging_data": {
         "html_attributions": [],
-        "results": [
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.8838435,
-                        "lng": -87.6430652
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.88520047989272,
-                            "lng": -87.64154102010727
-                        },
-                        "southwest": {
-                            "lat": 41.88250082010728,
-                            "lng": -87.64424067989272
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "d3e5846bab4de80127215ce4c075fae5dcd32bbe",
-                "name": "Hampton Inn Chicago Downtown West Loop",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 4000,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/102864565241352840124\">Hampton Inn Chicago West Loop</a>"
-                        ],
-                        "photo_reference": "CmRaAAAANlV585nM0SGkEoOtWKz1rdPiMIBDZ9pQ64L0JSf75rc5RhKLO2ZBjLZdIvnYW0ePkiyiTxRtVZ_R1LMi_EiPlzWhkiUsLac2kPWAGqd6yY5taDPR4thOtI2Owdmmre84EhC2ljN5n5A51J1f8u_yh7SkGhTSbagkVGc_JzGcuaMXKB7p__p9sw",
-                        "width": 5992
-                    }
-                ],
-                "place_id": "ChIJ21QlcMYsDogRM_HmOgyBA34",
-                "plus_code": {
-                    "compound_code": "V9M4+GQ Chicago, Illinois",
-                    "global_code": "86HJV9M4+GQ"
-                },
-                "rating": 4.5,
-                "reference": "ChIJ21QlcMYsDogRM_HmOgyBA34",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 819,
-                "vicinity": "116 N Jefferson St, Chicago"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.8838639,
-                        "lng": -87.643138
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.88525462989273,
-                            "lng": -87.64157752010728
-                        },
-                        "southwest": {
-                            "lat": 41.88255497010729,
-                            "lng": -87.64427717989271
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "caebd42a24355d2cdafcf70c6ca67d6426fad897",
-                "name": "Homewood Suites by Hilton Chicago Downtown West Loop",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 4000,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/104490863994132584592\">Homewood Suites by Hilton Chicago Downtown West Loop</a>"
-                        ],
-                        "photo_reference": "CmRaAAAApZG-FfqPdUYQHqOdW_4qywFrMSMBgz9kRD1MpmiaO_HMg9CgRYCqdYp0T7GgDICxjefJN4MsVLuLmpiz0Q_wd0AQ4y0IWMd6huBybu72zCa0Bb7ZKT_-GvX8DmfIcMPaEhAVB8KkeLJZ3KlIhYwXQpHqGhTtbzcSF9WHp8HzmVg2oho1REYMoQ",
-                        "width": 5992
-                    }
-                ],
-                "place_id": "ChIJQYIycMYsDogRGXREWIQWv2U",
-                "plus_code": {
-                    "compound_code": "V9M4+GP Chicago, Illinois",
-                    "global_code": "86HJV9M4+GP"
-                },
-                "rating": 4.6,
-                "reference": "ChIJQYIycMYsDogRGXREWIQWv2U",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 390,
-                "vicinity": "118 N Jefferson St, Chicago"
-            },
-            {
-                "geometry": {
-                    "location": {
-                        "lat": 41.8760598,
-                        "lng": -87.6321639
-                    },
-                    "viewport": {
-                        "northeast": {
-                            "lat": 41.87735587989273,
-                            "lng": -87.63060762010728
-                        },
-                        "southwest": {
-                            "lat": 41.87465622010728,
-                            "lng": -87.63330727989272
-                        }
-                    }
-                },
-                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-                "id": "a90534d37384d2982430056db4bc75ff53cb2e97",
-                "name": "The Buckingham Hotel",
-                "opening_hours": {
-                    "open_now": true
-                },
-                "photos": [
-                    {
-                        "height": 4899,
-                        "html_attributions": [
-                            "<a href=\"https://maps.google.com/maps/contrib/102673152365232879901\">A Google User</a>"
-                        ],
-                        "photo_reference": "CmRaAAAADcH2WqPSJ3ycmo8-n-aHLnSc9VbS_N1C8Qip2K7omqvUXnmLN7bs8mLEQV1LoCShQI7M4sbveP9MhCmdkN3TMuC4fWvyV4zxbj72arlhm9evy_coN4r_DQN3Ggbg_KM2EhDpS4mdNy4D_O-3tVquj_I1GhQoDnhoOQsKDSYXc6_yHS6J1tapzw",
-                        "width": 7341
-                    }
-                ],
-                "place_id": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "plus_code": {
-                    "compound_code": "V9G9+C4 Chicago, Illinois",
-                    "global_code": "86HJV9G9+C4"
-                },
-                "rating": 4.4,
-                "reference": "ChIJK3Ymib0sDogR1dZtqCGG5HQ",
-                "scope": "GOOGLE",
-                "types": [
-                    "lodging",
-                    "point_of_interest",
-                    "establishment"
-                ],
-                "user_ratings_total": 136,
-                "vicinity": "425 S Financial Pl, Chicago"
-            }
-        ],
-        "status": "OK"
+        "results": [],
+        "status": "ZERO_RESULTS"
     }
 }

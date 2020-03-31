@@ -6,16 +6,23 @@ export default class Landing extends Component {
 
     constructor(props) {
         super(props)
+
         this.state = {
             currentMsg: "Visit an Airbnb listing to get started...",
             gathering: false,
             dataObj: undefined,
-            url: undefined
+            url: undefined,
+            makeCall: false
         }
+        
+        
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.makeAPICall = this.makeAPICall.bind(this);
+
         
-        
+
+
         window.chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             if (message.type === "BETTERBNB_PLUGIN_EVALUATED_CONFIG") {
                 let currentUrl = message.configData
@@ -33,6 +40,7 @@ export default class Landing extends Component {
                     })
                     .catch(err => {
                         console.log(err)
+                        this.setState({currentMsg: "Error gathering information..."})
                     })
 
                 }
@@ -45,10 +53,32 @@ export default class Landing extends Component {
 
     }
 
+    checkUrl() {
+
+    }
+
     componentDidMount() {
         //                configData: message.configData
        /* 
         */
+       // make API call 
+
+    }
+
+
+    makeAPICall(currentUrl) {
+        this.setState({currentMsg: "Gathering information (please wait)..."})
+        axios.get('http://localhost:5000/api/report', {headers: {"url": currentUrl}})
+        .then(response => {
+            //res.send(response.data);
+            console.log(response.data)
+            this.setState({dataObj: response.data, gathering: false})
+        })
+        .catch(err => {
+            console.log(err)
+            this.setState({currentMsg: "Error gathering information...", gathering: false})
+        })
+        
     }
 
     getRestaurant(someint) {
@@ -66,7 +96,7 @@ export default class Landing extends Component {
 
     handleSubmit(event) {
         let currentUrl = this.state.url
-        let redirectUrl = 'http://localhost:3000/details/' + currentUrl
+        let redirectUrl = 'http://localhost:3000/details/?url=' + currentUrl
         window.chrome.tabs.create({'url': redirectUrl})
         
     }
@@ -81,12 +111,12 @@ export default class Landing extends Component {
                     <div className='text-center'>
                         <h5>Information:</h5>
                         <hr />
-                        <h6>Local Area Pop: {this.state.dataObj.population_data}</h6>
+                        <h6>Population Density: {this.state.dataObj.population_information.population_density_per_sq_mi}</h6>
                         <hr />
                         <h6>City Crime Stats:</h6>
                         <p>
                         Robbery: {this.state.dataObj.crime_data.robbery}<br /> 
-                        Burgarly: {this.state.dataObj.crime_data.burglary}<br /> 
+                        Property Crime: {this.state.dataObj.crime_data["property-crime"]}<br /> 
                         Larceny: {this.state.dataObj.crime_data.larceny}<br />
                         </p>
                         <hr />
@@ -114,7 +144,7 @@ export default class Landing extends Component {
                             <Form.Group controlId="formAirbnbUrl">
                                 <Form.Control type="text" placeholder="Airbnb url" value={this.state.url} onChange={this.handleInputChange} />
                             </Form.Group>
-                            <Button variant='outline-primary' onClick={this.handleSubmit}>Enter</Button>
+                            <Button variant='outline-dark' onClick={this.handleSubmit}>Enter</Button>
                         </Form>
                         
                     </div>

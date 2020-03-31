@@ -13,7 +13,8 @@ export class Preferences extends Component {
             id: "default",
             preferences: [["crime", 50], ["langprevalence", 50],
              ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
-            loaded: false
+            loaded: false,
+            showConfirm: false
             
         }
         
@@ -33,8 +34,11 @@ export class Preferences extends Component {
             axios.post('http://localhost:5000/getprefs', {id: userid})
                     .then(response => {
                         console.log(response.data)
-                        this.setState({preferences: response.data})
-                        this.setState({loaded: true})
+                        if(response.data[2].length > 0)  {
+                            this.setState({preferences: response.data})
+                            this.setState({loaded: true})
+                        }
+                        
                         console.log("Updated state")
                     })
                     .catch(err => {
@@ -44,9 +48,6 @@ export class Preferences extends Component {
 
         }
     }
-
-    getData() {}
-
 
     handleChildClick  = (data) => {
         console.log("The data is", data)
@@ -100,7 +101,8 @@ export class Preferences extends Component {
     
     */
     handleButtonClick = () => {
-
+        const confirm = this.state.showConfirm
+        this.setState({showConfirm: true})
         console.log("State is ", this.state.preferences)
 
         let requestObj = {
@@ -225,9 +227,19 @@ export class Preferences extends Component {
                     </div>
                     <div>
                         <Row>
-                            <Button onClick={this.handleButtonClick} className="pref-button">Save My Preferences</Button>
+                            <Button onClick={this.handleButtonClick} className="pref-button">Update preferences</Button>
+                            {this.state.showConfirm ? <p>Preferences saved!</p> : <p></p>}
+
                         </Row>
+
+                       
                         
+                    </div>
+
+                    <div>
+                    <Row>
+                        
+                    </Row>
                     </div>
                 </Container>
               

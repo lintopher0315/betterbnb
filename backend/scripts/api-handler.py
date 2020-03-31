@@ -1,5 +1,7 @@
 import os
 import sys
+import random
+import string
 from extract_location_details import extract_lat_lng_with_url
 from compiled_info import compile_info_lat_long
 import json
@@ -9,12 +11,17 @@ import json
 # possible way
 
 if __name__ == "__main__":
+    os.system("rm compiled_data.json 2> /dev/null")
+    os.system("rm ../compiled_data.json 2> /dev/null")
     
+    file_identifier = ''.join([random.choice(string.ascii_letters + string.digits) for i in list(range(6))])
+
     try:
         url = sys.argv[1] 
         latlong = list(extract_lat_lng_with_url(url))
-        compile_info_lat_long(latlong[0], latlong[1])
-        print("success", end="")
+        compile_info_lat_long(latlong[0], latlong[1], file_identifier)
+        out_string = "success " + "compiled_data" + file_identifier + ".json"
+        print(out_string, end="")
         sys.stdout.flush()
     except Exception as err: 
         print(err)

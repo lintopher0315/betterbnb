@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spinner, Form } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
 export default class Settings extends Component {
     constructor(props) {
@@ -39,7 +39,7 @@ export default class Settings extends Component {
     render() {
         console.log(this.state.currentSelection)
         console.log(this.state.crime)
-        var disabled = disabled
+
         return(
             <div className='container' style={{paddingTop: "2%"}}>
                 <div className='text-center'>

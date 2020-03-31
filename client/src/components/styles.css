@@ -303,6 +303,10 @@ body {
     padding-left: 255px;
 }
 
+#area-col-next {
+    width: 550px;
+}
+
 #map-col {
     width: 650px;
 }
@@ -418,4 +422,50 @@ body {
     width: 540px;
     margin-bottom: 20px;
     transition: all .25s ease;
+}
+
+#lodging-img {
+    height: 400px;
+    width: 400px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-filter: brightness(100%);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#lodging-img:hover {
+    -webkit-filter: brightness(30%);
+}
+
+#lodging-img:hover + #lodging-info {
+    opacity: 1;
+}
+
+#lodging-container {
+    width: 1400px;
+    margin-left: 240px;
+    padding-bottom: 70px;
+}
+
+#lodging-info {
+    position: absolute;
+    top: 30px;
+    padding-left: 40px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: rgb(204, 204, 204);
+    opacity: 0;
+    transition: all .5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
 }

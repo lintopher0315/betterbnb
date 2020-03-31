@@ -84,12 +84,14 @@ app.get('/api/report', function(req, res) {
         pythonProcess.stdout.on('data', (data) => {
             // Do something with the data returned from python script
             console.log(data.toString())
-            if (data.toString() === "success") {
-                let response = require('./compiled_data.json'); 
+            if (data.toString().includes("success")) {
+                let filename = "./"
+                filename += data.toString().split(" ")[1]
+                let response = require(filename)
                 console.log(response)
                 res.send(response)
-            }
-            else {
+                response = undefined
+            } else {
                 res.status(400).send({message: "error"}) 
             }
 
@@ -99,6 +101,26 @@ app.get('/api/report', function(req, res) {
             res.send(JSON.parse(data.toString()))
             */
         });
+    }
+})
+
+/**
+ * This route is an API endpoint to validate a specified url 
+ * is valid or not. Specifically, whether the url is a valid
+ * Airbnb listing url
+ * 
+ */
+app.get('/api/validate', function(req, res) {
+    let listing_url = req.headers.url.toString()
+    if (listing_url.includes("airbnb.com") && listing_url.includes("rooms")) {
+        res.send({
+            valid: true
+        })
+    }
+    else {
+        res.send({
+            valid: false
+        })
     }
 })
 
