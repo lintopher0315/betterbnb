@@ -5,20 +5,7 @@
     "population_information": {
         "population_density_per_sq_mi": 11244.0
     },
-    "crime_data": {
-        "property-crime": 1619,
-        "rape": 2,
-        "motor-vehicle-theft": 85,
-        "human-trafficing": 0,
-        "larceny": 1157,
-        "rape-legacy": 0,
-        "homicide": 0,
-        "robbery": 74,
-        "burglary": 377,
-        "violent-crime": 115,
-        "arson": 3,
-        "aggravated-assault": 39
-    },
+    "crime_data": {},
     "restraunt_data": {
         "Maya Del Sol": {
             "name": "Maya Del Sol",

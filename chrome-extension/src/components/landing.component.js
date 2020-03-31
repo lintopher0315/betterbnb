@@ -6,6 +6,27 @@ export default class Landing extends Component {
 
     constructor(props) {
         super(props)
+        window.chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+        let currentUrl = tabs[0].url;
+        if (currentUrl.includes("airbnb") && currentUrl.includes("room")) {
+            this.setState({
+                currentMsg: "Gathering information (please wait)..."
+            })
+
+            // make API call 
+            axios.get('http://localhost:5000/api/report', {headers: {"url": currentUrl}})
+            .then(response => {
+                //res.send(response.data);
+                console.log(response.data)
+                this.setState({dataObj: response.data})
+            })
+            .catch(err => {
+                console.log(err)
+                this.setState({currentMsg: "Error gathering information..."})
+            })
+        }
+    });
+        
         this.state = {
             currentMsg: "Visit an Airbnb listing to get started...",
             gathering: false,
@@ -14,7 +35,10 @@ export default class Landing extends Component {
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
         
+
+
         
         window.chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             if (message.type === "BETTERBNB_PLUGIN_EVALUATED_CONFIG") {
@@ -33,6 +57,7 @@ export default class Landing extends Component {
                     })
                     .catch(err => {
                         console.log(err)
+                        this.setState({currentMsg: "Error gathering information..."})
                     })
 
                 }
@@ -45,10 +70,15 @@ export default class Landing extends Component {
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         //                configData: message.configData
        /* 
         */
+
+    }
+
+    makeAPICall() {
+        
     }
 
     getRestaurant(someint) {
@@ -81,12 +111,12 @@ export default class Landing extends Component {
                     <div className='text-center'>
                         <h5>Information:</h5>
                         <hr />
-                        <h6>Local Area Pop: {this.state.dataObj.population_data}</h6>
+                        <h6>Local Area Pop: {this.state.dataObj.population_size}</h6>
                         <hr />
                         <h6>City Crime Stats:</h6>
                         <p>
                         Robbery: {this.state.dataObj.crime_data.robbery}<br /> 
-                        Burgarly: {this.state.dataObj.crime_data.burglary}<br /> 
+                        Vehicle Theft: {this.state.dataObj["motor-vehicle-theft"]}<br /> 
                         Larceny: {this.state.dataObj.crime_data.larceny}<br />
                         </p>
                         <hr />
@@ -114,7 +144,7 @@ export default class Landing extends Component {
                             <Form.Group controlId="formAirbnbUrl">
                                 <Form.Control type="text" placeholder="Airbnb url" value={this.state.url} onChange={this.handleInputChange} />
                             </Form.Group>
-                            <Button variant='outline-primary' onClick={this.handleSubmit}>Enter</Button>
+                            <Button variant='outline-dark' onClick={this.handleSubmit}>Enter</Button>
                         </Form>
                         
                     </div>
