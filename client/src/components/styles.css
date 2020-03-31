@@ -303,6 +303,10 @@ body {
     padding-left: 255px;
 }
 
+#area-col-next {
+    width: 550px;
+}
+
 #map-col {
     width: 650px;
 }
