@@ -85,7 +85,8 @@ app.get('/api/report', function(req, res) {
             // Do something with the data returned from python script
             console.log(data.toString())
             if (data.toString().includes("success")) {
-                let filename = data.toString().split(" ")[1]
+                let filename = "./"
+                filename += data.toString().split(" ")[1]
                 let response = require(filename)
                 console.log(response)
                 res.send(response)
