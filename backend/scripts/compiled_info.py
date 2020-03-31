@@ -15,7 +15,7 @@ from lodging import get_lodging_data_with_lat_lng, get_lodging_data_with_address
 # EXTRACT_LOCATION_DETAILS.py PROVIDES MANY METHODS FOR MANIPULATING LOCATION DETAILS. CHECK THERE BEFORE
 # IMPLEMENTING YOUR OWN ALGORITHM FOR SPECIFYING GEOGRAPHICALLY.
 
-def compile_info_lat_long(lat, longt):
+def compile_info_lat_long(lat, longt, identifier):
     # set up multithreading
     executor = concurrent.futures.ThreadPoolExecutor()
 
@@ -46,11 +46,11 @@ def compile_info_lat_long(lat, longt):
         lodging_thread_obj = None
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
+    generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def compile_info_addr(addr):
+def compile_info_addr(addr, identifier):
     # set up multithreading
     executor = concurrent.futures.ThreadPoolExecutor()
 
@@ -82,12 +82,12 @@ def compile_info_addr(addr):
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     # TODO: lat and longt is needed for the ListingPage component 
-    generate_report(-1, -1, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj)
+    generate_report(-1, -1, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier)
 
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj):
+def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier):
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
@@ -131,5 +131,6 @@ def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, populati
     compiled_dict['lodging_data'] = write_lodging_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
-    with open('compiled_data.json', 'w', encoding='utf-8') as f:
+    filename = "compiled_data" + identifier + ".json"
+    with open(filename, 'w', encoding='utf-8') as f:
         json.dump(compiled_dict, f, ensure_ascii=False, indent=4)
