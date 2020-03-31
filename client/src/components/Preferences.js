@@ -13,7 +13,8 @@ export class Preferences extends Component {
             id: "default",
             preferences: [["crime", 50], ["langprevalence", 50],
              ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
-            loaded: false
+            loaded: false,
+            showConfirm: false
             
         }
         
@@ -33,8 +34,11 @@ export class Preferences extends Component {
             axios.post('http://localhost:5000/getprefs', {id: userid})
                     .then(response => {
                         console.log(response.data)
-                        this.setState({preferences: response.data})
-                        this.setState({loaded: true})
+                        if(response.data.preferences.length > 0)  {
+                            this.setState({preferences: response.data})
+                            this.setState({loaded: true})
+                        }
+                        
                         console.log("Updated state")
                     })
                     .catch(err => {
@@ -44,9 +48,6 @@ export class Preferences extends Component {
 
         }
     }
-
-    getData() {}
-
 
     handleChildClick  = (data) => {
         console.log("The data is", data)
@@ -226,6 +227,7 @@ export class Preferences extends Component {
                     <div>
                         <Row>
                             <Button onClick={this.handleButtonClick} className="pref-button">Save My Preferences</Button>
+
                         </Row>
                         
                     </div>
