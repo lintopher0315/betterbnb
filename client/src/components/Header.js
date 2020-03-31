@@ -11,8 +11,14 @@ function Header(props) {
     const [key, setKey] = useState(0);
 
     useEffect(() => {
-        if (window.location.search.includes('=')) {
-            setKey(window.location.search.split('=')[1]);
+        if (window.location.search.includes('?q=')) {
+            let query = window.location.search.split('=')[1];
+            if (query.includes("&url")) {
+                setKey(query.substring(0, query.indexOf("&url")));
+            }
+            else {
+                setKey(query);
+            }
         }
         else {
             setKey('undefined');
@@ -61,6 +67,15 @@ function Header(props) {
                                 <div id='user-header-button'>
                                     Recommendations
                                 </div>
+                        </Nav.Link>
+                        <Nav.Link className="header-link">
+                            <Link className="header-redirect" to={{pathname: '/preferences', search: `?q=${key}`, params: {
+                                id: "test-value"
+                            }}}>
+                                <div id='user-header-button'>
+                                    Preferences
+                                </div>
+                            </Link>
                         </Nav.Link>
                         <Nav.Link className="header-link">
                             <Link className="header-redirect" onClick={setLogout}>

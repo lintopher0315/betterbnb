@@ -46,7 +46,7 @@ export default class ListingPage extends React.Component {
 
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
-        let currentUrlSplit = currentUrl.split("details/")
+        let currentUrlSplit = currentUrl.split("url=")
 
         /* If not logged in, redirect */
         if (currentUrlSplit.length != 2 || currentUrlSplit[1] === "") {
@@ -78,9 +78,16 @@ export default class ListingPage extends React.Component {
     render() {
         if (this.state.redirection) {
             console.log("true!")
-            return(
-                <Redirect to="/" />
-            )
+            if (window.location.search.split('=')[1] === null || window.location.search.split('=')[1] === "undefined") {
+                return(
+                    <Redirect to={'/?q=undefined'} />
+                )
+            }
+            else {
+                return(
+                    <Redirect to={'/userhome?q=' + window.location.search.split('=')[1]} />
+                )
+            }
         }
         else if (this.state.data === undefined) {
             return (

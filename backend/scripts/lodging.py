@@ -23,14 +23,16 @@ def get_lodging_data_with_address(address):
 
 class TestLodging(unittest.TestCase):
 
-    def testLodgingData(self): # Not flexible; tests will break when new lodging becomes available; if failed, must also check that there isn't new lodging
+    def testLodgingData(self): # MANUAL TESTS
         # Test with anecdotally KNOWN locations; find lodgings within 500m of the given latitude/longitude
-        self.assertEqual(3, len(get_lodging_data_with_lat_lng(40.4259, -86.9081)['results'])) # West Lafayette
-        time.sleep(0.25) # sleep in an attempt to avoid getting results limited
-        self.assertEqual(0, len(get_lodging_data_with_lat_lng(42.0778, -87.8223)['results'])) # Glenview
-        time.sleep(0.25) # sleep in an attempt to avoid getting results limited
-        self.assertEqual(0, len(get_lodging_data_with_lat_lng(42.0334, -87.8834)['results'])) # Des Plaines
-        time.sleep(0.25) # sleep in an attempt to avoid getting results limited
-        self.assertEqual(5, len(get_lodging_data_with_lat_lng(30.2241, -92.0198)['results'])) # Lafayette
-
-# Supplementary (manual, extra thorough): Verify specific data to make sure that the CORRECT lodgings are being returned; not just the number.
+        # Cannot test automatically because Google's API does not always return the same data
+        # Step through with a debugger; make sure that the lodgings returned match what Google says about lodgings
+        CONSTANT_DEBUG_HERE = 9999999
+        first = get_lodging_data_with_lat_lng(40.4259, -86.9081)['results'] # West Lafayette
+        second = get_lodging_data_with_lat_lng(42.0778, -87.8223)['results'] # Glenview
+        third = get_lodging_data_with_lat_lng(42.0334, -87.8834)['results'] # Des Plaines
+        fourth = get_lodging_data_with_lat_lng(30.2241, -92.0198)['results'] # Lafayette
+        five = get_lodging_data_with_lat_lng(41.8781, -87.6298)['results'] # Chicago
+        six = get_lodging_data_with_lat_lng(40.7128, -74.0060)['results'] # New York
+        seven = get_lodging_data_with_lat_lng(34.0522, -118.2437)['results'] # Los Angeles
+        eight = get_lodging_data_with_lat_lng(38.9072, -77.0369)['results'] # Washington, D.C.
