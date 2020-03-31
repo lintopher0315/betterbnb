@@ -160,14 +160,30 @@ export default class ListingPage extends React.Component {
         let lodgings = this.state.data.lodging_data.results.map((result, i) => {
             if (typeof(result.photos) !== "undefined") {
                 return (
-                    <div key={i}>
+                    <div style={{position: "relative"}} key={i}>
                         <img id="lodging-img" alt={result.name} src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${result.photos[0].photo_reference}&sensor=false&maxheight=400&maxwidth=400&key=${CONSTANT_GOOGLE_API_KEY}`} />
+                        <div id="lodging-info">
+                            {
+                                result.name.length>25 ? result.name.substring(0, 25)+"..." : result.name
+                            }
+                            <div style={{top: '50px', fontSize: "16px"}}>
+                                {result.vicinity}
+                            </div>
+                            <div style={{position: "relative", top: "10px", fontSize: '18px'}}>
+                                <Rating
+                                    name={'rating'}
+                                    value={result.rating}
+                                    size={'small'}
+                                />
+                                ({result.user_ratings_total})
+                            </div>
+                        </div>
                     </div>
                 )
             }
             else {
                 return (
-                    <div key={i}>
+                    <div style={{position: "relative"}} key={i}>
                         <img id="lodging-img" alt={result.name} src="https://i.picsum.photos/id/237/400/400.jpg" />
                     </div>
                 )

@@ -436,11 +436,32 @@ body {
 }
 
 #lodging-img:hover {
-    -webkit-filter: brightness(70%);
+    -webkit-filter: brightness(30%);
+}
+
+#lodging-img:hover + #lodging-info {
+    opacity: 1;
 }
 
 #lodging-container {
     width: 1400px;
     margin-left: 240px;
     padding-bottom: 70px;
+}
+
+#lodging-info {
+    position: absolute;
+    top: 30px;
+    padding-left: 40px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: rgb(204, 204, 204);
+    opacity: 0;
+    transition: all .5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
