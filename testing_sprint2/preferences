@@ -1,0 +1,59 @@
+#######Preferences Manual Tests#######
+
+###Test Case 1###
+Test case 1: Ensure each slider saves data to backend
+
+Steps:
+Change each slider from the default of 50 to any other number, and submit
+Go to the MongoDB cluster, see if preferences were upadted 
+Make sure preferences array matches numbers set in sliders
+
+
+Expected results:
+Each value in the preferences array should be different from 50, and be the value it was saved as
+
+Acutal resutls:
+As expected
+
+
+###Test Case 2###
+
+Steps:
+Log into the site with a different google account 
+Go to the preferences page
+
+
+Expected results:
+Each slider should be set to 50
+
+Acutal resutls:
+As expected
+
+
+###Test Case 3###
+
+Steps:
+Change each slider from the default of 50 to any other number, and submit
+Log out of website
+Log back in
+Go back to preferences and see if it was upadted
+Repeat for each slider
+
+Expected results:
+Slider's are loaded in from backend with non-default values
+
+Actual Resutls:
+As expected
+
+
+###Test Case 4###
+
+Steps: 
+Try to access the url /preferences when not logged in
+Try to copy and paste the url with a different objectID
+
+Expected results:
+You will be redirected to the hompage
+
+Actual results:
+It is still accesbile

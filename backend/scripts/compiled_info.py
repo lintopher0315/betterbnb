@@ -44,6 +44,7 @@ def compile_info_lat_long(lat, longt, identifier):
         lodging_thread_obj = executor.submit(get_lodging_data_with_lat_lng, lat, longt)
     except:
         lodging_thread_obj = None
+
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier)

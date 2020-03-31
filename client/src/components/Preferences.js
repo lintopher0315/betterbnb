@@ -34,7 +34,7 @@ export class Preferences extends Component {
             axios.post('http://localhost:5000/getprefs', {id: userid})
                     .then(response => {
                         console.log(response.data)
-                        if(response.data.preferences.length > 0)  {
+                        if(response.data[2].length > 0)  {
                             this.setState({preferences: response.data})
                             this.setState({loaded: true})
                         }
@@ -101,7 +101,8 @@ export class Preferences extends Component {
     
     */
     handleButtonClick = () => {
-
+        const confirm = this.state.showConfirm
+        this.setState({showConfirm: true})
         console.log("State is ", this.state.preferences)
 
         let requestObj = {
@@ -226,10 +227,19 @@ export class Preferences extends Component {
                     </div>
                     <div>
                         <Row>
-                            <Button onClick={this.handleButtonClick} className="pref-button">Save My Preferences</Button>
+                            <Button onClick={this.handleButtonClick} className="pref-button">Update preferences</Button>
+                            {this.state.showConfirm ? <p>Preferences saved!</p> : <p></p>}
 
                         </Row>
+
+                       
                         
+                    </div>
+
+                    <div>
+                    <Row>
+                        
+                    </Row>
                     </div>
                 </Container>
               
