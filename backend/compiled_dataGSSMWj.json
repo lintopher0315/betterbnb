@@ -1,0 +1,756 @@
+{
+    "lat": 42.34444,
+    "longt": -71.07628,
+    "population_size": 20628,
+    "population_information": {
+        "population_density_per_sq_mi": 32724.0
+    },
+    "crime_data": {
+        "human-trafficing": 0,
+        "burglary": 30,
+        "homicide": 0,
+        "robbery": 0,
+        "rape-legacy": 0,
+        "rape": 9,
+        "property-crime": 270,
+        "motor-vehicle-theft": 2,
+        "arson": 0,
+        "larceny": 238,
+        "violent-crime": 14,
+        "aggravated-assault": 5
+    },
+    "restraunt_data": {
+        "Toro": {
+            "name": "Toro",
+            "address": "1704 Washington Street 02118",
+            "rating": "4.9",
+            "cuisine": "Spanish, Tapas"
+        },
+        "Flour Bakery & Cafe": {
+            "name": "Flour Bakery & Cafe",
+            "address": "1595 Washington Street 02118",
+            "rating": "4.9",
+            "cuisine": "Bakery, Cafe"
+        },
+        "Atlantic Fish Company": {
+            "name": "Atlantic Fish Company",
+            "address": "761 Boylston Street, Back Bay 02116",
+            "rating": "4.6",
+            "cuisine": "Seafood"
+        },
+        "Parish Cafe and Bar": {
+            "name": "Parish Cafe and Bar",
+            "address": "361 Boylston Street 02116",
+            "rating": "4.6",
+            "cuisine": "American"
+        },
+        "Abe & Louie's": {
+            "name": "Abe & Louie's",
+            "address": "793 Boylston Street, Back Bay 02116",
+            "rating": "4.5",
+            "cuisine": "Steak, American"
+        },
+        "B&G Oysters": {
+            "name": "B&G Oysters",
+            "address": "550 Tremont Street. 02116",
+            "rating": "4.4",
+            "cuisine": "American, Seafood"
+        },
+        "Myers + Chang": {
+            "name": "Myers + Chang",
+            "address": "1145 Washington Street, Boston 02118",
+            "rating": "4.4",
+            "cuisine": "Asian, Ramen"
+        },
+        "Max Brenner": {
+            "name": "Max Brenner",
+            "address": "745 Boylston Street 02116",
+            "rating": "4.2",
+            "cuisine": "American, Desserts"
+        },
+        "Top of the Hub": {
+            "name": "Top of the Hub",
+            "address": "800 Boylston Street 02199",
+            "rating": "4.0",
+            "cuisine": "New American, Seafood"
+        }
+    },
+    "weather_data": {
+        "main_weather": "Clouds",
+        "main_weather_description": "scattered clouds"
+    },
+    "lodging_data": {
+        "html_attributions": [],
+        "results": [
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3469237,
+                        "lng": -71.0706459
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34833552989272,
+                            "lng": -71.06932632010727
+                        },
+                        "southwest": {
+                            "lat": 42.34563587010728,
+                            "lng": -71.07202597989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "2399804bde46f44b5e34418811dadd4cb4ee0193",
+                "name": "Staypineapple, A Delightful Hotel, South End Boston",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 3280,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/113428288447419549216\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAP2fxued7Zq7RD0zEYRWFEDRmeSSjr6Oxr1KvnLOioUi7sbC3cBeI35fg_buMhWvqWrHTfKuh2KwH8xgdRC6lhYi2JDJgpd4Dc-av-t7Fk0yCpoKHCF2lQWbfsGhfezhwEhA-ln-hnCl3gwKe0ukCK5uqGhTA4F0_3ibhHRWUF3BKLkPJFSkwGg",
+                        "width": 4928
+                    }
+                ],
+                "place_id": "ChIJVVWR-HJ644kRsS4eNklrhOw",
+                "plus_code": {
+                    "compound_code": "8WWH+QP Boston, Massachusetts",
+                    "global_code": "87JC8WWH+QP"
+                },
+                "rating": 4,
+                "reference": "ChIJVVWR-HJ644kRsS4eNklrhOw",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 119,
+                "vicinity": "26 Chandler St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3509266,
+                        "lng": -71.0697916
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.35218292989273,
+                            "lng": -71.06844237010728
+                        },
+                        "southwest": {
+                            "lat": 42.34948327010728,
+                            "lng": -71.07114202989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "cb1f1458991061ce7f0a45efc9f489ea628eebc6",
+                "name": "Boston Park Plaza",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1333,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/110836217639956526817\">Boston Park Plaza</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAQ6VEGTo-OvmUMh97m_kBSUwUqGXI3cdhFNzSQfzwho1rKMeA5HtxcL45QKbRcn60WLlyDbdhlCWvfr4YF7Tv6f9l973j2lR3yk-VZC03pfMUSnuAbiGtYjdT9qHBYQG3EhCW0a5qC7KJkN_ofxnaoUOxGhRKZ6yXX11uJNXHKXUuT1bEelIyVA",
+                        "width": 2000
+                    }
+                ],
+                "place_id": "ChIJtQj7XnR644kR6AKK8Go1I0g",
+                "plus_code": {
+                    "compound_code": "9W2J+93 Boston, Massachusetts",
+                    "global_code": "87JC9W2J+93"
+                },
+                "rating": 4.1,
+                "reference": "ChIJtQj7XnR644kR6AKK8Go1I0g",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 5063,
+                "vicinity": "50 Park Plaza, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.34830669999999,
+                        "lng": -71.0786177
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34962442989272,
+                            "lng": -71.07736052010728
+                        },
+                        "southwest": {
+                            "lat": 42.34692477010728,
+                            "lng": -71.08006017989273
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "99872494cc7f8aba30c59da2752d60ccceac87e4",
+                "name": "Copley Square Hotel",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1574,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/104483786586431037159\">Copley Square Hotel</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAWmUJj6IgxokG95qFfiRCofFlE4uR-D3y6dd2dHfPoQNrdrlllYRpHY2pbyvKTc9n7629pYzjsh8wH8PTIJbTlsUXIIUKtuFxoYcRBF0JDbDHrKwO2cHbElzL2lCH83m7EhCz5jxlWgfY6RbMcMMaARgIGhSf2WJgpraYs2K-v5DUDtYdEE-iwQ",
+                        "width": 2000
+                    }
+                ],
+                "place_id": "ChIJMR2XfQx644kRJ18HxGPOhg8",
+                "plus_code": {
+                    "compound_code": "8WXC+8H Boston, Massachusetts",
+                    "global_code": "87JC8WXC+8H"
+                },
+                "rating": 4.1,
+                "reference": "ChIJMR2XfQx644kRJ18HxGPOhg8",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 686,
+                "vicinity": "47 Huntington Ave, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3499566,
+                        "lng": -71.07854429999999
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.35122577989272,
+                            "lng": -71.07713577010728
+                        },
+                        "southwest": {
+                            "lat": 42.34852612010728,
+                            "lng": -71.07983542989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "505d42440a93310451884c87a92008bb4398285d",
+                "name": "The Charlesmark at Copley",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 2912,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/106215189947727191695\">The Charlesmark at Copley</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAZvvkebmeDaYq4rCO6Kq_0mSb8eWxnu0_LzjgwKySRgXiTOTRt8w7-I2NiEFha47jLzzC4FECVwgwPBSc_vDkUX9WmsX1aOhrnK9TL5qBfmXt6yurBcGPDmqcg5erTyYpEhCG8mBhqGXvTkuaT5A9_Q8ZGhQIGApWq9DP4-ZX5Yufm7OUy-xpYg",
+                        "width": 4368
+                    }
+                ],
+                "place_id": "ChIJ5c9EFgx644kR6c1QCqlmluo",
+                "plus_code": {
+                    "compound_code": "8WXC+XH Boston, Massachusetts",
+                    "global_code": "87JC8WXC+XH"
+                },
+                "rating": 4.2,
+                "reference": "ChIJ5c9EFgx644kR6c1QCqlmluo",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 270,
+                "vicinity": "655 Boylston St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3498074,
+                        "lng": -71.08461319999999
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.35122357989272,
+                            "lng": -71.08329632010728
+                        },
+                        "southwest": {
+                            "lat": 42.34852392010728,
+                            "lng": -71.08599597989273
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "27e5f1ad861e30af877c7793390f492540cac898",
+                "name": "No. 284 - A Boston Guest House",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 2800,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/114239570390904794722\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAn8ZGj735B4aGEfEc-HvtCe1TuYsZDdyXH9PRE_0p0Wjk7akFuktEF2j5MPssMNm3sfpJGpOlwWPkOpHZbQlQi64B9jBaa6pXpIG6d3UATQipa3GFa8R42K8ZON3Vcvc5EhCcjjy-Nx02_Tb4RrTAM77VGhS7kuerKmtpDYy_9GyE4e6nLlwC1g",
+                        "width": 4200
+                    }
+                ],
+                "place_id": "ChIJq6redw9644kRRzasrLaO4m8",
+                "plus_code": {
+                    "compound_code": "8WX8+W5 Boston, Massachusetts",
+                    "global_code": "87JC8WX8+W5"
+                },
+                "rating": 4.9,
+                "reference": "ChIJq6redw9644kRRzasrLaO4m8",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 81,
+                "vicinity": "284 Commonwealth Avenue, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.34629779999999,
+                        "lng": -71.0849425
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34770547989272,
+                            "lng": -71.08382447010727
+                        },
+                        "southwest": {
+                            "lat": 42.34500582010727,
+                            "lng": -71.08652412989272
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "c7140e9923e75c6865ec93da6206d1165ad2b0d5",
+                "name": "Hilton Boston Back Bay",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 2048,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/105838976571378257350\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAMmbamlB8idvyYPtgPdI0aRKR8wmHP17z1WCYAJ_nz3T0A1kzoMTWF5bzdyjwVzT98hLgqDT7mR2axR953c8rM1eMEybgSvKkG8jMjZn8uXyY74tGwXtb5IQr4KBzU73-EhCx_OBeRrASK-5_p18sxeGkGhS61JrJqqgL7zexv2BJvRqtyO5_aQ",
+                        "width": 1368
+                    }
+                ],
+                "place_id": "ChIJHy9yDBB644kRaiG39EGdzZc",
+                "plus_code": {
+                    "compound_code": "8WW8+G2 Boston, Massachusetts",
+                    "global_code": "87JC8WW8+G2"
+                },
+                "rating": 4.2,
+                "reference": "ChIJHy9yDBB644kRaiG39EGdzZc",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1541,
+                "vicinity": "40 Dalton St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.34716239999999,
+                        "lng": -71.0792286
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34847777989272,
+                            "lng": -71.07795122010728
+                        },
+                        "southwest": {
+                            "lat": 42.34577812010728,
+                            "lng": -71.08065087989273
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "9f78c6342ad6a02a913c6b4b0a6f84917c248bbb",
+                "name": "Boston Marriott Copley Place",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1536,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/100680427822677440746\">Andrea Ottonelli</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAKIIpghm81rfZpy3FOW1WVHLRu_iqNtmqXzgnKXTCRGJPxarSb2z3c7ciXOYN9_QJ43tDOzZ67LniiWs2qEovNLsZoF3Ge47xHYQsU8Dm9tvRZdJQbRvjbsjZ2B626SInEhC7HnVTMFBB7oBEFYz4IpHqGhSaQul0PUJINU5ry34X_CLP5PmpxQ",
+                        "width": 2048
+                    }
+                ],
+                "place_id": "ChIJS3rn5w1644kR-3JknJP3dxo",
+                "plus_code": {
+                    "compound_code": "8WWC+V8 Boston, Massachusetts",
+                    "global_code": "87JC8WWC+V8"
+                },
+                "rating": 4.3,
+                "reference": "ChIJS3rn5w1644kR-3JknJP3dxo",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1930,
+                "vicinity": "110 Huntington Ave, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3431063,
+                        "lng": -71.0842026
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34448087989271,
+                            "lng": -71.08289027010727
+                        },
+                        "southwest": {
+                            "lat": 42.34178122010727,
+                            "lng": -71.0855899298927
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "35ed0499a38da3a8eb0d3801976651c9d03f6f31",
+                "name": "The Midtown Hotel",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 1920,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/114626956579075013162\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAA5CRvAGQT1Jsnd7yXlFFf_ui3uZwVfbVxR1e3N2KJsjg47ZIq9YpPplrYITWJ0fbNbepx2hA3h2W2-BbJccBDdQxaRkwfYQW9nmRJ4C7gaVHqahU_Atw6TBuA2ubGGJb-EhAU_w1vHQsYChTBrk7qTLdbGhSav4GytYQD3izvMlllYVJY2dc-1A",
+                        "width": 1277
+                    }
+                ],
+                "place_id": "ChIJqV3MtsB544kRHt7sdITzz-Y",
+                "plus_code": {
+                    "compound_code": "8WV8+68 Boston, Massachusetts",
+                    "global_code": "87JC8WV8+68"
+                },
+                "rating": 3.7,
+                "reference": "ChIJqV3MtsB544kRHt7sdITzz-Y",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 1042,
+                "vicinity": "220 Huntington Ave, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.348566,
+                        "lng": -71.078896
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34987582989272,
+                            "lng": -71.07760562010728
+                        },
+                        "southwest": {
+                            "lat": 42.34717617010728,
+                            "lng": -71.08030527989273
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "c88458fc5312c27a758b72daa5fa16f6eaa34856",
+                "name": "Courtyard by Marriott Boston Copley Square",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 4377,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/114644646266522328557\">Courtyard Boston Copley Square</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAEPyM7ikA0RiwHp9vaibamPyQeAODc8jhvmTbUfenXoRYDUcw9xNYnVMjSb615jpotBZ8W6cyVOO7gZv49lwc1ZxUi55AfLbuUpnDBbIKD2P8InaRsUCP55AkK7s_avjnEhCypR904IS88R63UpdVOe4MGhSdIk8ctP73e9N3HhGil6vPC_2J3g",
+                        "width": 6566
+                    }
+                ],
+                "place_id": "ChIJ18tV0g1644kRl6RkJ1NwY-A",
+                "plus_code": {
+                    "compound_code": "8WXC+CC Boston, Massachusetts",
+                    "global_code": "87JC8WXC+CC"
+                },
+                "rating": 4.2,
+                "reference": "ChIJ18tV0g1644kRl6RkJ1NwY-A",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 315,
+                "vicinity": "88 Exeter St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3482726,
+                        "lng": -71.0786234
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34958007989272,
+                            "lng": -71.07719962010728
+                        },
+                        "southwest": {
+                            "lat": 42.34688042010728,
+                            "lng": -71.07989927989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "c0faf54575fa2003975ced29dc902470830ca720",
+                "name": "Copley Square Hotel",
+                "place_id": "ChIJ32tTWux744kR-2iuOCXxtPU",
+                "plus_code": {
+                    "compound_code": "8WXC+8H Boston, Massachusetts",
+                    "global_code": "87JC8WXC+8H"
+                },
+                "rating": 0,
+                "reference": "ChIJ32tTWux744kR-2iuOCXxtPU",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 0,
+                "vicinity": "47 Huntington Ave, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.345,
+                        "lng": -71.0808333
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34627202989272,
+                            "lng": -71.07952052010727
+                        },
+                        "southwest": {
+                            "lat": 42.34357237010727,
+                            "lng": -71.08222017989272
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "a6a971f4bba4be1c3fe59ade0cc6d0ab249851ec",
+                "name": "The Inn at St Botolph",
+                "photos": [
+                    {
+                        "height": 4032,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/103692805152432444230\">Dima Simonyan</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAsna2gsbt_gaoyy5lji-knqebMz02cqlEYCmt5QH0udwuCKlP5SQKgT88XOMojgLNPQZrePgrSOCQz2W8TznCFKJiULK24SETEgZzfZxivsMiZ0ev4AodhAnVqkXzQS_SEhBmqB83aJ5qgSMeBWFuGFG3GhQMk_k3I_EP07xOQcRfzXYWx-e_gQ",
+                        "width": 3024
+                    }
+                ],
+                "place_id": "ChIJgR8alxF644kRnD9V0_tMI40",
+                "plus_code": {
+                    "compound_code": "8WV9+XM Boston, Massachusetts",
+                    "global_code": "87JC8WV9+XM"
+                },
+                "rating": 4.3,
+                "reference": "ChIJgR8alxF644kRnD9V0_tMI40",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 91,
+                "vicinity": "99 St Botolph St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.34157750000001,
+                        "lng": -71.0770417
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34296877989272,
+                            "lng": -71.07561197010727
+                        },
+                        "southwest": {
+                            "lat": 42.34026912010728,
+                            "lng": -71.07831162989272
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "eab8408db8a6ce9c13a1e4b6c5e12ae37f6d2ff2",
+                "name": "Encore Bed and Breakfast",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 2712,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/116213253920436042375\">Encore Bed and Breakfast</a>"
+                        ],
+                        "photo_reference": "CmRaAAAADVav1JyHKav_hOVYgFP8Dtm2foRLE8Lbssy1Fv1NvuByfa8YtCMEY-nkP4wlfAxOfpfgKQHWz61yZce7t0Re5LS8m56FHlX2RnHO0YW2A2hLE0vm7zbYFJhH2c1NKMnqEhCJ9O8cMseI3Y6yDoxftFFHGhQOg_cPBLsuygIlx9B0AJZ-PyYR1w",
+                        "width": 2336
+                    }
+                ],
+                "place_id": "ChIJ4-8mhBN644kRzYugc2CJyxY",
+                "plus_code": {
+                    "compound_code": "8WRF+J5 Boston, Massachusetts",
+                    "global_code": "87JC8WRF+J5"
+                },
+                "rating": 4.7,
+                "reference": "ChIJ4-8mhBN644kRzYugc2CJyxY",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 34,
+                "vicinity": "116 W Newton St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.349229,
+                        "lng": -71.079528
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.35067677989272,
+                            "lng": -71.07824212010728
+                        },
+                        "southwest": {
+                            "lat": 42.34797712010727,
+                            "lng": -71.08094177989273
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "e3dd7da3c2e9a934554b14211b125fb927788da7",
+                "name": "The Lenox Hotel",
+                "opening_hours": {
+                    "open_now": true
+                },
+                "photos": [
+                    {
+                        "height": 843,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/113102567924638640746\">The Lenox</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAjFpQhct5OWNk0VqmpUSDUEnpwwU3c0eBpsoT5WehjjKdFcZWa1yF28z2BLl62mxzprmc_1iOLR51Vvz1kg__QEW7k0AjCYIVWHXA63EIlg5fvUBktmJCOL8qMHDX8T1xEhAY0mqfAVmBrYlWJABM7hMCGhSqPeru3Pk69nG0j9jCYtaOKHha1w",
+                        "width": 1500
+                    }
+                ],
+                "place_id": "ChIJLTG3KQx644kRUYQdVWHBlbY",
+                "plus_code": {
+                    "compound_code": "8WXC+M5 Boston, Massachusetts",
+                    "global_code": "87JC8WXC+M5"
+                },
+                "rating": 4.6,
+                "reference": "ChIJLTG3KQx644kRUYQdVWHBlbY",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 997,
+                "vicinity": "61 Exeter Street at, Boylston St, Boston"
+            },
+            {
+                "geometry": {
+                    "location": {
+                        "lat": 42.3456656,
+                        "lng": -71.0810351
+                    },
+                    "viewport": {
+                        "northeast": {
+                            "lat": 42.34709132989272,
+                            "lng": -71.07969197010728
+                        },
+                        "southwest": {
+                            "lat": 42.34439167010728,
+                            "lng": -71.08239162989271
+                        }
+                    }
+                },
+                "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+                "id": "20e9b77c411af646d03c71c17a396e9755485933",
+                "name": "The Colonnade Hotel",
+                "opening_hours": {},
+                "photos": [
+                    {
+                        "height": 1364,
+                        "html_attributions": [
+                            "<a href=\"https://maps.google.com/maps/contrib/111533846705505104323\">A Google User</a>"
+                        ],
+                        "photo_reference": "CmRaAAAAQIpvXZ1mqoO_f7cBNsVsoaU6GDYIOS6ZZ7PhKeC2y5oh_Y55vOqAmTmx-L5Z-Pz0LxFOMaKRqknC4dgfX65-Tg_JSuwZKpILsdKw_tEsnPAuNiHW9PwjD5zLpH_skc5cEhCCtGgM7abXYyO7matyBiZdGhTiRpXwkEiisTMh4z5ucSzRCwHldw",
+                        "width": 2048
+                    }
+                ],
+                "place_id": "ChIJAV-1D79-44kRfELWgjKpkZI",
+                "plus_code": {
+                    "compound_code": "8WW9+7H Boston, Massachusetts",
+                    "global_code": "87JC8WW9+7H"
+                },
+                "rating": 4.3,
+                "reference": "ChIJAV-1D79-44kRfELWgjKpkZI",
+                "scope": "GOOGLE",
+                "types": [
+                    "lodging",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "user_ratings_total": 2030,
+                "vicinity": "120 Huntington Ave, Boston"
+            }
+        ],
+        "status": "OK"
+    }
+}

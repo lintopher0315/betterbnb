@@ -419,3 +419,28 @@ body {
     margin-bottom: 20px;
     transition: all .25s ease;
 }
+
+#lodging-img {
+    height: 400px;
+    width: 400px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-filter: brightness(100%);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#lodging-img:hover {
+    -webkit-filter: brightness(70%);
+}
+
+#lodging-container {
+    width: 1400px;
+    margin-left: 240px;
+    padding-bottom: 70px;
+}

@@ -1,13 +1,23 @@
 import React from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
+
+const CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
+
+const carousel_settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+}
 
 export default class ListingPage extends React.Component {
     
@@ -23,9 +33,6 @@ export default class ListingPage extends React.Component {
             data: undefined,
             redirection: false
         }
-
-       
-
     }
 
     onSaveListing(e) {
@@ -149,6 +156,23 @@ export default class ListingPage extends React.Component {
                 showLine: true,
             }]
         }
+
+        let lodgings = this.state.data.lodging_data.results.map((result, i) => {
+            if (typeof(result.photos) !== "undefined") {
+                return (
+                    <div key={i}>
+                        <img id="lodging-img" alt={result.name} src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${result.photos[0].photo_reference}&sensor=false&maxheight=400&maxwidth=400&key=${CONSTANT_GOOGLE_API_KEY}`} />
+                    </div>
+                )
+            }
+            else {
+                return (
+                    <div key={i}>
+                        <img id="lodging-img" alt={result.name} src="https://i.picsum.photos/id/237/400/400.jpg" />
+                    </div>
+                )
+            }
+        })
 
         return (
             <div>
@@ -293,6 +317,26 @@ export default class ListingPage extends React.Component {
                         <Col>
                             <div id="listing-desc-text" style={{float: 'left', paddingLeft: '105px'}}>
                                 {this.state.data.population_information.population_density_per_sq_mi} per Square Mile
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Nearby Lodging
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="lodging-container">
+                                <Slider {...carousel_settings}>
+                                    {lodgings}
+                                </Slider>
                             </div>
                         </Col>
                     </Row>
