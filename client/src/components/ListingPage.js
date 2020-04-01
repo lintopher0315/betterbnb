@@ -25,6 +25,7 @@ export default class ListingPage extends React.Component {
         super(props)
 
         this.onSaveListing = this.onSaveListing.bind(this);
+        this.onRemoveListing = this.onRemoveListing(this);
         
         /* id is a placeholder*/
         this.state =  {
