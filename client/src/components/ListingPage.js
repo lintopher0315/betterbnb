@@ -51,6 +51,22 @@ export default class ListingPage extends React.Component {
             })
     }
 
+    onSaveListing(e) {
+        e.preventDefault()
+        
+        const requestObj = {
+            id: this.state.id,
+            url:  this.state.url
+        }
+
+        console.log(requestObj)
+        axios.post("http://localhost:5000/removeListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
         let currentUrlSplit = currentUrl.split("url=")
@@ -227,6 +243,10 @@ export default class ListingPage extends React.Component {
                                 <Button onClick={this.onSaveListing} className="listing-page-btn" variant="outline-success" size="sm">
                                     {/* <a className="listing-page-link">{this.state.id}</a> */}
                                     Save Listing  
+                                </Button>
+                                <Button onClick={this.onRemoveListing} className="listing-page-btn" variant="outline-success" size="sm">
+                                    {/* <a className="listing-page-link">{this.state.id}</a> */}
+                                    Remove Listing
                                 </Button>
                                 <hr />
                                 <div id="listing-sub-title">
