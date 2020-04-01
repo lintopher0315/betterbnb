@@ -25,7 +25,7 @@ export default class ListingPage extends React.Component {
         super(props)
 
         this.onSaveListing = this.onSaveListing.bind(this);
-        this.onRemoveListing = this.onRemoveListing(this);
+        this.onRemoveListing = this.onRemoveListing.bind(this);
         
         /* id is a placeholder*/
         this.state =  {
@@ -35,9 +35,24 @@ export default class ListingPage extends React.Component {
             redirection: false
         }
     }
+    onRemoveListing(e) {
+        e.preventDefault();
+        
+        const requestObj = {
+            id: this.state.id,
+            url:  this.state.url
+        }
+
+        console.log(requestObj)
+        axios.post("http://localhost:5000/removeListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     onSaveListing(e) {
-        e.preventDefault()
+        e.preventDefault();
         
         const requestObj = {
             id: this.state.id,
@@ -52,21 +67,7 @@ export default class ListingPage extends React.Component {
             })
     }
 
-    onSaveListing(e) {
-        e.preventDefault()
-        
-        const requestObj = {
-            id: this.state.id,
-            url:  this.state.url
-        }
-
-        console.log(requestObj)
-        axios.post("http://localhost:5000/removeListing", requestObj)
-            .then(() => console.log("url is", this.state.url))
-            .catch(err => {
-                console.log(err);
-            })
-    }
+    
 
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
