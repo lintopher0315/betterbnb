@@ -293,7 +293,16 @@ app.post('/setprefs', function(req, res) {
     })
 
 })
-    
+
+// Route that recieves a POST request to /getTrips
+app.post('/getTrips', function(req, res) {
+    let id = req.body.id
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { return done(err); }
+        res.send(user.trips);
+      });
+})
+
 
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
