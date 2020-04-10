@@ -25,6 +25,7 @@ export default class ListingPage extends React.Component {
         super(props)
 
         this.onSaveListing = this.onSaveListing.bind(this);
+        this.onRemoveListing = this.onRemoveListing.bind(this);
         
         /* id is a placeholder*/
         this.state =  {
@@ -34,9 +35,24 @@ export default class ListingPage extends React.Component {
             redirection: false
         }
     }
+    onRemoveListing(e) {
+        e.preventDefault();
+        
+        const requestObj = {
+            id: this.state.id,
+            url:  this.state.url
+        }
+
+        console.log(requestObj)
+        axios.post("http://localhost:5000/removeListing", requestObj)
+            .then(() => console.log("url is", this.state.url))
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     onSaveListing(e) {
-        e.preventDefault()
+        e.preventDefault();
         
         const requestObj = {
             id: this.state.id,
@@ -50,6 +66,8 @@ export default class ListingPage extends React.Component {
                 console.log(err);
             })
     }
+
+    
 
     componentDidMount() {
         let currentUrl = window.location.href.toString() 
@@ -227,6 +245,10 @@ export default class ListingPage extends React.Component {
                                 <Button onClick={this.onSaveListing} className="listing-page-btn" variant="outline-success" size="sm">
                                     {/* <a className="listing-page-link">{this.state.id}</a> */}
                                     Save Listing  
+                                </Button>
+                                <Button onClick={this.onRemoveListing} className="listing-page-btn" variant="outline-success" size="sm">
+                                    {/* <a className="listing-page-link">{this.state.id}</a> */}
+                                    Remove Listing
                                 </Button>
                                 <hr />
                                 <div id="listing-sub-title">

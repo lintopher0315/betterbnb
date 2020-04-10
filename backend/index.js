@@ -293,7 +293,44 @@ app.post('/setprefs', function(req, res) {
     })
 
 })
-    
+
+// Route that recieves a POST request to /getTrips
+app.post('/getTrips', function(req, res) {
+    let id = req.body.id
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { return done(err); }
+        res.send(user.trips);
+      });
+})
+
+// Route that recieves a POSt request to /addTrip
+app.post('/addTrip', function(req, res) {
+    let id = req.body.id;
+    let name = req.body.name;
+    console.log(id);
+    console.log(url)
+    User.update({_id : id}, {$addToSet: {trips: name}}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Added trip with name: " + name);
+        }
+    });
+})
+
+// Route that recieves a POST request to remove a trip
+app.post('/removeTrip', function(req, res) {
+    let id = req.body.id;
+    let name = req.body.name;
+    User.update({_id : id}, { $pull: { trips: name } } , err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Removed trip with name: " + name);
+        }
+    });
+})
+
 
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
