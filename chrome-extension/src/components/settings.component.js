@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
+import { GoogleLogin } from "react-google-login";
+import googleButton from "../images/btn_google_signin_light_normal_web.png";
+
+
 
 export default class Settings extends Component {
     constructor(props) {
@@ -7,74 +11,34 @@ export default class Settings extends Component {
 
         // do some stuff here related to the settings
         this.state = {
-            currentSelection: 0, 
-            crime: false, 
-            population: false, 
-            restaurants: false, 
-            lang: false
+            loggedIn: false 
         }
-
-        this.crimeHandle = () => this.setState({
-            crime: !this.state.crime,
-            currentSelection: !this.state.crime ? this.state.currentSelection+1 : this.state.currentSelection-1
-        })
-
-        this.popHandle = () => this.setState({
-            population: !this.state.population,
-            currentSelection: !this.state.population ? this.state.currentSelection+1 : this.state.currentSelection-1
-        })
-
-        this.restaurantHandle = () => this.setState({
-            restaurants: !this.state.restaurants,
-            currentSelection: !this.state.restaurants ? this.state.currentSelection+1 : this.state.currentSelection-1
-        })
-
-        this.langHandle = () => this.setState({
-            lang: !this.state.lang,
-            currentSelection: !this.state.lang ? this.state.currentSelection+1 : this.state.currentSelection-1
-        })
     }
 
+    // TODO: 
+    // Create new API endpoint to handle Google OAuth from Chrome extension
     
     render() {
-        console.log(this.state.currentSelection)
-        console.log(this.state.crime)
 
+
+        if (!this.state.loggedIn) {
         return(
             <div className='container' style={{paddingTop: "2%"}}>
                 <div className='text-center'>
                     <h1>Settings</h1>
-                    <p>Select your desired options (3 allowed)</p>
+                    <p>Login with your Betterbnb account for more options</p>
                     <hr />
-                    <p align="justify">
-                        <Form.Check 
-                            type="switch"
-                            id="crime"
-                            label="Crime"
-                            onChange={() => this.crimeHandle()}
-                        /> <br />
-                        <Form.Check 
-                            type="switch"
-                            id="population"
-                            label="Population"
-                            onChange={() => this.popHandle()}
-                        /> <br /> 
-                        <Form.Check 
-                            type="switch"
-                            id="restaurants"
-                            label="Restaurants"
-                            onChange={() => this.restaurantHandle()}
-                        /> <br />
-                        <Form.Check 
-                            type="switch"
-                            id="lang"
-                            label="Language Prevalence"
-                            onChange={() => this.langHandle()}
-                        />
-                    </p>
-                    <p><b>Coming Soon:</b> Sign-in with Betterbnb</p>
+                    <Form>
+                        <Form.Group controlId="formAirbnbUrl">
+                            <Form.Control type="text" placeholder="username" /> <br />
+                            <Form.Control type="password" placeholder="password" />
+                        </Form.Group>
+                        <Button variant='outline-dark' onClick={this.handleSubmit}>Login</Button>
+                    </Form> <br />
+                    <a href="http://localhost:5000/login/google"><img src={googleButton}></img></a>                    
                 </div>
             </div>
-        )
+            )
+        }
     }
-}
+}   
