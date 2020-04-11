@@ -40,6 +40,7 @@ export class SavedListing extends Component {
             data: null,
             map_loc: [10, 10],
             temp_data: [],
+            filtered_data: [],
         }
         
     }
@@ -68,6 +69,7 @@ export class SavedListing extends Component {
             </div>)
         }
         this.setState({temp_data: temp})
+        this.setState({filtered_data: temp})
 
         const requestObj = {
             id: this.state.id,
@@ -112,6 +114,18 @@ export class SavedListing extends Component {
         this.setState({map_loc: [-(Math.random() * 100 - 50), -(Math.random() * 100 - 50)]})
     }
 
+    filter() {
+        console.log(this.filter_val.state.value)
+        this.setState({filtered_data: []})
+        let new_filter = []
+        for (let i = 0; i < this.state.temp_data.length; i++) {
+            if (randomNames[i].toLowerCase().includes(this.filter_val.state.value)) {
+                new_filter.push(this.state.temp_data[i])
+            }
+        }
+        this.setState({filtered_data: new_filter})
+    }
+
     render() {
         return (
             <div style={{paddingTop: '100px'}}> 
@@ -121,7 +135,9 @@ export class SavedListing extends Component {
                             <PerfectScrollbar style={{height: '830px'}}>
                                 <MuiThemeProvider>
                                     <SearchBar
-                                        onChange={() => console.log("onChange")}
+                                        ref={(value) => this.filter_val = value}
+                                        onRequestSearch={this.filter.bind(this)}
+                                        onChange={() => {}}
                                         hintText="Filter"
                                         style={{
                                             border: '1px solid #dbdbdb',
@@ -135,7 +151,7 @@ export class SavedListing extends Component {
                                 </MuiThemeProvider>
                                 
                                 <div>
-                                    {this.state.temp_data}
+                                    {this.state.filtered_data}
                                 </div>
                             </PerfectScrollbar>
                         </Col>
