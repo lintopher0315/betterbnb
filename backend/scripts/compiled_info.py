@@ -7,11 +7,12 @@ from restraunt import get_nearby_restaurants, get_nearby_restaurants_with_addres
 from population_data import get_population_data_with_lat_lng, get_population_data_with_address
 from weather import get_weather_data_with_latitude_and_longitude, get_weather_data_with_address
 from lodging import get_lodging_data_with_lat_lng, get_lodging_data_with_address
+from elevation import get_elevation_data_with_lat_lng, get_elevation_data_with_address
 
 
 # NOTE: YOUR PYTHON SCRIPT MUST HAVE ONLY TWO FUNCTIONS.
 # BOTH FUNCTIONS MUST RETURN THE SAME DATA. THEY BOTH MUST RETURN A DICT. ONE FUNCTION MUST TAKE IN
-# LATITUDE AND LONGITUDE. THE OTHER MUST TAKE IN ADDRESS. THIS IS EASILY SIMPLIFIED BUT THATS FOR SPRINT 2.
+# LATITUDE AND LONGITUDE. THE OTHER MUST TAKE IN ADDRESS.
 # EXTRACT_LOCATION_DETAILS.py PROVIDES MANY METHODS FOR MANIPULATING LOCATION DETAILS. CHECK THERE BEFORE
 # IMPLEMENTING YOUR OWN ALGORITHM FOR SPECIFYING GEOGRAPHICALLY.
 
@@ -45,9 +46,14 @@ def compile_info_lat_long(lat, longt, identifier):
     except:
         lodging_thread_obj = None
 
+    try:
+        elevation_thread_obj = executor.submit(get_elevation_data_with_lat_lng, lat, longt)
+    except:
+        elevation_thread_obj = None
+
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
-    generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier)
+    generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, elevation_thread_obj, identifier)
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
@@ -80,15 +86,21 @@ def compile_info_addr(addr, identifier):
         lodging_thread_obj = executor.submit(get_lodging_data_with_address, addr)
     except:
         lodging_thread_obj = None
+
+    try:
+        elevation_thread_obj = executor.submit(get_elevation_data_with_address, addr)
+    except:
+        elevation_thread_obj = None
+
     # NEW DATA SOURCES: add data_source_obj above that does the same thing
 
     # TODO: lat and longt is needed for the ListingPage component 
-    generate_report(-1, -1, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier)
+    generate_report(-1, -1, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, elevation_thread_obj, identifier)
 
     # NEW DATA SOURCES: add another argument above and then modify the parameters of generate_report below
 
 
-def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, identifier):
+def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, population_thread_obj, weather_thread_obj, lodging_thread_obj, elevation_thread_obj, identifier):
     if (path.exists("compiled_data.txt")):
         system("rm compiled_data.txt")
 
@@ -116,6 +128,11 @@ def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, populati
         write_lodging_dict = lodging_thread_obj.result()
     except:
         write_lodging_dict = {} # value if an exception is raised
+
+    try:
+        write_elevation_dict = elevation_thread_obj.result()
+    except:
+        write_elevation_dict = {} # value if an exception is raised
     # NEW DATA SOURCES: ADD SIMILAR CALL TO ABOVE. THE RETURN TYPE OF YOUR FUNCTIONS SHOULD BE A DICT.
     
     compiled_dict = {} # initialize dict that will be turned to json
@@ -130,6 +147,7 @@ def generate_report(lat, longt, crime_thread_obj, restraunt_thread_obj, populati
     compiled_dict['restraunt_data'] = write_restraunt_dict # or like this one
     compiled_dict['weather_data'] = write_weather_dict
     compiled_dict['lodging_data'] = write_lodging_dict
+    compiled_dict['elevation_data'] = write_elevation_dict
     # NEW DATA SOURCES: compiled_dict['TYPE_OF_DATA'] = DATA_DICT <--------- THIS IS AN EXAMPLE. ADD THIS IF YOU'RE ADDING A NEW API.
     
     filename = "compiled_data" + identifier + ".json"
