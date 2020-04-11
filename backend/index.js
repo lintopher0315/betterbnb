@@ -298,7 +298,7 @@ app.post('/setprefs', function(req, res) {
 
 // Route that recieves a POST request to /getTrips
 app.post('/getTrips', function(req, res) {
-    let id = req.body.id
+    let id = req.body.id;
     User.findOne({ _id : id }, function(err, user) {
         if (err) { return done(err); }
         res.send(user.trips);
@@ -309,9 +309,13 @@ app.post('/getTrips', function(req, res) {
 app.post('/addTrip', function(req, res) {
     let id = req.body.id;
     let name = req.body.name;
+    let obj = {
+        'name': name,
+        'listings': []
+    }
     console.log(id);
     console.log(url)
-    User.update({_id : id}, {$addToSet: {trips: name}}, err => {
+    User.update({_id : id}, {$addToSet: {trips: obj}}, err => {
         if (err) {
             console.log(err);
         } else {
@@ -323,8 +327,8 @@ app.post('/addTrip', function(req, res) {
 // Route that recieves a POST request to remove a trip
 app.post('/removeTrip', function(req, res) {
     let id = req.body.id;
-    let name = req.body.name;
-    User.update({_id : id}, { $pull: { trips: name } } , err => {
+    let nameToRemove = req.body.name;
+    User.update({_id : id}, { $pull: { trips: {name: nameToRemove} } } , err => {
         if (err) {
             console.log(err);
         } else {
@@ -333,6 +337,30 @@ app.post('/removeTrip', function(req, res) {
     });
 })
 
+// Route that recieves a POST request to remove a listing from a trip
+app.post('/removeListingFromTrip', function(req, res) {
+    let id = req.body.id;
+    //let tripName = req.body.tripName;
+    let lisitngUrl = req.body.listing;
+    User.update({_id : id}, { $pull: { trips: {listings: lisitngUrl} } } , err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Removed listing with url: " + listingToRemove);
+        }
+    });
+})
+
+// Route that recieves a POST request to get trip listings
+app.post('/getTripListings', function(req, res) {
+    let id = req.body.id;
+    let trip = req.body.tripName;
+    User.findOne({ _id : id }, function(err, user) {
+        if (err) { return done(err); }
+        var obj = user.trips.find(o => o.name === 'trip');
+        res.send(obj['listings']);
+      });
+})
 
 // Route that recieves a POST request to /email
 app.post('/email', function (req, res) {
