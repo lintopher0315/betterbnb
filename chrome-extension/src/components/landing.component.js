@@ -109,18 +109,19 @@ export default class Landing extends Component {
             return(
                 <div className='container' style={{paddingTop: "2%"}}>
                     <div className='text-center'>
-                        <h5>Information:</h5>
+                        { /* if user is logged in */}
+                        <nobr><h5>Information — <Button variant='outline-dark' size='sm'>Save Listing</Button></h5></nobr>
                         <hr />
-                        <h6>Population Density: {this.state.dataObj.population_information.population_density_per_sq_mi}</h6>
+                        <b>Population Density</b>: {this.state.dataObj.population_information.population_density_per_sq_mi}
                         <hr />
-                        <h6>City Crime Stats:</h6>
+                        <b>City Crime Stats:</b>
                         <p>
                         Robbery: {this.state.dataObj.crime_data.robbery}<br /> 
                         Property Crime: {this.state.dataObj.crime_data["property-crime"]}<br /> 
                         Larceny: {this.state.dataObj.crime_data.larceny}<br />
                         </p>
                         <hr />
-                        <h6>Nearby Restaurants:</h6>
+                        <b>Nearby Restaurants:</b>
                         <p>
                             {this.getRestaurant(1)} <br />
                             {this.getRestaurant(2)} <br />

@@ -17,7 +17,8 @@ export default class Settings extends Component {
 
     // TODO: 
     // Create new API endpoint to handle Google OAuth from Chrome extension
-    
+    // Create handler that calls Chrome API opening new tab
+
     render() {
 
 

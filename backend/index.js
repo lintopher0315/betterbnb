@@ -178,6 +178,8 @@ app.get('/auth/google/callback',
     res.redirect('http://localhost:3000/userhome?q=' + req.user._id);
   });
 
+// TODO: Create route for chrome extension for Google OAuth
+
 // Route that recieves a POST to local login
 app.post('/login',
   passport.authenticate('local', { failureRedirect: 'http://localhost:3000/login' }),
