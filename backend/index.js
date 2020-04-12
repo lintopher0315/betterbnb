@@ -351,6 +351,21 @@ app.post('/removeListingFromTrip', function(req, res) {
     });
 })
 
+// Route that recieves a POST request to add a listing to a trip
+app.post('/addLitingFromTrip', function(req, res) {
+    let id = req.body.id;
+    let tripName = req.body.trip;
+    let listingUrl = req.body.listing;
+    var path = 'trips.$.' + tripName + 'listings';
+    User.update({_id : id}, {$addToSet: {path: listingUrl} }, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Added listing to trip with url: " + listingUrl);
+        }
+    });
+})
+
 // Route that recieves a POST request to get trip listings
 app.post('/getTripListings', function(req, res) {
     let id = req.body.id;
