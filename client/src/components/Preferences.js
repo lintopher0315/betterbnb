@@ -14,17 +14,27 @@ export class Preferences extends Component {
             preferences: [["crime", 50], ["langprevalence", 50],
              ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
             loaded: false,
+            languages: ["english"],
+            spanishvalue: "",
+            frenchvalue: "",
+            portvalue: "",
+            hindivalue: "",
             showConfirm: false
             
         }
+        //this.handleLangChange = this.handleLangChange.bind(this);
         
     }
 
-    componentWillMount() {
-        /* grabing the userid */
-       
-
-    }
+    // handleLangChange(event) {
+        
+    //     const target = event.target;
+    //     const value = target.name;
+    //     const name = target.name;
+    //     console.log(name)
+    //     this.setState({
+    //       [name]: value    });
+    // }
 
     componentDidMount() {
         if (window.location.search) {
@@ -124,6 +134,12 @@ export class Preferences extends Component {
                 <hr id="line"></hr>
                 <Container>
                     <div className="preferencesBlock">
+                        <Row>
+                            <h2 className="subtitle">Importance of Data</h2>
+                        </Row>
+                    </div>
+                    <div className="preferencesBlock">
+                        
                         <Row>
                             <h3>Crime Data</h3>
                         </Row>
@@ -225,6 +241,41 @@ export class Preferences extends Component {
                         </Row>
                            
                     </div>
+                    <hr></hr>
+                    <div>
+                        <Row>
+                            <h2 className="subtitle">Get Language Prevelance Data</h2>
+                            
+                        </Row>
+
+                        <Row>
+                            <p className="infopara">Choose from Spanish, French, Portuguese, and Hindi</p>
+                            
+                        </Row>
+
+                        <Row>
+                        <form className="langboxes">
+                                <label className="checkboxcontainer">
+                                    <input className="mycheckbox" type="checkbox" checked={this.state.spanishvalue} onChange={this.handleLangChange}/>
+                                    <span className="checkboxtext"> Spanish</span>
+                                </label>
+                                <label className="checkboxcontainer">
+                                    <input className="checkbox" type="checkbox" checked={this.state.frenchvalue}/>
+                                    <span className="checkboxtext"> French</span>
+                                </label>
+                                <label className="checkboxcontainer">
+                                    <input className="checkbox" type="checkbox" checked={this.state.portvalue}/>
+                                    <span className="checkboxtext"> Portuguese</span>
+                                </label>
+                                <label className="checkboxcontainer">
+                                    <input className="checkbox" type="checkbox" checked={this.state.hindivalue}/>
+                                    <span className="checkboxtext"> Hindi</span>
+                                </label>
+                            </form>
+                        </Row>
+                          
+                        
+                    </div>
                     <div>
                         <Row>
                             <Button onClick={this.handleButtonClick} className="pref-button">Update preferences</Button>
@@ -234,12 +285,6 @@ export class Preferences extends Component {
 
                        
                         
-                    </div>
-
-                    <div>
-                    <Row>
-                        
-                    </Row>
                     </div>
                 </Container>
               
