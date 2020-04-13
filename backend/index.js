@@ -285,12 +285,14 @@ app.post('/getprefs', function(req, res) {
 app.post('/setprefs', function(req, res) {
     let id = req.body.id
     let prefs = req.body.prefs
-    User.update({ _id: id}, {preferences: prefs}, err => {
+    let langs = req.body.langdata
+    User.update({ _id: id}, {preferences: prefs}, {langdata: langs},  err => {
         if (err) {
             console.log(err)
         } else {
             res.send(200)
             console.log("Preferences are now" + prefs)
+            console.log("Langs are now", langs)
         }
     })
 

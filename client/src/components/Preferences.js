@@ -14,27 +14,65 @@ export class Preferences extends Component {
             preferences: [["crime", 50], ["langprevalence", 50],
              ["restaurants", 50], ["lodging", 50], ["population", 50], ["weather", 50]],
             loaded: false,
-            languages: ["english"],
+
+            /* send to backend so they can implement lang prevalence data if needed */
+            languages: [["spanish", false],["french", false],  ["portuguese", false], ["hindi", false]], 
+
+            /* these are used for */
             spanishvalue: "",
             frenchvalue: "",
             portvalue: "",
             hindivalue: "",
+
+            /* used to show the confirmation message */
             showConfirm: false
             
         }
-        //this.handleLangChange = this.handleLangChange.bind(this);
+        this.handleLangChange = this.handleLangChange.bind(this);
         
     }
 
-    // handleLangChange(event) {
-        
-    //     const target = event.target;
-    //     const value = target.name;
-    //     const name = target.name;
-    //     console.log(name)
-    //     this.setState({
-    //       [name]: value    });
-    // }
+    handleLangChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        let copyarr;
+        switch (name) {
+            
+
+            case 'spanishvalue':
+                copyarr = this.state.languages;
+                copyarr[0][1] = true;
+                this.setState({languages: copyarr});
+                break;
+
+            case 'frenchvalue':
+                copyarr = this.state.languages;
+                copyarr[1][1] = true;
+                this.setState({languages: copyarr});
+                break;
+
+            case 'portvalue':
+                copyarr = this.state.languages;
+                copyarr[2][1] = true;
+                this.setState({languages: copyarr});
+                break;
+
+            case 'hindivalue':
+                copyarr = this.state.languages;
+                copyarr[3][1] = true;
+                this.setState({languages: copyarr});
+                break;
+
+        }
+
+        console.log(name)
+
+        this.setState({
+            [name]: value
+        });
+    }
 
     componentDidMount() {
         if (window.location.search) {
@@ -117,7 +155,8 @@ export class Preferences extends Component {
 
         let requestObj = {
             id: this.state.id,
-            prefs: this.state.preferences
+            prefs: this.state.preferences,
+            langdata: this.state.languages
         }
         axios.post("http://localhost:5000/setprefs", requestObj)
             .then(() => console.log("Set preferences"))
@@ -256,19 +295,19 @@ export class Preferences extends Component {
                         <Row>
                         <form className="langboxes">
                                 <label className="checkboxcontainer">
-                                    <input className="mycheckbox" type="checkbox" checked={this.state.spanishvalue} onChange={this.handleLangChange}/>
+                                    <input name="spanishvalue" className="mycheckbox" type="checkbox" checked={this.state.spanishvalue} onChange={this.handleLangChange}/>
                                     <span className="checkboxtext"> Spanish</span>
                                 </label>
                                 <label className="checkboxcontainer">
-                                    <input className="checkbox" type="checkbox" checked={this.state.frenchvalue}/>
+                                    <input name="frenchvalue" className="checkbox" type="checkbox" checked={this.state.frenchvalue} onChange={this.handleLangChange}/>
                                     <span className="checkboxtext"> French</span>
                                 </label>
                                 <label className="checkboxcontainer">
-                                    <input className="checkbox" type="checkbox" checked={this.state.portvalue}/>
+                                    <input name="portvalue" className="checkbox" type="checkbox" checked={this.state.portvalue} onChange={this.handleLangChange}/>
                                     <span className="checkboxtext"> Portuguese</span>
                                 </label>
                                 <label className="checkboxcontainer">
-                                    <input className="checkbox" type="checkbox" checked={this.state.hindivalue}/>
+                                    <input name="hindivalue" className="checkbox" type="checkbox" checked={this.state.hindivalue} onChange={this.handleLangChange}/>
                                     <span className="checkboxtext"> Hindi</span>
                                 </label>
                             </form>

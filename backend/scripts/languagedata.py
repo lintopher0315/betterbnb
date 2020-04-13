@@ -78,7 +78,12 @@ def get_data_with_lat_long(lat, lng, language):
         return data_to_return
         
        
-#print(get_data_with_lat_long(47.535436, -122.286905))
+
+#print(get_data_with_lat_long(47.535436, -122.286905, "spanish"))
+#print(get_data_with_lat_long(40.427708, -86.918695, "spanish"))
+#print(get_data_with_lat_long(47.535436, -122.286905, "french"))
+#print(get_data_with_lat_long(40.500075, -74.365610, "french"))
+
 #print(None == get_data_with_lat_long(40.427708, -86.918695))
 
 
@@ -100,3 +105,5 @@ class TestPopulation(unittest.TestCase):
         self.assertEqual(123185, get_data_with_lat_long(40.901796, -73.997409))
         self.assertEqual(15865, get_data_with_lat_long(42.840341, -71.623169))
         self.assertEqual(121930, get_data_with_lat_long(47.535436, -122.286905))
+
+
