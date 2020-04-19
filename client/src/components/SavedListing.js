@@ -8,7 +8,7 @@ import SearchBar from 'material-ui-search-bar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const randomNames = [
+let randomNames = [
     'Corinthia Hotel',
     'Beautiful Sea Apartment',
     'Hong Kong Peninsula Hotel',
@@ -19,7 +19,7 @@ const randomNames = [
     'InterContinental Hong Kong'
 ]
 
-const randomImg = [
+let randomImg = [
     "https://cdn.cnn.com/cnnnext/dam/assets/160506135321-hong-kong-hotel-park-lane-super-169.jpg",
     "https://cdn.cnn.com/cnnnext/dam/assets/160506135313-hong-kong-hotel-peninsula-super-169.jpg",
     "https://www.elitetraveler.com/wp-content/uploads/2013/06/night-view4.jpg",
@@ -48,7 +48,7 @@ export class SavedListing extends Component {
 
     componentDidMount() {
         let temp = [];
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < randomNames.length; i++) {
             temp.push(
             <div>
                 <div id="saved-listing-btn" onClick={this.changeMap.bind(this)}>
@@ -65,7 +65,7 @@ export class SavedListing extends Component {
                         ${Math.floor(Math.random()*50+20)} daily rate
                     </p>
                 </div>
-                <Button id="saved-listing-remove-btn" size="sm" variant="secondary">
+                <Button id="saved-listing-remove-btn" size="sm" variant="secondary" onClick={() => this.removeList(randomNames[i])}>
                     Remove
                 </Button>
                 <hr />
@@ -127,6 +127,41 @@ export class SavedListing extends Component {
             }
         }
         this.setState({filtered_data: new_filter})
+    }
+
+    removeList = (name) => {
+        for (let i = randomNames.length-1; i >= 0; --i) {
+            if (randomNames[i].includes(name)) {
+                randomNames.splice(i, 1);
+                randomImg.splice(i, 1);
+            }
+        }
+        let temp = [];
+        for (let i = 0; i < randomNames.length; i++) {
+            temp.push(
+            <div>
+                <div id="saved-listing-btn" onClick={this.changeMap.bind(this)}>
+                    <div id="saved-listing-title">
+                        {randomNames[i]}
+                    </div>
+                    <Rating
+                        name={'rating'}
+                        value={Math.ceil(Math.random()*i/2)}
+                        size={'medium'}
+                    />
+                    <img id="saved-listing-img" alt="" src={randomImg[i]} />
+                    <p style={{fontFamily: 'Dosis'}}>
+                        ${Math.floor(Math.random()*50+20)} daily rate
+                    </p>
+                </div>
+                <Button id="saved-listing-remove-btn" size="sm" variant="secondary" onClick={() => this.removeList(randomNames[i])}>
+                    Remove
+                </Button>
+                <hr />
+            </div>)
+        }
+        this.setState({temp_data: temp})
+        this.setState({filtered_data: temp})
     }
 
     render() {
