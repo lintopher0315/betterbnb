@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import Rating from '@material-ui/lab/Rating';
 import SearchBar from 'material-ui-search-bar';
@@ -65,6 +65,9 @@ export class SavedListing extends Component {
                         ${Math.floor(Math.random()*50+20)} daily rate
                     </p>
                 </div>
+                <Button id="saved-listing-remove-btn" size="sm" variant="secondary">
+                    Remove
+                </Button>
                 <hr />
             </div>)
         }
