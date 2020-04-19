@@ -26,15 +26,38 @@ export default class ListingPage extends React.Component {
 
         this.onSaveListing = this.onSaveListing.bind(this);
         this.onRemoveListing = this.onRemoveListing.bind(this);
+        this.onDownloadPDF = this.onDownloadPDF.bind(this);
         
         /* id is a placeholder*/
         this.state =  {
             id: "5e793b4e25eca81d644b12a5",
             url: "",
             data: undefined,
-            redirection: false
+            redirection: false,
+            title: "Four Seasons Hotel",
+            location: "Sydney",
+            description: "Location doesn’t get any better than this: \
+            Iconic Sydney Harbor sits at the doorstep of our \
+            award-winning Central Business District Hotel"
         }
     }
+
+    onDownloadPDF(e) {
+        e.preventDefault();
+
+        const requestObj = {
+            id: this.state.id,
+            data: this.state.data,
+            title: this.state.title,
+            location: this.state.location,
+            description: this.state.description
+        }
+
+        axios.post("http://localhost:5000/downloadPDF", requestObj)
+            .then(() => console.log("Generating PDF..."))
+            .catch(err => {console.log("Error generating PDF.")})
+    }
+
     onRemoveListing(e) {
         e.preventDefault();
         
@@ -239,7 +262,7 @@ export default class ListingPage extends React.Component {
                                     value={5}
                                     size={'medium'}
                                 />
-                                <Button className="listing-page-btn" variant="outline-success" size="sm">
+                                <Button onClick={this.onDownloadPDF} className="listing-page-btn" variant="outline-success" size="sm">
                                     <a className="listing-page-link" href='../res/sample_pdf.pdf' download>Download PDF</a>
                                 </Button>
                                 <Button onClick={this.onSaveListing} className="listing-page-btn" variant="outline-success" size="sm">
