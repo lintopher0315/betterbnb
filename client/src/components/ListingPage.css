@@ -1,0 +1,19 @@
+.flagbutton {
+    background-color: cadetblue;
+    padding: 1%;
+
+}
+
+.flagbutton:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+
+.flagbuttonimg {
+    max-width:10%;
+    padding: none;
+    margin: none;
+    height:auto;
+
+}

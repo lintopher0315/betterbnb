@@ -7,6 +7,8 @@ import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
 
+import './ListingPage.css';
+
 const CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
 
 const carousel_settings = {
@@ -273,6 +275,13 @@ export default class ListingPage extends React.Component {
                                     {/* <a className="listing-page-link">{this.state.id}</a> */}
                                     Remove Listing
                                 </Button>
+                              
+                                <Button className="flagbutton">
+                                    <img className="flagbuttonimg" src={require('../images/flagicon.png')} />
+                                    Flag Listing
+
+                                </Button>
+                                
                                 <hr />
                                 <div id="listing-sub-title">
                                     Description
