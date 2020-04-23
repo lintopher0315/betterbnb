@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Slider from "react-slick";
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
+
 
 import './ListingPage.css';
 
@@ -90,6 +91,10 @@ export default class ListingPage extends React.Component {
             .catch(err => {
                 console.log(err);
             })
+    }
+
+    onFlagListing(e) {
+        e.preventDefault();
     }
 
     
@@ -276,9 +281,11 @@ export default class ListingPage extends React.Component {
                                     Remove Listing
                                 </Button>
                               
-                                <Button className="flagbutton">
+                                <Button onClick={this.onFlagListing} className="flagbutton">
                                     <img className="flagbuttonimg" src={require('../images/flagicon.png')} />
-                                    Flag Listing
+                                    <Link className="header-redirect" to={{pathname: '/flaglisting'}}>
+                                        Flag Listing
+                                    </Link>
 
                                 </Button>
                                 
