@@ -285,16 +285,33 @@ app.post('/getprefs', function(req, res) {
 app.post('/setprefs', function(req, res) {
     let id = req.body.id
     let prefs = req.body.prefs
-    let langs = req.body.langdata
-    User.update({ _id: id}, {preferences: prefs}, {langdata: langs},  err => {
+    let langs = req.body.langs
+    console.log("the langs are")
+    console.log(langs)
+    // User.updateMany({ _id: id}, {foo: "why hello", preferences: prefs, langdata: langs},  err => {
+    //     if (err) {
+    //         console.log(err)
+    //     } else {
+    //         res.sendStatus(200)
+    //         console.log("Preferences are now" + prefs)
+    //         console.log("Langs are now", langs)
+    //     }
+    // })
+    User.update({_id : id}, {preferences: prefs}, err => {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
-            res.send(200)
-            console.log("Preferences are now" + prefs)
-            console.log("Langs are now", langs)
+            console.log("Prefs are now \n" + prefs);
         }
-    })
+    });
+
+    User.update({_id : id}, {foo: "plz work"}, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            
+        }
+    });
 
 })
 
