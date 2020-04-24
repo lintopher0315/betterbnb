@@ -1,34 +1,57 @@
 import React from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
 import { useHistory } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap'
 
-function Jumbotron(props) {
+export default class Jumbotron extends React.Component {
 
-    let history = useHistory();
+    constructor(props) {
+        super(props)
 
-    return (
-        <div id="container">
-            <div id="container-text">
-                Travel safe with BetterBnB
+        this.state = {
+            url: ''
+        }
+
+        this.updateValue = this.updateValue.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    updateValue(event) {
+        const target = event.target;
+        const val = target.value
+
+        this.setState({
+            url: val
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        var redir = "http://localhost:3000/details/?url=" + this.state.url
+        window.location = redir
+    }
+
+
+
+    // http://localhost:3000/details/?url=
+    render() {
+        return (
+            <div id="container">
+                <div id="container-text">
+                    Travel safe with Betterbnb
+                </div>
+                
+                <div className='container'>
+                    <Form>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="text" value={this.state.url} onChange={this.updateValue} placeholder="Airbnb Url" /> <br />
+                        <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+                            Go!
+                        </Button>
+                    </Form>
+                </div>
             </div>
-            <div id="location-container">
-                <AlgoliaPlaces
-                    placeholder={"Search a location"}
-                    style={{
-                        borderRadius: '10px',
-                    }}
-                    onChange={({suggestion}) => {
-                        history.push({
-                            pathname: '/results',
-                            name: suggestion.name,
-                            coord: suggestion.latlng,
-                            search: `?q=${window.location.search.split('=')[1]}`
-                        })
-                    }}
-                />
-            </div>
-        </div>
-    )
+        )
+    }
+
 }
-
-export default Jumbotron;
