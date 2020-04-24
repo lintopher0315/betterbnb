@@ -6,19 +6,26 @@ export default class FlagListing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          value: ''
+          email: '',
+          description: ''
         };
     
-        this.handleChange = this.handleChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
+
+    handleEmailChange(event) {
+        this.setState({email: event.target.value});
+    }
+
+    handleDescriptionChange(event) {
+        this.setState({description: event.target.value});
     }
     
     handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
+        alert('An essay was submitted: ' + this.state.description + "\n" + this.state.email);
         event.preventDefault();
     }
 
@@ -50,23 +57,20 @@ export default class FlagListing extends Component {
                             <Form>
                             <Form.Group controlId="exampleForm.ControlTextarea1">
                                 
-                                <Form.Control as="textarea" rows="6" />
+                                <Form.Control onChange={this.handleDescriptionChange} as="textarea" rows="6" />
                             </Form.Group>
                        
             
                             <h3>Email: </h3>
-                       
-                    
-                 
-                           
+        
                                 <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control type="email" placeholder="Enter email" onChange={this.handleEmailChange}/>
                                 <Form.Text className="text-muted">
                                    So we can contact you about a listing's status 
                                 </Form.Text>
                                 </Form.Group>
                             <br></br>
-                            <Button>
+                            <Button onClick={this.handleSubmit}>
                                 Submit
                             </Button>
 
