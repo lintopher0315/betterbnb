@@ -1,14 +1,18 @@
 .flagbutton {
-    background-color: cadetblue;
+    margin-top: 15px;
+    background-color: rgb(250, 112, 87);
     padding: 1%;
 
 }
 
 .flagbutton:hover {
-    background-color: rgb(253, 104, 77); /* Green */
+    background-color: rgb(192, 72, 51); /* Green */
     color: white;
   }
 
+.header-redirect {
+    color: black;
+}
 
 .flagbuttonimg {
     max-width:10%;
@@ -16,4 +20,9 @@
     margin: none;
     height:auto;
 
+}
+
+.langimage {
+    width: 50%;
+    height: 50%;
 }

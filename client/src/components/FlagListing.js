@@ -7,9 +7,9 @@ export default class FlagListing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          link:  '',
           email: '',
-          description: ''
+          subject:  '',
+          message: '',
         };
     
         this.handleLinkChange = this.handleLinkChange.bind(this);
@@ -24,11 +24,11 @@ export default class FlagListing extends Component {
     }
 
     handleDescriptionChange(event) {
-        this.setState({description: event.target.value});
+        this.setState({message: event.target.value});
     }
 
     handleLinkChange(event) {
-        this.setState({link: event.target.value});
+        this.setState({subject: event.target.value});
 
     }
     
@@ -36,18 +36,17 @@ export default class FlagListing extends Component {
         
         event.preventDefault();
 
-        // axios
-        //     .post('http://localhost:5000/flaglisting', this.state)
-        //     .then(() => console.log('Email Sent'))
-        //     .catch(err => {
-        //         console.error(err);
-        // });
-        // alert("Thank you for contacting betterbnb.");
+        axios
+            .post('http://localhost:5000/email', this.state)
+            .then(() => console.log('Email Sent'))
+            .catch(err => {
+                console.error(err);
+        });
 
         this.setState({
-            link: '',
             email: '',
-            description: '',
+            subject: '',
+            message: '',
         });
 
         alert("You have succesfully flagged the listing, thank you.")
@@ -80,7 +79,7 @@ export default class FlagListing extends Component {
                             <h3 className="subtitle">Listing link </h3>
 
                             <Form.Group controlId="formBasicLink">
-                                <Form.Control type="email" placeholder="Enter listing url" onChange={this.handleLinkChange}/>
+                                <Form.Control type="email" placeholder="Enter listing url" value={this.state.subject} onChange={this.handleLinkChange}/>
                                 <Form.Text className="text-muted">
                                     So we can identify the listing
                                 </Form.Text>
@@ -91,19 +90,19 @@ export default class FlagListing extends Component {
                             
                             
                             <Form.Group controlId="exampleForm.ControlTextarea1"> 
-                                <Form.Control onChange={this.handleDescriptionChange} as="textarea" rows="6" />
+                                <Form.Control value={this.state.message} onChange={this.handleDescriptionChange} as="textarea" rows="6" />
                             </Form.Group>
                        
                             <h3 className="subtitle">Email: </h3>
         
                                 <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="Enter email" onChange={this.handleEmailChange}/>
+                                <Form.Control type="email" placeholder="Enter email" value={this.state.email}  onChange={this.handleEmailChange}/>
                                 <Form.Text className="text-muted">
                                    So we can contact you about a listing's status 
                                 </Form.Text>
                                 </Form.Group>
                             <br></br>
-                            <Button onClick={this.handleSubmit}>
+                            <Button onClick={this.handleSubmit} type="submit">
                                 Submit
                             </Button>
 

@@ -263,12 +263,12 @@ export default class ListingPage extends React.Component {
                                 <div id="listing-page-loc">
                                     
                                 </div>
-                                {/* <Rating
+                                <Rating
                                     id="listing-page-star"
                                     name={'rating'}
                                     value={5}
                                     size={'medium'}
-                                /> */}
+                                />
                                 <Button onClick={this.onDownloadPDF} className="listing-page-btn" variant="outline-success" size="sm">
                                     <a className="listing-page-link" href='../res/sample_pdf.pdf' download>Download PDF</a>
                                 </Button>
@@ -340,6 +340,7 @@ export default class ListingPage extends React.Component {
                                 </div>
                             </div>
                         </Col>
+
                     </Row>
 
                     <Row>
@@ -404,6 +405,21 @@ export default class ListingPage extends React.Component {
                             </div>
                         </Col>
                     </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Language Prevalence: N/A
+                                </div>
+                                <div>
+                                    <img className="langimage" src={require("../images/langicon.png")} alt=""/>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+
 
                     <Row>
                         <Col>
