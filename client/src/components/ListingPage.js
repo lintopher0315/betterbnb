@@ -258,17 +258,17 @@ export default class ListingPage extends React.Component {
                         <Col style={{paddingRight: '100px'}}>
                             <div id="desc-col">
                                 <div id="listing-page-title">
-                                    Four Seasons Hotel
+                                    Your listing
                                 </div>
                                 <div id="listing-page-loc">
-                                    Sydney
+                                    
                                 </div>
-                                <Rating
+                                {/* <Rating
                                     id="listing-page-star"
                                     name={'rating'}
                                     value={5}
                                     size={'medium'}
-                                />
+                                /> */}
                                 <Button onClick={this.onDownloadPDF} className="listing-page-btn" variant="outline-success" size="sm">
                                     <a className="listing-page-link" href='../res/sample_pdf.pdf' download>Download PDF</a>
                                 </Button>
@@ -288,21 +288,6 @@ export default class ListingPage extends React.Component {
                                     </Link>
 
                                 </Button>
-                                
-                                <hr />
-                                <div id="listing-sub-title">
-                                    Description
-                                </div>
-                                <div id="listing-desc-text">
-                                    Location doesn’t get any better than this: 
-                                    Iconic Sydney Harbor sits at the doorstep of our 
-                                    award-winning Central Business District Hotel, with historic 
-                                    The Rocks and Circular Quay right next door. Head out to explore the nearby shopping, 
-                                    outdoor adventure and vibrant social scene that surround us, 
-                                    then meet back at Mode Kitchen &amp; Bar for fresh, local cuisine and drinks at Grain. 
-                                    In Sydney, work and play are never too far apart. And that’s just the way we like it.
-                                </div>
-                                <hr />
                             </div>
                         </Col>
 

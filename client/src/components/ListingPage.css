@@ -5,7 +5,7 @@
 }
 
 .flagbutton:hover {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(253, 104, 77); /* Green */
     color: white;
   }
 

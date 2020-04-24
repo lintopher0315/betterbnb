@@ -43,7 +43,7 @@ export default class Jumbotron extends React.Component {
                 
                 <div className='container'>
                     <Form>
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label></Form.Label>
                             <Form.Control type="text" value={this.state.url} onChange={this.updateValue} placeholder="Airbnb Url" /> <br />
                         <Button variant="primary" type="submit" onClick={this.handleSubmit}>
                             Go!
