@@ -110,8 +110,6 @@ export default class Landing extends Component {
                 <div className='container' style={{paddingTop: "2%"}}>
                     <div className='text-center'>
                         { /* if user is logged in */}
-                        <nobr><h5>Information — <Button variant='outline-dark' size='sm'>Save Listing</Button></h5></nobr>
-                        <hr />
                         <b>Population Density</b>: {this.state.dataObj.population_information.population_density_per_sq_mi}
                         <hr />
                         <b>City Crime Stats:</b>

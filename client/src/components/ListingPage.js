@@ -57,7 +57,7 @@ export default class ListingPage extends React.Component {
         }
 
         axios.post("http://localhost:5000/getTrips", requestObj)
-            .then(() => console.log(res))
+            .then(() => console.log())
             .catch(err => {console.log("Error getting Trips.")})
     }
 
