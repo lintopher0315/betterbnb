@@ -397,6 +397,11 @@ body {
     padding-top: 100px;
 }
 
+#saved-listing-remove-btn {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 #saved-listing-title {
     font-family: 'Dosis';
     font-size: 32px;

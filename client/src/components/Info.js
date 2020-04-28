@@ -12,7 +12,7 @@ function Info() {
             </div>
             <br />
             <div id="info-text" style={{paddingTop: '8px'}}>
-                BetterBNB provides you with the most up-to-date info with no hassle.
+                Betterbnb provides you with the most up-to-date info with no hassle.
             </div>
             <img id="plane-image" alt="" src={require("../res/paper_plane.png")}/>
         </div>

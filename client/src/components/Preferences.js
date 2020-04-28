@@ -156,7 +156,7 @@ export class Preferences extends Component {
         let requestObj = {
             id: this.state.id,
             prefs: this.state.preferences,
-            langdata: this.state.languages
+            langs: this.state.languages
         }
         axios.post("http://localhost:5000/setprefs", requestObj)
             .then(() => console.log("Set preferences"))

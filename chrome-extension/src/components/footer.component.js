@@ -26,15 +26,8 @@ export default class Footer extends Component {
                     <Card.Footer className="text-muted">
                     <Row>
                         <Col>
-                            <Link to='/'><i class="fas fa-home"></i></Link>
-                        </Col>    
-                        <Col>
                             <Link onClick={this.createNewTab}><i class="fas fa-link"></i></Link>
                         </Col>      
-                        <Col>
-                            <Link to='/settings'><i class="fas fa-cog"></i></Link>
-                        </Col>   
-                        
                     </Row>    
                     </Card.Footer>
                 </div>

@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Slider from "react-slick";
 import { Button, Container, Col, Row, Spinner } from 'react-bootstrap';
 import Rating from '@material-ui/lab/Rating';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Line, Scatter } from 'react-chartjs-2';
+
+
+import './ListingPage.css';
 
 const CONSTANT_GOOGLE_API_KEY = "AIzaSyACEj7IvA9oyKaApQikJKvSVm1B_nmFSUw"
 
@@ -88,6 +91,10 @@ export default class ListingPage extends React.Component {
             .catch(err => {
                 console.log(err);
             })
+    }
+
+    onFlagListing(e) {
+        e.preventDefault();
     }
 
     
@@ -251,10 +258,10 @@ export default class ListingPage extends React.Component {
                         <Col style={{paddingRight: '100px'}}>
                             <div id="desc-col">
                                 <div id="listing-page-title">
-                                    Four Seasons Hotel
+                                    Your listing
                                 </div>
                                 <div id="listing-page-loc">
-                                    Sydney
+                                    
                                 </div>
                                 <Rating
                                     id="listing-page-star"
@@ -273,20 +280,14 @@ export default class ListingPage extends React.Component {
                                     {/* <a className="listing-page-link">{this.state.id}</a> */}
                                     Remove Listing
                                 </Button>
-                                <hr />
-                                <div id="listing-sub-title">
-                                    Description
-                                </div>
-                                <div id="listing-desc-text">
-                                    Location doesn’t get any better than this: 
-                                    Iconic Sydney Harbor sits at the doorstep of our 
-                                    award-winning Central Business District Hotel, with historic 
-                                    The Rocks and Circular Quay right next door. Head out to explore the nearby shopping, 
-                                    outdoor adventure and vibrant social scene that surround us, 
-                                    then meet back at Mode Kitchen &amp; Bar for fresh, local cuisine and drinks at Grain. 
-                                    In Sydney, work and play are never too far apart. And that’s just the way we like it.
-                                </div>
-                                <hr />
+                              
+                                <Button onClick={this.onFlagListing} className="flagbutton">
+                                    <img className="flagbuttonimg" src={require('../images/flagicon.png')} />
+                                    <Link className="header-redirect" to={{pathname: '/flaglisting'}}>
+                                        Flag Listing
+                                    </Link>
+
+                                </Button>
                             </div>
                         </Col>
 
@@ -339,6 +340,7 @@ export default class ListingPage extends React.Component {
                                 </div>
                             </div>
                         </Col>
+
                     </Row>
 
                     <Row>
@@ -403,6 +405,21 @@ export default class ListingPage extends React.Component {
                             </div>
                         </Col>
                     </Row>
+
+                    <Row>
+                        <Col>
+                            <div id="area-col">
+                                <div id="listing-sub-title-second">
+                                    Language Prevalence: N/A
+                                </div>
+                                <div>
+                                    <img className="langimage" src={require("../images/langicon.png")} alt=""/>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+
+
 
                     <Row>
                         <Col>
