@@ -30,6 +30,7 @@
     "google-id-token-verifier": "^0.2.3",
     "googleapis": "^47.0.0",
     "heroku-ssl-redirect": "0.0.4",
+    "jspdf": "^1.5.3",
     "mongodb": "^3.5.3",
     "mongoose": "^5.9.7",
     "node-fetch": "^2.6.0",

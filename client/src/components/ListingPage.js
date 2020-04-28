@@ -53,9 +53,9 @@ export default class ListingPage extends React.Component {
             description: this.state.description
         }
 
-        axios.post("http://localhost:5000/downloadPDF", requestObj)
-            .then(() => console.log("Generating PDF..."))
-            .catch(err => {console.log("Error generating PDF.")})
+        axios.post("http://localhost:5000/getTrips", requestObj)
+            .then(() => console.log(res))
+            .catch(err => {console.log("Error getting Trips.")})
     }
 
     onRemoveListing(e) {

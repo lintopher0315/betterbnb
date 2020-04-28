@@ -415,6 +415,13 @@ app.post('/email', function (req, res) {
 })
 
 
+app.post('/downloadPDF', function(req, res) {
+    var doc = new jsPDF()
+    doc.text(req.body.title, 10, 10)
+    doc.save('listingPage.pdf')
+})
+
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
     app.use('*', express.static('client/build'));
